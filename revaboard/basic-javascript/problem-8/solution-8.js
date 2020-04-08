@@ -1,0 +1,21 @@
+function addArr(arr1, arr2){
+    // get the longer array
+    function compareArr(arr1, arr2){
+    if (arr1.length>=arr2.length){
+        return [arr1, arr2];
+    }else{
+        return [arr2, arr1];
+    }}
+    var longArr = compareArr(arr1, arr2)[0];
+    var shortArr = compareArr(arr1, arr2)[1];
+    for(i=0; i<=longArr.length-1; i++){
+
+        if(i<=shortArr.length-1){
+                    console.log(longArr[i]);
+    console.log(shortArr[i]);    
+
+        longArr[i] = longArr[i] + shortArr[i];
+        }
+    }
+  return longArr;
+}
