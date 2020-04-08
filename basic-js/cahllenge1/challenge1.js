@@ -3,8 +3,9 @@
 //not even sure what challenge 1 is rn
 
 function myfunc(){
-
-
+let x = 5;
+return x;
+// heres where some logic would go
 }
 
 
