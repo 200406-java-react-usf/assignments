@@ -1,0 +1,19 @@
+{
+  "name": "assignments",
+  "version": "1.0.0",
+  "description": "Challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/200406-java-react-usf/assignments.git"
+  },
+  "author": "Jose Angeles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/200406-java-react-usf/assignments/issues"
+  },
+  "homepage": "https://github.com/200406-java-react-usf/assignments#readme"
+}
