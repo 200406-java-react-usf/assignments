@@ -1,0 +1,14 @@
+{
+  "name": "basicjavascript",
+  "version": "1.0.0",
+  "description": "First basic javascript assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JS"
+  ],
+  "author": "Kevin Wagenheim",
+  "license": "ISC"
+}
