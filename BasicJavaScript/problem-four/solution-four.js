@@ -1,15 +1,8 @@
-/*
-
-    so far works only with words strings that begin with test, anything with test in it will break
-    and print the whole string
-
-*/
-
 // the string "test"
 var testString = "test";
 
 //string we are searching through to find test
-var stringToFindTestIn = "testing";
+var stringToFindTestIn = "I'm testing";
 
 //loop to find "test" within the stringToFindTestIn
 
@@ -37,10 +30,15 @@ var stringToFindTestIn = "testing";
 
             }
 
-        } else{
+        } 
+
+        if (i !== stringToFindTestIn.length - 1){
+
+            continue;
+
+        } else {
 
             console.log(stringToFindTestIn);
-            break;
 
         }
     
