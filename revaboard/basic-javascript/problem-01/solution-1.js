@@ -2,7 +2,7 @@
 function leapYear(input){
     var leapCheck;
 //take the year 
-    var year = input.prototype.getFullYear();
+    var year = input.getFullYear();
     if(year%4==0){
         leapCheck = true;
     }else{
