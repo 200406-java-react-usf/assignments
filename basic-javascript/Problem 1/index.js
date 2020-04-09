@@ -1,14 +1,17 @@
 var currentDate = new Date();
-let trialDate = new  Date(96,0,6);
+let trialDate = new  Date(2000,0,6);
 
 
 function checkLeapYear (currentDate){
     var currentYear = currentDate.getFullYear();
-    if(currentYear % 4 == 0){
-        return true;
+    if(((currentYear % 4) == 0) && (!(currentDate % 100) == 0)){
+        console.log(true);
     }
-    else{
-        return false;
+    else if(currentYear % 400 == 0){
+        console.log(true);
+    }
+    else {
+        console.log(false);
     }
 }
 
