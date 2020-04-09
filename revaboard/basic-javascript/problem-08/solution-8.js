@@ -6,14 +6,10 @@ function addArr(arr1, arr2){
     }else{
         return [arr2, arr1];
     }}
-    var longArr = compareArr(arr1, arr2)[0];
-    var shortArr = compareArr(arr1, arr2)[1];
+    let longArr = compareArr(arr1, arr2)[0];
+    let shortArr = compareArr(arr1, arr2)[1];
     for(i=0; i<=longArr.length-1; i++){
-
         if(i<=shortArr.length-1){
-                    console.log(longArr[i]);
-    console.log(shortArr[i]);    
-
         longArr[i] = longArr[i] + shortArr[i];
         }
     }

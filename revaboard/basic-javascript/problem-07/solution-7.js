@@ -1,5 +1,5 @@
 function fibonacci(input){
-    var output = [];
+    let output = [];
     output[0] = 0;
     // per wiki reversed fibonacci starts at 1 as well
     output[-1] = 1;

@@ -1,5 +1,5 @@
 function main(input){
-    var firstChar = input.split("")[0];
+    let firstChar = input.split("")[0];
     if (["a", "e", "i", "o", "u"].includes(firstChar)){
         return "A";
     }else if (["b", "c", "d", "f", "g"].includes(firstChar)){
