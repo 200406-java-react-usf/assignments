@@ -1,8 +1,15 @@
+/*
+
+    so far works only with words strings that begin with test, anything with test in it will break
+    and print the whole string
+
+*/
+
 // the string "test"
 var testString = "test";
 
 //string we are searching through to find test
-var stringToFindTestIn = "I'm not testing";
+var stringToFindTestIn = "testing";
 
 //loop to find "test" within the stringToFindTestIn
 
@@ -22,13 +29,20 @@ var stringToFindTestIn = "I'm not testing";
 
                         console.log(partOne + partTwo);
 
+                        break;
+
                     } 
 
                 }
 
             }
 
-        } 
+        } else{
+
+            console.log(stringToFindTestIn);
+            break;
+
+        }
     
    }
 
