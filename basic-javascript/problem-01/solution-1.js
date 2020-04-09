@@ -7,9 +7,9 @@
 
 var year = new Date();
 
-function leapCheck(Date){
+function leapCheck(input){
 
-    var fullYear = Date.getFullYear();
+    var fullYear = input.getFullYear();
 
         if (fullYear % 4 == 0 || (fullYear % 100 != 0 && fullYear % 400 == 0)){
             return true;
