@@ -1,10 +1,10 @@
-function main(){
-    inquirer.prompt(question)
-
-    .then(answers => {
-        var output = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answers.input);
-        console.log(output);
-        return output;
-    });
-
-}
+function main(input){
+    //regular expression of email?
+        if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input)){
+            return true;
+        }else{
+            return false;
+        };
+    }
+    
+console.log(main("hao@gmail.com"))
