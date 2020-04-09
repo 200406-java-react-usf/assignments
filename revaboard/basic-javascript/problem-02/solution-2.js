@@ -1,15 +1,3 @@
-var prompt = require("prompt");
-var inquirer = require('inquirer');
-var question = {
-    type: "input",
-    name: "input",
-    message: "Email?",
-    validate: function (value) {
-        if (value != null) {
-            return true;
-        }
-    }
-}
 function main(){
     inquirer.prompt(question)
 
