@@ -2,25 +2,27 @@
 var testString = "test";
 
 //string we are searching through to find test
-var stringToFindTestIn = "I'm testing";
+var stringToFindTestIn = "I'm not testing";
 
 //loop to find "test" within the stringToFindTestIn
 
-   for (var i = 0; i < stringToFindTestIn.length; i++){
+function removeTestString(testInput, searchInput){
 
-        if (stringToFindTestIn[i] == testString[0]){
+   for (var i = 0; i < searchInput.length; i++){
 
-            if (stringToFindTestIn[i+1] == testString[1]){
+        if (searchInput[i] == testInput[0]){
 
-                if (stringToFindTestIn[i+2] == testString[2]){
+            if (searchInput[i+1] == testInput[1]){
 
-                    if (stringToFindTestIn[i+3] == testString[3]){
+                if (searchInput[i+2] == testInput[2]){
 
-                        var partOne = stringToFindTestIn.slice(0, i);
+                    if (searchInput[i+3] == testInput[3]){
 
-                        var partTwo = stringToFindTestIn.slice(i+testString.length, stringToFindTestIn.length);
+                        var partOne = searchInput.slice(0, i);
 
-                        console.log(partOne + partTwo);
+                        var partTwo = searchInput.slice(i+testInput.length, searchInput.length);
+
+                        return partOne + partTwo;
 
                         break;
 
@@ -32,16 +34,18 @@ var stringToFindTestIn = "I'm testing";
 
         } 
 
-        if (i !== stringToFindTestIn.length - 1){
+        if (i !== searchInput.length - 1){
 
             continue;
 
         } else {
 
-            console.log(stringToFindTestIn);
+            return searchInput;
 
         }
     
    }
 
+}
 
+console.log(removeTestString(testString,stringToFindTestIn));
