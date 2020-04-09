@@ -1,12 +1,19 @@
 //inpute will be Date object
 function leapYear(input){
-    var leapCheck;
 //take the year 
     var year = input.getFullYear();
     if(year%4==0){
-        leapCheck = true;
+        if(year%100 == 0){
+            if (year%400 == 0){
+                return true;
+            }
+            return false;
+        }else{
+            return true;
+        }
     }else{
-        leapCheck = false;
+        return false;
     }
-    return leapCheck;
 }
+var d = new Date();
+console.log(leapYear(d));
