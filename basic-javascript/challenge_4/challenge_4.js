@@ -1,4 +1,4 @@
-/**Basic JavaScript Challenge 2
+/**Basic JavaScript Challenge 4
 * 
 * by Kennedy Wandelt
 * 
@@ -6,6 +6,7 @@
 **/
 
 function RemoveTest(userString){
+    userString.toLowerCase()
     if (userString.indexOf('test') == -1) {
         return userString
     }

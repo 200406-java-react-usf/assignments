@@ -1,4 +1,4 @@
-/**Basic JavaScript Challenge 2
+/**Basic JavaScript Challenge 5
 * 
 * by Kennedy Wandelt
 * 
