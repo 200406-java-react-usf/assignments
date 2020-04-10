@@ -6,8 +6,7 @@
    
 
 function leapYear (myDate) {
-    //hardcoding the date to test functionality
-    myDate = new Date('01/01/1700');
+     
     //creating a boolean to check if it is a leap year
     let isLeap = false;       
     //obtaining the year from the provided date   
@@ -19,4 +18,4 @@ function leapYear (myDate) {
     console.log(isLeap);
          
 }
-leapYear();
+leapYear(new Date('01/01/2000'));
