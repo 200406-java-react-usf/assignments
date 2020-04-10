@@ -11,7 +11,7 @@ function main(input, index) {
              newCode = charArray[i]+index-26;
             }else{     
              newCode = charArray[i]+index;
-            }
+            } 
     //charcode uppercase start at 65 ends at 90
         }else if(charArray[i] >= 65 && charArray[i] <= 90){
             if (charArray[i]+index > 90){
