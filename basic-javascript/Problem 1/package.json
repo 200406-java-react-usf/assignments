@@ -4,7 +4,7 @@
   "description": "check if Date is a leap year in gregorian calendar",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "node",

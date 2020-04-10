@@ -1,17 +1,17 @@
 function checkLeapYear(currentDate) {
-    var currentYear = currentDate.getFullYear();
+    let currentYear = currentDate.getFullYear();
     if ((currentYear % 4) == 0 && (currentYear % 100) != 0) {
-        console.log(true);
+        return true;
     }
     else {
         if (currentYear % 400 == 0) {
-            console.log(true);
+            return true;
         }
         else {
-            console.log(false);
+            return false;
         }
     }
 }
 
-
-checkLeapYear(new Date(1602,1,1));
+module.exports = checkLeapYear;
+//checkLeapYear(new Date(1602,1,1));
