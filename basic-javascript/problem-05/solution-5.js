@@ -30,8 +30,9 @@ function caesarShift(input,shift){
             }
         }        
     }
-       
-    console.log(output);
+
+    outputString = output.toString()
+    console.log(outputString.replace(/,/g,''));
             
 }
 caesarShift('testing',2);
