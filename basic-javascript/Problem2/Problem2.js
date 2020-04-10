@@ -1,5 +1,6 @@
 /**
  * Create a function that checks for a valid email format.
+ * Could try REGEX (regular expressions)
  */
 
 function checkValidEmail (email) {

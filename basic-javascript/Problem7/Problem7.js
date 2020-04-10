@@ -3,6 +3,7 @@
  * corresponding value of the Fibonacci sequence.
  */
 
+
 //There is probably a better solution if I learn the math... 
 //but this works for now
 function fibonacciSequence (index) {
@@ -23,3 +24,4 @@ function fibonacciSequence (index) {
 }
 
 console.log(fibonacciSequence(10));
+var person = prompt("Please enter your name", "Harry Potter");
