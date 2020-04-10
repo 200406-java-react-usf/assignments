@@ -22,7 +22,6 @@ function resetLoop(word, end) {
     return encrypt;
 }
 
-
-test_String = "Zeremy";
-testing = resetLoop(test_String, 1);
+test_String = "WXYZ";
+testing = resetLoop(test_String, 4);
 console.log(testing);

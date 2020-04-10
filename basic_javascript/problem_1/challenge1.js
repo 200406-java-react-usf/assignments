@@ -12,4 +12,4 @@ function date(userInput) {
     return d.getFullYear();
 
 }
-console.log(leapYear("April 8, 2018"));
+console.log(leapYear("01/22/2024"));
