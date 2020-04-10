@@ -26,4 +26,7 @@ function main(input, index) {
     }
     return charArray.join("");
   }
-  console.log(main("Xyz", 1));
+
+  module.exports = main;
+
+
