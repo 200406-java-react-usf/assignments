@@ -1,32 +1,26 @@
-function LeapYear(input) {
+function LeapYear(input, onComplete, onError) {
     let date = new Date(input);
-
-    var year = 1900 + date.getYear(); 
-
-    var test1 = year%4;
-    var test2 = year%100;
-    var test3 = year%400
-
-    if (test1 == 0) {
-        if (test2 == 0){
-            if (test3 == 0){
-                return "The year " + (year) +" is a leap year."
-            }
-            else{
-                return "The year " + (year) +" is not a leap year."
-            }
-        }
-        else {
-            return "The year " + (year) +" is a leap year."
-        }
-       return "The year " + (year) +" is a leap year."
+    let year = date.getFullYear(); 
+    
+    if(!year){
+        onError('Bad request. Input provided is not valid');
+        return;
     }
+
     else {
-        return "The year " + (year) +" is not a leap year."
-    }
-}
+        
 
-console.log(LeapYear('Dec 29, 1936'))
-console.log(LeapYear('Dec 29, 1900'))
-console.log(LeapYear('Dec 29, 2000'))
-console.log(LeapYear('Dec 29, 1935'))
+        var condition1 = year%4;
+        var condition2 = year%100;
+        var condition3 = year%400
+
+        if (condition1 == 0 && condition2 != 0 || condition3 ==0) {
+            onComplete('Is a leap year.');
+        }
+        else onComplete('Is not a leap year.');
+        return;
+    }
+    
+}
+module.exports= {LeapYear};
+
