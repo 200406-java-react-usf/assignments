@@ -34,4 +34,10 @@ let testEmailFunction = (regEx, input) => {
     }
 }    
 
-console.log(testEmailFunction(givenRegEx,inputEmail));
+module.exports = {
+
+    testEmailFunction
+
+}
+
+//console.log(testEmailFunction(givenRegEx,inputEmail));

@@ -14,4 +14,10 @@ function testForLeapYear(Date){
 
 }
 
-console.log(testForLeapYear(testDate));
+module.exports = {
+
+    testForLeapYear
+
+}
+
+//console.log(testForLeapYear(testDate));
