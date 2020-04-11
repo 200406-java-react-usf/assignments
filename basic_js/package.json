@@ -1,0 +1,20 @@
+{
+  "name": "basic_js",
+  "version": "1.0.0",
+  "description": "Week A assignments",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "Node",
+    "JS"
+  ],
+  "author": "Kaneisha Reese",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}
