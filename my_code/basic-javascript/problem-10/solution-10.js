@@ -14,3 +14,26 @@
 
 */
 
+function idStringByChar(input){
+
+    firstChar = input.charAt(0);
+    
+    let setA = 'aeiou';
+    let setB = 'bcdfg';
+    let setC = 'hjklm';
+    let setD = 'npqrstvxyz';
+
+    if(setA.includes(firstChar)){
+        console.log('A');
+    }else if(setB.includes(firstChar)){
+        console.log('B');
+    }else if(setC.includes(firstChar)){
+        console.log('C');
+    }else if(setD.includes(firstChar)){
+        console.log('D');
+    }else{
+        console.log('E');
+    }
+}
+
+idStringByChar('0esting');
