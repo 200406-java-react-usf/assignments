@@ -1,5 +1,13 @@
-function main(input, index) {
+function main(input, index, onError) {
     //charcode start at 65 ends at 90
+    if (typeof input !== "string"){
+      onError('Bad string request');
+      return;
+  }
+  if (!Number.isInteger(index)){
+      onError('Bad position request');
+      return;
+  }
     let charArray = input.split("");
     for (i = 0; i <= charArray.length - 1; i++) {
       charArray[i] = charArray[i].charCodeAt();
