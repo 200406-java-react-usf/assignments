@@ -1,0 +1,1 @@
+//Create a function that takes in a string as a parameter. It must return A, B, C, D, or E depending on the following criteria:
