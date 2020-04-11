@@ -2,15 +2,16 @@
 //return the string without any occurrences of “test”, otherwise return the original one.
 
 function removeTest(str, word) {
-    const length = word.length
-    let index = str.indexOf(word)
+    //Splits the words by the spaces between the words
+    const words = str.split(' ');
 
-    while(index >= 1) {
-        index = str.indexOf(word)
-        str = str.substring(0, index)
+    let newStr = ''
+
+    for (position = 0; position < words.length; position++){
+        if (words[position] !== word){
+            newStr = newStr + ' ' + words[position]
+        }
     }
-
-    console.log(str)
-    return str
+    console.log(newStr)
 }
-removeTest('A test is a test', 'test')
+removeTest('This test is a test','test')
