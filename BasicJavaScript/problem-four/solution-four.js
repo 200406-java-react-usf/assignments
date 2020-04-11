@@ -1,8 +1,8 @@
 // the string "test"
-var testString = "test";
+//var testString = "test";
 
 //string we are searching through to find test
-var stringToFindTestIn = "I'm not testing";
+//var stringToFindTestIn = "I'm not testing";
 
 //loop to find "test" within the stringToFindTestIn
 
@@ -48,4 +48,10 @@ function removeTestString(testInput, searchInput){
 
 }
 
-console.log(removeTestString(testString,stringToFindTestIn));
+module.exports = {
+
+    removeTestString
+
+}
+
+//console.log(removeTestString(testString,stringToFindTestIn));
