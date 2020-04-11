@@ -1,8 +1,10 @@
 function testSearch(input) {
+    if (typeof(input) != 'string')
+        return "Input incorrect. Please put in a string"
+
     input = input.toLowerCase();
-    return test.replace(/\b(test)\b/gi, '')
+    return input.replace(/\b(test)\b/gi, '')
 }
-
-let test = "you are the best test Test ez as pie";
-
-console.log(testSearch(test));
+module.exports = {
+    testSearch
+}

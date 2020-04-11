@@ -1,0 +1,14 @@
+{
+  "name": "problem_4",
+  "version": "1.0.0",
+  "description": "heck if the string \"test\" is present in a given string.",
+  "main": "challenge4.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "jeremy elam",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}
