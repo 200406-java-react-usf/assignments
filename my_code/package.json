@@ -1,0 +1,14 @@
+{
+  "name": "my_code",
+  "version": "1.0.0",
+  "description": "Basic JavaScript Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Korey Keipe",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}

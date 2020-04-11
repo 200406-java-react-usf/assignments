@@ -32,10 +32,10 @@ function caesarShift(input,shift){
     }
 
     outputString = output.toString()
-    console.log(outputString.replace(/,/g,''));
+    console.log(outputString.replace(/,/g,""));
             
 }
-caesarShift('testing',2);
+caesarShift('testing testing',2);
 
 // TESTING shoulld equal --> UFTUJOH
 
