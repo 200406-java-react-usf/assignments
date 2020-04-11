@@ -1,0 +1,14 @@
+{
+  "name": "problem_8",
+  "version": "1.0.0",
+  "description": "adds the values of arrays, even if the arrays are different sizes",
+  "main": "challenge8.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "jeremy elam",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}
