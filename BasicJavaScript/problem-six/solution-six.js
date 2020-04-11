@@ -8,12 +8,14 @@
 
 */
 
-let vowelCounter = 0;
+
 
 let inputString = 'My name is Kevin';
 
 
 function testForVowels(input){
+
+    let vowelCounter = 0;
 
     for (var i = 0; i < input.length; i++){
 
@@ -23,7 +25,13 @@ function testForVowels(input){
     
     }
 
-   console.log(vowelCounter);
+   return vowelCounter;
 }
 
 testForVowels(inputString);
+
+module.exports = {
+
+    testForVowels
+
+}
