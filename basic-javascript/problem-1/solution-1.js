@@ -1,10 +1,13 @@
-function checkLeapYear(currentYear){
-    if((currentYear % 4 === 0) && (currentYear % 100 !== 0) || (currentYear % 400 === 0)){
-        return true;
-    }
-    else{
-        return false;
-    }
+const checkLeapYear = (date) => {
+
+   if(typeof date !== 'object') throw Error ('You did not give me a valid date.');
+   
+    let year = date.getFullYear();
+    //console.log(`You are looking to see if ${year} is a leap year...`);
+    if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) return true;
+    else return false;
 }
 
-console.log(checkLeapYear('2020'));
+module.exports = {
+    checkLeapYear
+};
