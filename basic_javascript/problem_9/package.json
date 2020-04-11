@@ -1,0 +1,14 @@
+{
+  "name": "problem_9",
+  "version": "1.0.0",
+  "description": "find the longest string from a given array of strings and returns the string’s array index",
+  "main": "challenge9.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "jeremy elam",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}

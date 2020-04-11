@@ -1,23 +1,22 @@
-function longestString(string) {
-    wordArray = string;
+function longestString(input) {
+    if (typeof(input) != 'object')
+        return ("Given Parameter incorrect please give me an array")
+
+    for (i = 0; i < input.length; i++) {
+        if (typeof(input[i]) != 'string')
+            return ("Your array contains elements that is not a string. Please fix")
+    }
+
+    wordArray = input;
     let long1 = '';
     for (let i = 0; i < wordArray.length; i++) {
         if (wordArray[i].length > long1.length)
             long1 = wordArray[i];
     }
     index = wordArray.indexOf(long1)
-    return [index, long1];
+    return index;
 }
 
-let test = `
-I'm a genius in disguise, wear my heart on my sleeve
-And you forced to oblige to a king in his prime (Yeah, yeah)
-Everybody get in line, sit back, watch the stars align
-I finesse like my life on the line
-Was a diamond in the rough and now I shine (Woo)`;
-test = test.replace(/,/g, '');
-test = test.replace(/\n/g, ' ');
-test = test.replace(/[{()}]/g, ' ');
-wordArray = test.split(" ");
-
-console.log(longestString(wordArray));
+module.exports = {
+    longestString
+}
