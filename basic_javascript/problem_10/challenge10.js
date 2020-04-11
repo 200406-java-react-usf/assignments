@@ -1,6 +1,7 @@
-testString = "Testing this string";
-
 function firstCharacter(userInput) {
+    if (typeof(userInput) != 'string')
+        return ("Please input a valid String data type")
+
     userInput = userInput.toLowerCase();
     let testCase = userInput[0];
     let a = ['a', 'e', 'i', 'o', 'u'];
@@ -23,4 +24,7 @@ function firstCharacter(userInput) {
 
 
 }
-console.log(firstCharacter(testString));
+
+module.exports = {
+    firstCharacter
+}

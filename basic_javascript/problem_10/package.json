@@ -1,0 +1,14 @@
+{
+  "name": "problem_10",
+  "version": "1.0.0",
+  "description": "function that takes in a string as a parameter. It must return A, B, C, D, or E depending on the following criteria:",
+  "main": "challenge10.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "jeremy elam",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}
