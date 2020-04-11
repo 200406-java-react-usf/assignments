@@ -1,4 +1,4 @@
-
+// Create a function that checks for a valid email format.
 //found on w3
 // var email = prompt("Input Email");
 // let val = email.ValidateEmail();
@@ -13,3 +13,4 @@
 //         return false;
 //     }
 // }
+
