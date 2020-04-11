@@ -7,4 +7,4 @@ function main(input){
         };
     }
     
-console.log(main("hao@gmail.com"))
+module.exports = main;
