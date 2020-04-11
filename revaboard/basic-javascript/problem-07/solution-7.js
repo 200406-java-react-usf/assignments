@@ -1,4 +1,8 @@
-function fibonacci(input){
+function fibonacci(input, onError){
+    if (!Number.isInteger(input)) {
+        onError('Bad num request');
+        return;
+      }
     let output = [];
     
     //per wiki reversed fibonacci starts at 1 as well
@@ -19,10 +23,4 @@ function fibonacci(input){
     return output[input];
 }
 
-for (j = 0; j >= -10; j--){
-    console.log(j+" : "+ fibonacci(j));
-}
-
-for (k = 0; k <= 10; k++){
-    console.log(k+" : "+ fibonacci(k));
-}
+module.exports = fibonacci;

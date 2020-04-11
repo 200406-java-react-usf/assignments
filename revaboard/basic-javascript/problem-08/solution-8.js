@@ -1,4 +1,8 @@
-function addArr(arr1, arr2){
+function addArr(arr1, arr2, onError){
+    if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
+        onError('Bad array request');
+        return;
+      }
     // get the longer array
     function compareArr(arr1, arr2){
     if (arr1.length>=arr2.length){
@@ -16,3 +20,4 @@ function addArr(arr1, arr2){
   return longArr;
 }
 
+module.exports = addArr;

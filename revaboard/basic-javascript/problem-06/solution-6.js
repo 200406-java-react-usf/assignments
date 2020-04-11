@@ -14,3 +14,6 @@ function main(input, onError) {
     })
     return count;
 }
+
+
+module.exports = main;

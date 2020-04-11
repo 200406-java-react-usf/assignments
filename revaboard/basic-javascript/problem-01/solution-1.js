@@ -1,5 +1,10 @@
 //inpute will be Date object
-function leapYear(input){
+function leapYear(input, onError){
+    //check if valis date
+    if (isNaN(input.valueOf())) {
+        onError('Bad date request');
+        return;
+      }
 //take the year 
     if(input){
     let year = input.getFullYear();
