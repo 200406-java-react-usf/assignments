@@ -1,0 +1,17 @@
+{
+  "name": "problem_5",
+  "version": "1.0.0",
+  "description": "Caesar Shift encryption",
+  "main": "challenge5.js",
+  "dependencies": {
+    "inquire": "^0.4.8"
+  },
+  "devDependencies": {
+    "jest": "^25.3.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "jeremy elam",
+  "license": "ISC"
+}

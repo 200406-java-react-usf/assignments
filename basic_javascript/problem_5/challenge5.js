@@ -1,4 +1,4 @@
-function resetLoop(word, end) {
+function caesarShift(word, end) {
     if ((typeof word !== 'string') || typeof end !== 'number')
         return "Parameters are incorrect";
 
@@ -8,8 +8,8 @@ function resetLoop(word, end) {
     const a2 = "abcdefghijklmnopqrstuvwxyz";
     let encrypt = '';
 
-    for (i of word) {
-        alphabetIndex = a2.indexOf(i);
+    for (number of word) {
+        alphabetIndex = a2.indexOf(number);
         counter = alphabetIndex;
         for (let j = 0; j < end; j++) {
             counter++;
@@ -22,6 +22,6 @@ function resetLoop(word, end) {
     return encrypt;
 }
 
-test_String = "WXYZ";
-testing = resetLoop(test_String, 4);
-console.log(testing);
+module.exports = {
+    caesarShift
+}
