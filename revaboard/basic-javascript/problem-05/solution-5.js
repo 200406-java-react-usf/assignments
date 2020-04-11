@@ -1,7 +1,6 @@
 function main(input, index) {
     //charcode start at 65 ends at 90
     let charArray = input.split("");
-    console.log(input);
     for (i = 0; i <= charArray.length - 1; i++) {
       charArray[i] = charArray[i].charCodeAt();
       let newCode;
