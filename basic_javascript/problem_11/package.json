@@ -1,0 +1,14 @@
+{
+  "name": "problem_11",
+  "version": "1.0.0",
+  "description": "Check if two arrays have the same size and contents (including if content order is not the same).",
+  "main": "challenge11.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "jeremy elam",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}
