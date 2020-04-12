@@ -25,4 +25,3 @@ module.exports = {
     countVowels
 };
 
-console.log(countVowels("This is a vowel test"));

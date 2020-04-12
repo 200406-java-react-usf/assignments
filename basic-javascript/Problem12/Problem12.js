@@ -30,7 +30,7 @@ const tictactoe = function (board) {
     let validGame = true;
     let winner = "F";
     let gameInProgress = false;
-    let message = "error";
+    let message = "Invalid result";
     if (!fair(board)) {
         validGame = false;
     } else {
@@ -69,21 +69,21 @@ const tictactoe = function (board) {
         }
     }
     if (!validGame) {
-        message = "Not a valid game";
+        message = "Invalid result";
     } else {
         if (winner == "F" && gameInProgress) {
-            message = "game in progress";
+            message = "Game in progress, no winner yet";
         } else if (winner == "X") {
-            message = "X is winner";
+            message = "X is the winner";
         } else if (winner == "O") {
-            message = "O is winner";
+            message = "O is the winner";
         }
     }
     return message;
 }
 
 function fair(board) {
-    fair = true;
+    let isfair = true;
     let x = 0;
     let o = 0;
     for (let i = 0; i < 3; i++) {
@@ -96,9 +96,9 @@ function fair(board) {
         }
     }
     if (Math.abs(x-o) > 1) {
-        fair = false;
+        isfair = false;
     }
-    return fair;
+    return isfair;
 }
 
 module.exports = {

@@ -7,16 +7,19 @@
 const deleteOccurencesofTest = function(myString) {
      while(myString.includes("test")) {
          var testIndex = myString.indexOf("test");
-         myString = myString.substring(0,testIndex) +
-                    myString.substring(testIndex+4, myString.length);
+         if (myString.charAt(testIndex-1) === " ") {
+            myString = myString.substring(0,testIndex-1) +
+            myString.substring(testIndex+4, myString.length);
+         } else {
+            myString = myString.substring(0,testIndex) +
+            myString.substring(testIndex+4, myString.length);
+         }
      }
-     console.log(myString);
- }
+     return myString;
+}
 
-testString = "this test is a test demo";
-deleteOccurrencesOfTest(testString);
 
 module.exports = {
-    deleteOccurencesOfTest
+    deleteOccurencesofTest
 };
  

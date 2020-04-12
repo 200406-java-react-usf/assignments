@@ -1,5 +1,6 @@
 /**
- *  Create a function that takes in a string as a parameter. It must return A, B, C, D, or E depending on the following criteria:
+ *  Create a function that takes in a string as a parameter. 
+ *  It must return A, B, C, D, or E depending on the following criteria:
  *
  *  If the first character is in the set {a, e, i, o, u}, then return A.
  *  If the first character is in the set {b, c, d, f, g}, then return B.
@@ -17,8 +18,7 @@ const determineCase = function(myString) {
     let caseA = ['a', 'e', 'i', 'o', 'u'];
     let caseB = ['b', 'c', 'd', 'f', 'g'];
     let caseC = ['h', 'j', 'k', 'l', 'm'];
-    let caseD = ['n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z']
-    myString = myString.toLowerCase();
+    let caseD = ['n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z'];
     whichCase = "E";
     subjectChar = myString.charAt(0);
     if (caseA.includes(subjectChar)) {
@@ -36,5 +36,3 @@ const determineCase = function(myString) {
 module.exports = {
     determineCase
 };
-
-console.log(determineCase("Test"));

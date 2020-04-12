@@ -26,6 +26,3 @@ const fibanacciSequence = function (index) {
 module.exports = {
     fibanacciSequence
 };
-
-console.log(fibonacciSequence(10));
-var person = prompt("Please enter your name", "Harry Potter");

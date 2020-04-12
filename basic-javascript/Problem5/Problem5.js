@@ -3,7 +3,7 @@
  * and implements a Caesar Shift encryption.
  */
 
-//For the time being, this will only use lower case strings
+//This will only use lower case strings
 const ceasarShift = function(myString, shift) {
     myString = myString.toLowerCase();
     var array = [];
@@ -20,10 +20,8 @@ const ceasarShift = function(myString, shift) {
         }
         array.push(String.fromCharCode(asciiVal+97));
     }
-    console.log(array.join(""));
+    return array.join("");
 }
-
-ceasarShift("Write a function that takes in a string and a number as parameters and implements a Caesar Shift encryption.",3);
 
 module.exports = {
     ceasarShift

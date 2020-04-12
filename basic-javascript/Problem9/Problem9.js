@@ -9,7 +9,7 @@ const checkLongestString = function(arrayOfStrings) {
         throw new Error("Please input a valid array of strings");
     }
     let longestString = "";
-    let index = -1;
+    let index = 0;
     for (let i = 0; i < arrayOfStrings.length; i++) {
         if (arrayOfStrings[i].length > longestString.length) {
             longestString = arrayOfStrings[i];
@@ -22,6 +22,3 @@ const checkLongestString = function(arrayOfStrings) {
 module.exports = {
     checkLongestString
 };
-
-arrayOfStrings = ["this", "is", "a", "tester"];
-console.log(checkLongestString(arrayOfStrings));

@@ -4,8 +4,8 @@
  */
 
 const addArrays = function(arr1, arr2) {
-     var iterations;
-     var arr3 = [];
+     let iterations;
+     let arr3 = [];
      //this way we can assume that arr1 is always longer or the array lengths are equivalent.
      if (arr1.length < arr2.length) {
          arr3 = addArrays(arr2, arr1);
@@ -20,12 +20,8 @@ const addArrays = function(arr1, arr2) {
      return arr3;
 }
 
+
 module.exports = {
     addArrays
 };
-
-arr1 = [1,2,3,5,3];
-arr2 = [3,2,1];
-
-console.log(addArrays(arr1, arr2));
  

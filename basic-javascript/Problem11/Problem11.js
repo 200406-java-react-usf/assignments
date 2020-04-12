@@ -25,7 +25,3 @@ const equivArr = function(arr1, arr2) {
 module.exports = {
     equivArr
 };
-
-console.log(equivArr([4,2,8,4,7],[7,4,4,2,8]));
-console.log(equivArr([4,2,8,4,7],[7,5,4,2,8]));
-console.log(equivArr([4,2,8,4],[7,5,4,2,8]));

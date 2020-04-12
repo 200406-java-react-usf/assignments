@@ -8,7 +8,7 @@ const removeCharAt = function (myString, index) {
             myString.substring(index,myString.length));
  }
 
- console.log(removeCharAt('potato', 3));
+console.log(removeCharAt('potato', 3));
 
 module.exports = {
         removeCharAt
