@@ -20,7 +20,7 @@ function arrayAdd(array1,array2){
         sumArray = array1[x]+array2[x];
         arraySum.push(sumArray)
     }
-    console.log(arraySum);   
+    return arraySum;   
 }
 arrayAdd([1,2,3],[3,2,1]);
 arrayAdd([1,2,3,4,5],[1,2,3]);
