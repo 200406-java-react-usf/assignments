@@ -1,6 +1,6 @@
 const sut = require('./solution-11.js');
 
-describe('cesar encrypt', () => {
+describe('compare 2 arr', () => {
     test("[1,2,3,4,5],[1,2,3,4,5]", done => {
         expect(sut([1,2,3,4,5],[1,2,3,4,5])).toBe(true);
         done();

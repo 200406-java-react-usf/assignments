@@ -11,7 +11,6 @@ function main(input, onError){
             return;
           }
         if (input[i].length>max){
-            console.log(input[i].length);
             index = i;
             max = input[i].length;
         }
