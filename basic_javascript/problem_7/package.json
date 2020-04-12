@@ -1,0 +1,14 @@
+{
+  "name": "problem_7",
+  "version": "1.0.0",
+  "description": "Fibonacci sequence",
+  "main": "challenge7.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "jeremy elam",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}
