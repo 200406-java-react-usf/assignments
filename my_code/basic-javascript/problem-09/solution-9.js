@@ -10,14 +10,16 @@
 function findStringIndex(stringArray){   
     
     let word = '';
-    for (x=0; x<stringArray.length ;x++){
+    for (let x=0; x<stringArray.length ;x++){
         if(stringArray[x].length > word.length){
             word=stringArray[x];
         }      
     }
     index = stringArray.indexOf(word)
-    console.log(index);
+    return index;
 }
 findStringIndex(['this','is','a','test','array','of','strings']);
+console.log(findStringIndex(['this','is','a','test','array','of','strings']));
+
 
 module.exports = findStringIndex;
