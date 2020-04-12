@@ -6,7 +6,7 @@ describe('count vowels', () => {
         done();
     });
     test('test -4', done => {
-        expect(sut(-4)).toBe(-3);
+        expect(sut(-4)).toBe(-1);
         done();
     });
     test('test not a number', done => {
