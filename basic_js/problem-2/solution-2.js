@@ -1,4 +1,15 @@
-function validateEmail(elementValue){      
-    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailPattern.test(elementValue); 
+function validateEmail(email, onComplete, onError) {      
+
+   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+    {
+      onComplete (true);
+      return;
+
+    }
+      onError('This is not a valid email.');
+      return;
   }
+
+
+
+module.exports = {validateEmail}
