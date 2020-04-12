@@ -18,8 +18,8 @@ function countVauls(input){
             count = count + 1;            
         }        
     }
-    console.log(count);
+    return count;
 }
-countVauls('Korey Keipe');
+countVauls('Korey');
 
 module.exports = countVauls;
