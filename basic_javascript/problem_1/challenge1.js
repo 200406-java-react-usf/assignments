@@ -3,13 +3,9 @@ function leapYear(userInput) {
     var d = new Date(s);
     var date = d.getFullYear(s);
 
-    if (((date % 4 === 0) && (date % 100 !== 0)) || date % 400 === 0)
-        return true;
-    else
-        return false;
-};
+    return (((date % 4 === 0) && (date % 100 !== 0)) || date % 400 === 0) ? true : false;
 
-console.log(leapYear(Date.now()))
+};
 
 module.exports = {
     leapYear,
