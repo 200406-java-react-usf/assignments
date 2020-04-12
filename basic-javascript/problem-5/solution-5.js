@@ -1,4 +1,8 @@
 const ceaserShift = (phrase, shift) => {
+    if (typeof phrase !== 'string') throw Error ('You did not give me a valid string');
+    if (phrase === '') throw Error ('You did not send me any message...');
+    if (typeof shift !== 'number' || shift <= 0) throw Error ('You did not give me a valid number');
+
     let text = 'abcdefghijklmnopqrstuvwxyz';
     let cryp = ''
     for (let i = 0; i<phrase.length; i++){
@@ -16,6 +20,7 @@ const ceaserShift = (phrase, shift) => {
     }
     return cryp;
 }
+
 
 
 
