@@ -1,8 +1,7 @@
-const date = new Date();
-let isLeapYear = function (date)
+const date = new Date().getFullYear();
+const isLeapYear = function (date)
 {
-    let x = date.getFullYear();
-    if ((x % 4 === 0) && (x % 100 === 0) && (x % 400 === 0))
+    if ((date % 4 === 0) && (date % 100 !== 0) || (date % 400 === 0))
     {
         return true;
     }
@@ -10,13 +9,10 @@ let isLeapYear = function (date)
     {
         return false;
     }   
-}
+};
 
-if (isLeapYear)
+
+module.exports = 
 {
-    console.log(date.getFullYear() + " is a leap year");
-}
-else
-{
-    console.log(date.getFullYear() + " is not a leap year");
-}
+    isLeapYear
+};
