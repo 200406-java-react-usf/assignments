@@ -4,7 +4,7 @@
   "description": "Basic JS problems",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -12,8 +12,13 @@
   },
   "keywords": [
     "JS",
-    "Node"
+    "Node",
+    "Jest"
   ],
   "author": "Drew Peters",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+  
 }
