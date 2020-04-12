@@ -24,15 +24,15 @@ function idStringByChar(input){
     let setD = 'npqrstvxyz';
 
     if(setA.includes(firstChar)){
-        console.log('A');
+        return 'A';
     }else if(setB.includes(firstChar)){
-        console.log('B');
+        return 'B';
     }else if(setC.includes(firstChar)){
-        console.log('C');
+        return 'C';
     }else if(setD.includes(firstChar)){
-        console.log('D');
+        return 'D';
     }else{
-        console.log('E');
+        return 'E';
     }
 }
 
