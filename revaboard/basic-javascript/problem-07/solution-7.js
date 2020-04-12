@@ -14,7 +14,7 @@ function fibonacci(input, onError){
         }
     }
     //per instructor, -1 will just return -1
-    if(input<=0){        
+    else if(input<=0){        
         return -1;
     }
     return output[input];
