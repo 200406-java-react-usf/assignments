@@ -18,4 +18,4 @@ function stringTest(input,keyword){
 
 console.log(stringTest('this is a test string','test'));
 
-
+module.exports = stringTest;

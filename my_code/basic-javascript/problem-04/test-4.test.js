@@ -1,0 +1,1 @@
+const sut = require('./solution-4');
