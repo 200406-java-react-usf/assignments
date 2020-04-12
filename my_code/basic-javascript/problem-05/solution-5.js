@@ -31,9 +31,9 @@ function caesarShift(input,shift){
         }        
     }
 
-    outputString = output.toString()
-    console.log(outputString.replace(/,/g,""));
-            
+    newString = output.toString()
+    newString = newString.replace(/,/g,"");
+    return newString;
 }
 caesarShift('testing testing',2);
 
