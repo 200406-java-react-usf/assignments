@@ -3,14 +3,14 @@
  * Could try REGEX (regular expressions)
  */
 
-function checkValidEmail (email) {
+const checkValidEmail = function (email) {
+    let truthChecker = false;
     if (hasValidExtension(email) && 
         hasValidDomain(email) && 
         hasValidName(email)) {
-        console.log("Email is valid");
-    } else {
-        console.log("Email is invalid")
+        truthChecker = true;
     }
+    return truthChecker;
 }
 
 //Could potentially turn the valid extensions into a list, and add more
@@ -46,4 +46,6 @@ function hasValidName(email) {
     }
 }
 
-checkValidEmail('ebiven1563@gmail.cc');
+module.exports = {
+    checkValidEmail
+};

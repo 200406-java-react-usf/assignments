@@ -4,15 +4,22 @@
  * calendar.
  */
 
- function leapYear (year) {
+const leapYear = function (aDate) {
+    let boolLeapYear = false;
+    year = aDate.getFullYear();
     if ((year % 4 == 0) && (!(year % 100 == 0) || (year % 400 == 0))) {
-        console.log('is a leap year');
-    } else {
-        console.log('is not a leap year');
+        boolLeapYear = true;
     }
+    return boolLeapYear;
  }
 
-let mydate = new Date("April 19, 2024");
-leapYear(mydate.getFullYear());
+module.exports = {
+    leapYear
+};
 
+// let mydate = new Date("April 19, 2024");
+// leapYear(mydate.getFullYear());
+
+// let testDate = new Date("October 1, 2004 22:02:05");
+// console.log(leapYear(testDate));
 

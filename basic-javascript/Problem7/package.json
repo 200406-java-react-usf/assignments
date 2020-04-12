@@ -1,0 +1,19 @@
+{
+  "name": "problem7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Problem7.js",
+  "dependencies": {
+    "inquirer": "^7.1.0",
+    "prompt": "^1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^25.3.0"
+  },
+  "scripts": {
+    "start": "node problem1.js",
+    "test": "jest"
+  },
+  "author": "Josef Bostik",
+  "license": "ISC"
+}

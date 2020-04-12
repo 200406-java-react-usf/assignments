@@ -1,0 +1,15 @@
+{
+  "name": "problem3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Problem3.js",
+  "scripts": {
+    "start": "node problem1.js",
+    "test": "jest"
+  },
+  "author": "Josef Bostik",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}

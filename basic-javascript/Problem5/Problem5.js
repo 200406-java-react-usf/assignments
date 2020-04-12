@@ -23,4 +23,4 @@ function ceasarShift(myString, shift) {
     console.log(array.join(""));
 }
 
-ceasarShift("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG",3);
+ceasarShift("Write a function that takes in a string and a number as parameters and implements a Caesar Shift encryption.",3);
