@@ -1,0 +1,17 @@
+{
+  "name": "basic-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "assignment"
+  ],
+  "author": "Juan Valencia",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}

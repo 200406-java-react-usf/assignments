@@ -22,4 +22,4 @@ const caesarCypher = (cypher,key) => {
     
 }
 
-caesarCypher('password',4);
+module.exports = caesarCypher;
