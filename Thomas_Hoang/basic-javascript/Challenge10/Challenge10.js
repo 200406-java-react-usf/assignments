@@ -6,23 +6,23 @@
 // If none of these, then return E.
 
 function firstCharacter(str){
-    const firstChar = str.charAt(0)
+    const fChar = str.charAt(0)
+    const firstChar = fChar.toLowerCase()
     const A = ['a', 'e', 'i', 'o', 'u']
     const B = ['b', 'c', 'd', 'f', 'g']
     const C = ['h', 'j', 'k', 'l', 'm']
     const D = ['n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z']
 
-    
-    for (i = 0; i < D.length; i++){
-        if (firstChar === A[i]){
+        if (A.includes(firstChar)){
             return("A")
-        }else if (firstChar === B[i]){
+        }else if (B.includes(firstChar)){
             return("B")
-        }else if (firstChar === C[i]){
+        }else if (C.includes(firstChar)){
             return("C")
-        }else if (firstChar === D[i]){
+        }else if (D.includes(firstChar)){
             return("D")
         }else
             return("E")
     }
-}
+
+    firstCharacter('This is the test string it should be')
