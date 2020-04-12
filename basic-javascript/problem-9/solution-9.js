@@ -1,5 +1,5 @@
 const longestString = (phrases) => {
-    if (typeof phrases !== 'object') throw Error ('You did not send me an array');
+    if (typeof phrases !== typeof []) throw Error ('You did not send me an array');
 
     let longestString = ''
     let longestIndex = 0
