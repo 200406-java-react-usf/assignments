@@ -1,5 +1,6 @@
 const sut = require('./solution-4');
 
+
 describe ('solution-4', () => {
    
     test('should remove all of the instances of the word "test"', () => {

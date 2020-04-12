@@ -5,7 +5,6 @@ const removeTest = (phrase) => {
         phrase = phrase.replace(/test /gi,'');
     }
     return phrase;
-
 }
 
 
