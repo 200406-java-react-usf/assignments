@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/200406-java-react-usf/assignments/issues"
   },
-  "homepage": "https://github.com/200406-java-react-usf/assignments#readme"
+  "homepage": "https://github.com/200406-java-react-usf/assignments#readme",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
 }

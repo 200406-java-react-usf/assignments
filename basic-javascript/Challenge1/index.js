@@ -9,8 +9,7 @@ let isLeapYear = function (date)
     else
     {
         return false;
-    }
-    
+    }   
 }
 
 if (isLeapYear)
