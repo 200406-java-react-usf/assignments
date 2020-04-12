@@ -2,12 +2,14 @@
 // given string and return the new string
 
 
-// var text = new String ("Testing");
-// var pos = str.slice(1);
+let str = new String ("Testing");
+let pos = String.slice(1);
+
+console.log (str);
 
 // function splice(pos){
-//     var newString = input.replace(charAt(index));
+//     let newString = input.replace(charAt(index));
 //     return newString;
 // }
 
-// console.log(characterSwap(inputString,index));
+// console.log(inputString, index);
