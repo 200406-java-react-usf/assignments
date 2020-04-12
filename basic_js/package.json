@@ -1,0 +1,19 @@
+{
+  "name": "basic_js",
+  "version": "1.0.0",
+  "description": "Basic JS problems",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/200406-java-react-usf/assignments/tree/Andrew_Peters/basic_js"
+  },
+  "keywords": [
+    "JS",
+    "Node"
+  ],
+  "author": "Drew Peters",
+  "license": "ISC"
+}
