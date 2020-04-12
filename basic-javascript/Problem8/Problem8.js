@@ -3,7 +3,7 @@
  * even if the arrays are different sizes.
  */
 
-function addArrays(arr1, arr2) {
+const addArrays = function(arr1, arr2) {
      var iterations;
      var arr3 = [];
      //this way we can assume that arr1 is always longer or the array lengths are equivalent.
@@ -19,6 +19,10 @@ function addArrays(arr1, arr2) {
      }
      return arr3;
 }
+
+module.exports = {
+    addArrays
+};
 
 arr1 = [1,2,3,5,3];
 arr2 = [3,2,1];

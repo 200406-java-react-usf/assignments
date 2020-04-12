@@ -3,9 +3,13 @@
  * of a given string and return the new string. 
  */
 
- function removeCharAt(myString, index) {
+const removeCharAt = function (myString, index) {
     return (myString.substring(0,index-1) + 
             myString.substring(index,myString.length));
  }
 
  console.log(removeCharAt('potato', 3));
+
+module.exports = {
+        removeCharAt
+};

@@ -6,7 +6,7 @@
 
 //There is probably a better solution if I learn the math... 
 //but this works for now
-function fibonacciSequence (index) {
+const fibanacciSequence = function (index) {
     fibonnaciArray = [0,1]
     var isNeg = false;
     if (index < 0) {
@@ -22,6 +22,10 @@ function fibonacciSequence (index) {
     }
     return fibAtIndex;
 }
+
+module.exports = {
+    fibanacciSequence
+};
 
 console.log(fibonacciSequence(10));
 var person = prompt("Please enter your name", "Harry Potter");

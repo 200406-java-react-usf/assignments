@@ -11,13 +11,13 @@
 
 
 //An ascii implementation might be a little nicer
-let caseA = ['a', 'e', 'i', 'o', 'u'];
-let caseB = ['b', 'c', 'd', 'f', 'g'];
-let caseC = ['h', 'j', 'k', 'l', 'm'];
-let caseD = ['n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z']
 
-function determineCase(myString) {
+const determineCase = function(myString) {
     //Not case sensistive
+    let caseA = ['a', 'e', 'i', 'o', 'u'];
+    let caseB = ['b', 'c', 'd', 'f', 'g'];
+    let caseC = ['h', 'j', 'k', 'l', 'm'];
+    let caseD = ['n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z']
     myString = myString.toLowerCase();
     whichCase = "E";
     subjectChar = myString.charAt(0);
@@ -32,5 +32,9 @@ function determineCase(myString) {
     }
     return whichCase;
 }
+
+module.exports = {
+    determineCase
+};
 
 console.log(determineCase("Test"));

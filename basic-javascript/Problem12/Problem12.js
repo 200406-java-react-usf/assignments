@@ -22,23 +22,11 @@
  * 
  */
 
-function tictactoe(board) {
-    if (!fair(board)) {
-        return "Invalid result";
-    } else {
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
-                
-            }
-        }
-    }
-}
-
 // 1 2 3
 // 4 5 6
 // 7 8 9
 
-function tictactoe(board) {
+const tictactoe = function (board) {
     let validGame = true;
     let winner = "F";
     let gameInProgress = false;
@@ -112,5 +100,9 @@ function fair(board) {
     }
     return fair;
 }
+
+module.exports = {
+    tictactoe
+};
 
 console.log(tictactoe([['X', '', 'X'], ['O', '', ''], ['', 'O', '']]));

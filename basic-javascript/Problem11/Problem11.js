@@ -3,7 +3,7 @@
  * (including if content order is not the same).
  */
 
-function equivArr(arr1, arr2) {
+const equivArr = function(arr1, arr2) {
     let equi = true;
     if (arr1.length == arr2.length) {
         arr1.sort();
@@ -21,6 +21,10 @@ function equivArr(arr1, arr2) {
     }
     return equi;
 }
+
+module.exports = {
+    equivArr
+};
 
 console.log(equivArr([4,2,8,4,7],[7,4,4,2,8]));
 console.log(equivArr([4,2,8,4,7],[7,5,4,2,8]));

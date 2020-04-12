@@ -4,7 +4,7 @@
  * “test”, otherwise return the original one.
  */
 
- function deleteOccurrencesOfTest(myString) {
+const deleteOccurencesofTest = function(myString) {
      while(myString.includes("test")) {
          var testIndex = myString.indexOf("test");
          myString = myString.substring(0,testIndex) +
@@ -15,4 +15,8 @@
 
 testString = "this test is a test demo";
 deleteOccurrencesOfTest(testString);
+
+module.exports = {
+    deleteOccurencesOfTest
+};
  

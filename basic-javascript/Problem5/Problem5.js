@@ -4,7 +4,7 @@
  */
 
 //For the time being, this will only use lower case strings
-function ceasarShift(myString, shift) {
+const ceasarShift = function(myString, shift) {
     myString = myString.toLowerCase();
     var array = [];
     for (let i = 0; i < myString.length; i++) {
@@ -24,3 +24,7 @@ function ceasarShift(myString, shift) {
 }
 
 ceasarShift("Write a function that takes in a string and a number as parameters and implements a Caesar Shift encryption.",3);
+
+module.exports = {
+    ceasarShift
+};

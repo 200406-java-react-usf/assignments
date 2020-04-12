@@ -2,7 +2,7 @@
  * Write a function to count the number of vowels in a given string.
  */
 
-function countVowels(myString) {
+const countVowels = function(myString) {
     vowelCount = 0;
     for (let i = 0; i < myString.length; i++) {
         if (isaVowel(myString[i])) {
@@ -20,5 +20,9 @@ function isaVowel(myChar) {
     }
     return boolVowel;
 }
+
+module.exports = {
+    countVowels
+};
 
 console.log(countVowels("This is a vowel test"));
