@@ -13,3 +13,7 @@ function countVowel(str){
 
 //happai = 3 vowels
 console.log(countVowel("happai"));
+
+module.exports = {
+    countVowel
+}

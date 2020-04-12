@@ -13,3 +13,7 @@ function removePos(index){
 }
 //Voction
 console.log("remove the 3rd index of 'Vocation' become " + removePos(3));
+
+module.exports = {
+    removePos
+}

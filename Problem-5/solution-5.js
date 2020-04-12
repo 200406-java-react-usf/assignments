@@ -20,3 +20,5 @@ function caesarShift(num, str){
 }
 //cde%cde
 console.log(caesarShift(2,'abc%abc'));
+
+module.exports = {caesarShift}

@@ -30,3 +30,5 @@ console.log(fibonacci(1));
 console.log(fibonacci(2));
 //fibonacci(4) = 3
 console.log(fibonacci(4))
+
+module.exports = {fibonacci}
