@@ -15,4 +15,6 @@ function emailCheck(email){
 let inputEmail = 'peters.drew.dp@gmail.com'
 console.log(emailCheck(inputEmail));
 
-module.exports = emailCheck;
+module.exports = {
+    emailCheck
+};

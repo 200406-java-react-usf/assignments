@@ -22,5 +22,5 @@ leapYear(date);
 
 //function export
 module.exports = {
-    leapYear,
+    leapYear
 };
