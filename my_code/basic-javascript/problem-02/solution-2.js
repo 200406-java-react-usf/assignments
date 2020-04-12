@@ -21,3 +21,5 @@ function emailVerification(email){
 
 let inputEmail = 'kkeipe@gmail.com'
 console.log(emailVerification(inputEmail));
+
+module.exports = emailVerification;
