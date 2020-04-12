@@ -37,5 +37,6 @@ function caesarShift(input,shift){
 }
 caesarShift('testing testing',2);
 
+module.exports = caesarShift;
 // TESTING shoulld equal --> UFTUJOH
 

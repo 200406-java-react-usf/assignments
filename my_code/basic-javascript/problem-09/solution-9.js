@@ -19,3 +19,5 @@ function findStringIndex(stringArray){
     console.log(index);
 }
 findStringIndex(['this','is','a','test','array','of','strings']);
+
+module.exports = findStringIndex;

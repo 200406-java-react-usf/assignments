@@ -24,3 +24,5 @@ function arrayAdd(array1,array2){
 }
 arrayAdd([1,2,3],[3,2,1]);
 arrayAdd([1,2,3,4,5],[1,2,3]);
+
+module.exports = arrayAdd;

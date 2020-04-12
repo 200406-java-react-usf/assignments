@@ -37,3 +37,5 @@ function idStringByChar(input){
 }
 
 idStringByChar('0esting');
+
+module.exports = idStringByChar;

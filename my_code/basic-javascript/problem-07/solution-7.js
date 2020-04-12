@@ -9,12 +9,14 @@
 
 // (input-1) = (-1)^(input+1)*
 
+
+
+function findFib(input){
+
 let sequence = [];
 sequence[0] = 0;
 sequence[1] = 1;
 sequence[-1] = 1;
-
-function findFib(input){
 
 if(input>0){
     for (x = 2; x <= input; x++){
@@ -27,3 +29,5 @@ if(input>0){
     console.log(sequence[input]);          
 }
 findFib(-4);
+
+module.exports = findFib;

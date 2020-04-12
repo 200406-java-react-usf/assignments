@@ -24,5 +24,6 @@ function verifyArrayEquiv(Array1,Array2){
     }
     return true;   
 }
-
 console.log(verifyArrayEquiv([4,2,8,4,7],[7,4,4,2,8]));
+
+module.exports = verifyArrayEquiv;

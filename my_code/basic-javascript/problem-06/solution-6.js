@@ -6,8 +6,6 @@
 
     6.) Write a function to count the number of vowels in a given string.
 */
-
-
 function countVauls(input){
 
     let stringCap = input.toUpperCase();
@@ -20,9 +18,8 @@ function countVauls(input){
             count = count + 1;            
         }        
     }
-
     console.log(count);
-    
 }
-
 countVauls('Korey Keipe');
+
+module.exports = countVauls;

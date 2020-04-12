@@ -56,3 +56,5 @@ const gameBoard_3 = [['', 'O', 'X'], ['X', 'O', ''], ['', 'O', 'X']];
 const gameBoard_4 = [['X', '', 'X'], ['O', '', ''], ['', 'O', '']];
 const gameBoard_5 = [['a', '', 'X'], ['O', '', ''], ['', 'O', '']];
 ticTacToe(gameBoard_2);
+
+module.exports=ticTacToe;
