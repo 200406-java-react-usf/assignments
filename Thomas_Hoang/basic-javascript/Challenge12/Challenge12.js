@@ -21,6 +21,7 @@ function ticTacToe(input){
         [2, 4, 6]
     ]
 
+
     //Checks the condition of the game
     for (i = 0; i < winConditions.length; i++){
         let a = game[winConditions[0]]
@@ -28,9 +29,6 @@ function ticTacToe(input){
         let c = game[winConditions[2]]
         //Checks if x is the Winner
         if (a === 'x' && b === 'x' && c ==='x'){
-            console.log(a)
-            console.log(b)
-            console.log(c)
             console.log("X is the winner")
         //If o is Winner
         }else if (a === 'o' && b === 'o' && c ==='o'){
