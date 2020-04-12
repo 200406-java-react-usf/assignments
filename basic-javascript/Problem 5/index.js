@@ -1,6 +1,14 @@
 const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 let cypherAlphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 const caesarCypher = (cypher,key) => {
+    let err = 'Not a valid string';
+    let err2 = 'Not a valid number';
+    if(!cypher  && typeof err){
+        return err;
+    }
+    else if(!key){
+        return err2;
+    }
     for(let k = 1; k < (key + 1); k++){
         shifted = cypherAlphabet.shift()
         cypherAlphabet.push(shifted)
@@ -16,9 +24,10 @@ const caesarCypher = (cypher,key) => {
             }
         }
         newArray.push(cyphered)
+        result = newArray.join('')
         
     }
-    console.log(newArray)
+    return result;
     
 }
 

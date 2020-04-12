@@ -1,5 +1,10 @@
 function checkLeapYear(currentDate) {
-    let currentYear = currentDate.getFullYear();
+    let err = 'No valid Date Object';
+    let currentYear = new Date()
+    if(typeof currentDate != typeof currentYear){
+        return err;
+    }
+    currentYear = currentDate.getFullYear();
     if ((currentYear % 4) == 0 && (currentYear % 100) != 0) {
         return true;
     }

@@ -1,7 +1,11 @@
 //const TrialEmail = 'jdvalencia..1994@hotmail.com';
 const emailChecker = (TrialEmail) => {
+    let err = "You have an invalid email";
+    let err2 = "invalid email(domain)";
+    let err3 = "invalid email(username)";
+    let validEm = "Valid Email!";
     if (TrialEmail.indexOf('@') == -1 || TrialEmail.indexOf('.') == -1) {
-        console.log("You have an invalid email");
+        return err;
     }
     else {
         const splitEmail = TrialEmail.split('@')
@@ -15,21 +19,22 @@ const emailChecker = (TrialEmail) => {
             */
             if (/^\w+([_.-]{0,1}\w+)*$/.test(prefix)) {
                 if (/^\w+([.-]{0,1}\w+)*$/.test(suffix)) {
-                    console.log("Valid Email!");
+                    return validEm;
                 }
                 else {
-                    console.log("invalid email(domain)");
+                    return err2;
                 }
                 //console.log("Valid username");
             }
             else {
-                console.log("invalid email(username)");
+                return err3;
             }
         }
-        checkEmailSections(prefixEmail, suffixEmail);
+        let program = checkEmailSections(prefixEmail, suffixEmail);
+        return program;
 
 
     }
 }
 
-emailChecker('jdvalencia_1994@hotmail.com');
+module.exports = emailChecker;

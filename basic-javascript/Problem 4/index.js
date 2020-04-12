@@ -1,6 +1,13 @@
 const stringCheck = (test) => {
-    testSample = 'test'
-    console.log(test.replace(testSample,''));
+    let testSample = 'test';
+    let err = 'Not a valid string';
+    if(typeof test != typeof testSample){
+        return err;
+    }
+
+    let result = test.replace(testSample,'');
+
+    return result;
 }
 
-stringCheck('My name is juan, how are you? test check');
+module.exports = stringCheck;

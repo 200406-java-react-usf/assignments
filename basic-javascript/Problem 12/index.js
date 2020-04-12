@@ -29,6 +29,18 @@ const tictactoe = (arr) => {
 
     for (let x = 0; x < arr.length; x++, st++, end++, counter--) {
 
+        if (arr[x].every(isX) || arr[x].every(isO)) { //test horizontal win
+            if (arr[(x + 1)].every(isX) || arr[(x + 1)].every(isO)) {
+                return 'Game invalid'
+            }
+            else if (arr[(x + 1)].every(isX) || arr[(x + 1)].every(isO)) {
+                return 'Game invalid'
+            }
+            else if (arr[(x + 2)].every(isX) || arr[(x + 2)].every(isO)) {
+                return 'Game invalid'
+            }
+            return checkWinner(arr[x]);
+        }
         for (let y = 0; y < arr[x].length; y++) {
             if(arr[y].some(isEmpty)){ //check is any element in the array is empty
                 return 'Game in progress, no winner yet';
@@ -42,18 +54,7 @@ const tictactoe = (arr) => {
             }
 
         }
-        if (arr[x].every(isX) || arr[x].every(isO)) { //test horizontal win
-            if (arr[(x + 1)].every(isX) || arr[(x + 1)].every(isO)) {
-                return 'Game invalid'
-            }
-            else if (arr[(x + 1)].every(isX) || arr[(x + 1)].every(isO)) {
-                return 'Game invalid'
-            }
-            else if (arr[(x + 2)].every(isX) || arr[(x + 2)].every(isO)) {
-                return 'Game invalid'
-            }
-            return checkWinner(arr[x]);
-        }
+
 
         if (checkWinner(chkVertical) != false) {  // test vertical win
             return checkWinner(chkVertical);
@@ -63,13 +64,13 @@ const tictactoe = (arr) => {
         test2.push(arr[x][x])
         if (test2.length == arr[x].length) { // testing top left to bottom right win
             if (checkWinner(test2) != false) {
-                checkWinner(test2);
+                return checkWinner(test2);
             }
         }
         final.push(arr[x][counter])
         if (final.length == arr[x].length) { // testing bottom left to top right win
             if (checkWinner(final) != false) {
-                checkWinner(final);
+                return checkWinner(final);
             }
         }
     }

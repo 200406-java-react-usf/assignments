@@ -1,5 +1,10 @@
 let fibonnaci = (seq) => {
+    let err = 'Not a number';
     let a = 0,b = 1,temporary;
+    if(typeof seq != typeof a){
+        return err;
+    }
+    
     if(seq < 0){
         return -1;
     }
