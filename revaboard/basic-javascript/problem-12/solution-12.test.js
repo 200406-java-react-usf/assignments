@@ -34,7 +34,8 @@ describe('tictactoe', () => {
         });
         done();
     });
-    test('4 lines', done => {
+    
+    test('test 3*4 gris error', done => {
         sut([["O","X","O"], ["X","O","X"],["O","X","O"], ["X","O","X"]], err => {
             expect(err).toBeTruthy();
             expect(err).toEqual('too many lines');
