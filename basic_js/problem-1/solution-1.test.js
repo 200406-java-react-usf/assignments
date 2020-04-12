@@ -1,6 +1,6 @@
 const sut = require('./solution-1');
 
-describe('Solution 1', () => {
+describe('Solution 1 Test', () => {
 
     /**
      * Test will check for all types of inputs to solution
