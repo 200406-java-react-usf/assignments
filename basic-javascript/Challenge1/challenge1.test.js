@@ -1,4 +1,4 @@
-const sut = require ('./index');
+const sut = require ('./challenge1');
 
 test('properly return true for leap year 1904', () => 
 {
