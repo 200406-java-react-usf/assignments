@@ -29,7 +29,8 @@ let ticTacToe = (input) => {
         let row = input[x];
         for(y=0;y<row.length;y++){
             if (row[y] !=='X' && row[y] !=='O' && row[y] !==''){
-                throw Error('Invalid Character On Board');           
+                return 'Invalid Character On Board';
+                break;           
             }
 
             if(row[y] =='X') {
