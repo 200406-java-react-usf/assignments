@@ -44,19 +44,14 @@ const ticTacToe = (board) => {
     testWon(a1,b2,c3);
     testWon(a3,b2,c1);
 
-    if (xWon && oWon) return ('Invalid result');
+    if((!xWon && !oWon) && gameStillGoing) return 'The game is still going on';
+    else if (xWon && oWon) return ('Invalid result');
+    else if((!xWon && !oWon) && !gameStillGoing) return 'It was a tie.';
     else if(xWon) return 'X is the winner!';
     else if(oWon) return 'O is the winner!';
-    else if((!xWon && !oWon) && gameStillGoing) return 'The game is still going on';
-
+    
 
 };
-
-
-// ();
-// ();
-// ();
-// ;
 
 
 module.exports = {

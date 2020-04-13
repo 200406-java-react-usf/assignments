@@ -42,4 +42,8 @@ describe('solution-12', () => {
         expect(sut.ticTacToe([['X','','X'],['O','',''],['','O','']])).toBe('The game is still going on')
     });
 
+    test('should say that the game was a tie if both players won and no moves are left to play', () => {
+        expect(sut.ticTacToe([['X','O','O'],['O','O','X'],['X','X','O']])).toBe('It was a tie.')
+    });
+
 })
