@@ -11,4 +11,8 @@ describe('Check if two arrays have the same size and contents', () =>{
         expect(sut([4,2,10,4,7],[7,4,4,2,8])).toBe(false);
         done();
     });
+    test('should be false', done =>{
+        expect(sut([4,2,8],[7,4,4,2,8])).toBe(false);
+        done();
+    });
 });
