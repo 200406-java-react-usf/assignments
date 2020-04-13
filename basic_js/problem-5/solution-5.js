@@ -45,5 +45,7 @@ var caesarShift = function(str, amount, onComplete, onError) {
     }
 
 };
-caesarShift(24, 1,  ()=>{}, err => console.log(err));
-module.exports = {caesarShift}
+//caesarShift(24, 1,  ()=>{}, err => console.log(err));
+module.exports = {
+    caesarShift
+}
