@@ -14,12 +14,12 @@ describe('evaluate a game of tic tac toe', () =>{
     });
 
     test('should return X is the winner', done => {
-        expect(sut([['X', 'O', 'X'], ['O', 'X', 'O'], ['X', 'O', 'X']])).toBe('X is the winnert');
+        expect(sut([['X', 'O', 'X'], ['O', 'X', 'O'], ['X', 'O', 'X']])).toBe('X is the winner');
         done();
     });
 
     test('should return O is the winner', done => {
-        expect(sut([['', 'O', 'X'], ['X', 'O', ''], ['', 'O', 'X']])).toBe('O is the winnert');
+        expect(sut([['', 'O', 'X'], ['X', 'O', ''], ['', 'O', 'X']])).toBe('O is the winner');
         done();
     });
 

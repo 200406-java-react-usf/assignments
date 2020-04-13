@@ -19,11 +19,13 @@
             tictactoe([[‘X’, ‘’, ‘X’], [‘O’, ‘’, ‘’], [‘’, ‘O’, ‘’]]) 
         Prints “Game in progress, no winner yet”
 */
-
 let ticTacToe = (input) => {
 
     let validateX = [];
     let validateO = [];
+    let Xwin = false; 
+    let Owin = false;
+    let doubleWin = false;
 
     for (x=0;x<input.length;x++){
         let row = input[x];
@@ -31,31 +33,81 @@ let ticTacToe = (input) => {
             if (row[y] !=='X' && row[y] !=='O' && row[y] !==''){
                 return 'Invalid Character On Board';
                 break;           
-            }
-
+            } 
             if(row[y] =='X') {
-                //console.log([x,y]);
                 let checkWinX = [x,y];
-                validateX.push(checkWinX);                 
+                validateX.push(checkWinX);               
             }else{
                 let checkWinO = [x,y];
                 validateO.push(checkWinO);
             }
         }
-    }  
+        // Checking for X row win
+        if(row[0] == 'X' && row[1]== 'X' && row[2]=='X'){
+            Xwin = true;
+        }
+        // Checking for O row win
+        if(row[0] == 'O' && row[1]== 'O' && row[2]=='O'){
+            Owin = true;
+        }
+    }
+    let row1 = input[0]; 
+    let row2 = input[1]; 
+    let row3 = input[2]; 
 
-    // console.log('X Validate');
-    // console.log(validateX.sort());
-
-    // console.log('O Validate');
-    // console.log(validateO);
-    
+    // Checking for X column win
+    if (row1[0]=='X' && row2[0]== 'X' && row3[0]=='X'){
+        Xwin = true;
+    }
+    if (row1[1]=='X' && row2[1]=='X' && row3[1]=='X'){
+        Xwin = true;
+    }
+    if (row1[2]=='X' && row2[2]=='X' && row3[2]=='X'){
+        Xwin = true;
+    }
+    // Checking for O column win
+    if (row1[0]=='O' && row2[0]== 'O' && row3[0]=='O'){
+        Owin = true; 
+    }
+    if (row1[1]=='O' && row2[1]=='O' && row3[1]=='O'){
+        Owin = true;
+    }
+    if (row1[2]=='O' && row2[2]=='O' && row3[2]=='O'){
+        Owin = true;
+    }
+    //Checking for diagonal wins
+    if (row1[0]=='X' && row2[1]=='X' && row3[2]=='X'){
+        Xwin = true;
+    }
+    if (row1[0]=='O' && row2[1]=='O' && row3[2]=='O'){
+        Owin = true;
+    }
+    if (row1[2]=='X' && row2[1]=='X' && row3[0]=='X'){
+        Xwin = true;
+    }
+    if (row1[2]=='O' && row2[1]=='O' && row3[0]=='O'){
+        Owin = true;
+    }
+    // Check for double win
+    if (Xwin == true && Owin == true){
+        return 'Invalid Result';
+        doubleWin = true;
+    }
+    // Announce winner
+    if(Xwin == true && doubleWin == false){
+        return 'X is the winner';
+    }
+    if(Owin == true && doubleWin == false){
+        return 'O is the winner';
+    }else{
+        return 'Game in progress, no winner yet';
+    }
 }
-const gameBoard_1 = [['X', 'X', 'X'], ['O', 'O', 'O'], ['X', 'O', 'X']];
-const gameBoard_2 = [['X', 'O', 'X'], ['O', 'X', 'O'], ['X', 'O', 'X']];
-const gameBoard_3 = [['', 'O', 'X'], ['X', 'O', ''], ['', 'O', 'X']];
-const gameBoard_4 = [['X', '', 'X'], ['O', '', ''], ['', 'O', '']];
-const gameBoard_5 = [['a', '', 'X'], ['O', '', ''], ['', 'O', '']];
-ticTacToe(gameBoard_2);
+// ticTacToe(gameBoard_1);
+// const gameBoard_1 = [['X', 'X', 'X'], ['O', 'O', 'O'], ['X', 'O', 'X']];
+// const gameBoard_2 = [['X', 'O', 'X'], ['O', 'X', 'O'], ['X', 'O', 'X']];
+// const gameBoard_3 = [['', 'O', 'X'], ['X', 'O', ''], ['', 'O', 'X']];
+// const gameBoard_4 = [['X', '', 'X'], ['O', '', ''], ['', 'O', '']];
+// const gameBoard_5 = [['a', '', 'X'], ['O', '', ''], ['', 'O', '']];
 
 module.exports=ticTacToe;
