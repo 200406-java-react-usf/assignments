@@ -6,14 +6,15 @@
 **/
 
 whoWins = (gameBoard) => {
-    //validation
+    // need to see if there are any blanks on the board in case no winner yet exists which will determine game progress
     let blankExists = false;
     for (row of gameBoard) {
         for (spot of row) {
             if (spot == '') {
                 blankExists = true;
             }
-            if (spot != 'X' && spot != 'O' && spot != '') throw new Error("Invalid character used!");
+            //if it has some character other than x or o we want to throw an error
+            if (spot != 'X' && spot != 'O') throw new Error("Invalid character used!");
         }
     }
     /*ways to win 1a,1b,1c ; 2a,2b,2c ; 3a,3b,3c; 1a,2a,3a; 1b,2b,3b; 1c,2c,3c; 1a,2b,3c; 1c,2b,3a : 8 ways
@@ -22,6 +23,8 @@ whoWins = (gameBoard) => {
     2 _ | _ | _
     3   |   |
     */
+
+    //this gives each spot on the gameboard a name so it is easy to visualize and input
     a1 = gameBoard[0][0];
     a2 = gameBoard[1][0];
     a3 = gameBoard[2][0];
@@ -32,9 +35,12 @@ whoWins = (gameBoard) => {
     c2 = gameBoard[1][2];
     c3 = gameBoard[2][2];
 
+    //initializing the winner variables
     let xIsWinner = false;
     let oIsWinner = false;
 
+    //testing each possible winner config to see if there is a winner then reassigns winner variables
+    //if appropriate. must be IF and not IF ELSE in case of two winners
     if(a1 == b1 && b1 == c1){
         if (a1 == 'X') {
             xIsWinner = true;
@@ -100,6 +106,7 @@ whoWins = (gameBoard) => {
         }
     }
 
+    //checks to see game outcome (invalid, tie, in progress, x wins, or o wins)
     if(oIsWinner && xIsWinner){
         console.log("Invalid result")
     }
