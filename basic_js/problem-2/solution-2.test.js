@@ -12,32 +12,32 @@ describe('Solution 2 Test', () => {
         sut.validateEmail('kane@gmail.com', email =>{
             expect(email).toBeTruthy();
             expect(email).toEqual(true);
-            done;
+            done();
         }, () => {} );
 
-     });
+      });
 
      test('Email is missing characters befor the @ symbol. Should not be valid', done => {
         sut.validateEmail('@gmail.com', () =>{} ,err =>{
             expect(err).toBeTruthy();
             expect(err).toEqual('This is not a valid email.');
-            done;
+            done();
         });   
      });
 
      test('Email is missing  the @ symbol. Should not be valid', done => {
-        sut.validateEmail('kanegmail.com', () =>{}, err => {
-            expect(email).toBeTruthy();
-            expect(email).toEqual('This is not a valid email.');
-            done;
-        });   
+        sut.validateEmail('kanegmail.com', () =>{} ,err =>{
+            expect(err).toBeTruthy();
+            expect(err).toEqual('This is not a valid email.');
+            done();
+        });    
      });
      
      test('Email is missing characters after the @ symbol. Should not be valid', done => {
-        sut.validateEmail('kane@.com', email =>{
-            expect(email).toBeTruthy();
-            expect(email).toEqual('This is not a valid email.');
-            done;
+        sut.validateEmail('kane@.com', () =>{} ,err =>{
+            expect(err).toBeTruthy();
+            expect(err).toEqual('This is not a valid email.');
+            done();
         });   
      });
 
@@ -45,15 +45,15 @@ describe('Solution 2 Test', () => {
         sut.validateEmail('kane@gmailcom', () =>{} ,err =>{
             expect(err).toBeTruthy();
             expect(err).toEqual('This is not a valid email.');
-            done;
+            done();
         });   
      });
 
      test('Email is missing characters after the\'.\' the @ symbol. Should not be valid', done => {
-        sut.validateEmail('kane@gmail.', () =>{} ,err =>{
+        sut.validateEmail('kane@gmail.',() =>{} ,err =>{
             expect(err).toBeTruthy();
             expect(err).toEqual('This is not a valid email.');
-            done;
-        });   
+            done();
+        });  
      });
 });
