@@ -5,7 +5,7 @@ function vowelCount(aString){
         i++;
         console.log(`This String has ${i} vowels`);
 
-    } else console.log("did not work")
+    } else console.log("No vowels here")
 }
 
 vowelCount("Testerino")
