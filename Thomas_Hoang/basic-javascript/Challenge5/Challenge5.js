@@ -8,28 +8,27 @@ function caesarShift(str, key){
     const encryptedAlphabet2 = encryptedAlphabet.toLowerCase()
 
     //Initializes variables
-    const newStr = str
-    const newChar = ''
-    const currChar = ''
+    const newStr = str.split('')
+    let newChar = ''
+    let currChar = ''
     let index = 1
     //Loop to go through the alphabet and set the new character to the encrypted equivalent
     for (i = 0; i < str.length; i++){
-        currChar = newStr.charAt(i)
+        currChar = newStr[i]
         //Uppercase
         index = alphabet.indexOf(currChar)
         if (index !== -1) {
             newChar = encryptedAlphabet.charAt(index);
-            newStr.setCharAt(i, newChar)
+            newStr[i] = newChar;
         }
         //Lowercase
         index = alphabet2.indexOf(currChar)
-        if (index != -1) {                
-            encryptedAlphabet2 = encryptedAlphabet2.toLowerCase();                
+        if (index != -1) {                                
             newChar = encryptedAlphabet2.charAt(index);                
-            newStr.setCharAt(i, newChar);
+            newStr[i] = newChar;
         }
     }
-        return newStr.toString()
+    return(newStr.join(''))
 }
-
-caesarShift("This is my test encryption", 6)
+caesarShift('This is my test encryption', 2)
+module.exports = caesarShift;
