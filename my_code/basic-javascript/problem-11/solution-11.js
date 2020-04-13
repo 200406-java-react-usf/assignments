@@ -12,17 +12,21 @@
 
 function verifyArrayEquiv(Array1,Array2){
 
-    let sort1 = Array1.sort();
-    let sort2 = Array2.sort();
-    let longArray = Math.max(Array1.length,Array2.length)
-
-    for (x=0;x<longArray;x++){
-        if (Array1[x]!=Array2[x]){
-            return false;
-            break; 
-        }              
+    
+    if (Array1.length != Array2.length){
+        return false;
     }
-    return true;   
+
+    const sort1 = Array1.sort();
+    const sort2 = Array2.sort();
+
+    for (x=0;x<Array1.length;x++){
+        
+        if(sort1[x]!==sort2[x]){
+            return false;            
+        }           
+    }
+    return true;
 }
 console.log(verifyArrayEquiv([4,2,8,4,7],[7,4,4,2,8]));
 
