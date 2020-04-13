@@ -4,10 +4,8 @@
 //   Should have a result for a tie, each winner, or an invalid game.
 
 function ticTacToe(input){
-    //So the game is case insensitive
-    const input2 = input.toLowerCase
     //puts the input game status into a non-multidimensional array
-    const game = input.concat(input[1], input[2])
+    const game = input[0].concat(input[1], input[2])
     //All of the possible win conditions
     const winConditions = [
         [0, 1, 2],
@@ -21,14 +19,14 @@ function ticTacToe(input){
         [2, 4, 6]
     ]
 
-
     //Checks the condition of the game
     for (i = 0; i < winConditions.length; i++){
-        let a = game[winConditions[0]]
-        let b = game[winConditions[1]]
-        let c = game[winConditions[2]]
+
+        let a = game[winConditions[i][0]]
+        let b = game[winConditions[i][1]]
+        let c = game[winConditions[i][2]]
         //Checks if x is the Winner
-        if (a === 'x' && b === 'x' && c ==='x'){
+        if (a === 'x' & b === 'x' & c ==='x'){
             console.log("X is the winner")
         //If o is Winner
         }else if (a === 'o' && b === 'o' && c ==='o'){
