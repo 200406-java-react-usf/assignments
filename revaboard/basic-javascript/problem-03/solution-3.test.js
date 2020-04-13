@@ -1,10 +1,8 @@
 const sut = require('./solution-3.js');
 
 describe('pop char in location', () => {
-    test('abcde', done => {
-        expect(sut('abcde', 0)).toBe("bcde");
-        done();
-    });
+    test('abcde', () => {
+        expect(sut('abcde', 0)).toBe("bcde");    });
     test('arry ["abc", "def"]', done => {
         sut(["abc", "def"], 0, err => {
             expect(err).toBeTruthy();

@@ -1,9 +1,8 @@
 const sut = require('./solution-9.js');
 
 describe('return the first letter into 5 diff cases', () => {
-    test('["1","12","1234"]', done => {
+    test('["1","12","1234"]', () => {
         expect(sut(["1","12","1234"])).toEqual(2);
-        done();
     });
     test('bad arr', done => {
         sut("12345", err => {

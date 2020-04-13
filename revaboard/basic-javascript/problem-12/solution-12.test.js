@@ -1,29 +1,29 @@
 const sut = require('./solution-12.js');
 
 describe('tictactoe', () => {
-    test('test 1: [["O","O", "O"], ["X","X","X"], ["O","O","O"]]', done => {
+    test('test 1: [["O","O", "O"], ["X","X","X"], ["O","O","O"]]', () => {
         expect(sut([["O","O", "O"], ["X","X","X"], ["O","O","O"]])).toEqual("Not Valid");
-        done();
+        
     });
-    test('test 2: [["O","O", "O"], ["X","O","X"], ["O","O","O"]]', done => {
+    test('test 2: [["O","O", "O"], ["X","O","X"], ["O","O","O"]]', () => {
         expect(sut([["O","O", "O"], ["X","O","X"], ["O","O","O"]])).toEqual("O wins");
-        done();
+        
     });
-    test('test 3: [["O","", "O"], ["X","O","X"], ["O","",""]]', done => {
+    test('test 3: [["O","", "O"], ["X","O","X"], ["O","",""]]', () => {
         expect(sut([["O","O", "O"], ["X","O","X"], ["O","O","O"]])).toEqual("O wins");
-        done();
+        
     });
-    test('test 4: [["x","O", "X"], ["O","X","O"], ["X","O","X"]]', done => {
+    test('test 4: [["x","O", "X"], ["O","X","O"], ["X","O","X"]]', () => {
         expect(sut([["X","O", "X"], ["O","X","O"], ["X","O","X"]])).toEqual("X wins");
-        done();
+        
     });
-    test('test 5: [["O","X", "O"], ["O","X","O"], ["X","O","X"]]', done => {
+    test('test 5: [["O","X", "O"], ["O","X","O"], ["X","O","X"]]', () => {
         expect(sut([["O","X", "O"], ["O","X","O"], ["X","O","X"]])).toEqual("Draw");
-        done();
+        
     });
-    test('test 6: [["","", ""], ["X","O","X"], ["","",""]]', done => {
+    test('test 6: [["","", ""], ["X","O","X"], ["","",""]]', () => {
         expect(sut([["","", ""], ["X","O","X"], ["","",""]])).toEqual("Game not finished!");
-        done();
+        
     });
     
     test('string input', done => {

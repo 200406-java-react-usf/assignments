@@ -1,9 +1,8 @@
 const sut = require('./solution-5.js');
 
 describe('cesar encrypt', () => {
-    test('abcABCxyzXYZ shift 1', done => {
+    test('abcABCxyzXYZ shift 1', () => {
         expect(sut('abcABCxyzXYZ', 1)).toBe('bcdBCDyzaYZA');
-        done();
     });
     test('arry ["abc", "def"]', done => {
         sut(["abc", "def"], 1, err => {

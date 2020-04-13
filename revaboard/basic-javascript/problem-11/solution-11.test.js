@@ -1,13 +1,11 @@
 const sut = require('./solution-11.js');
 
 describe('compare 2 arr', () => {
-    test("[1,2,3,4,5],[1,2,3,4,5]", done => {
+    test("[1,2,3,4,5],[1,2,3,4,5]", () => {
         expect(sut([1,2,3,4,5],[1,2,3,4,5])).toBe(true);
-        done();
     });
-    test("[1,2,3,4,5],[1,2,3,4,4]", done => {
+    test("[1,2,3,4,5],[1,2,3,4,4]", () => {
         expect(sut([1,2,3,4,5],[1,2,3,4,4])).toBe(false);
-        done();
     });
     test('string', done => {
         sut("12345", [1,2,3,4,5], err => {

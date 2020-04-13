@@ -1,25 +1,25 @@
 const sut = require('./solution-10.js');
 
 describe('return index of longest str', () => {
-    test("aeiou", done => {
+    test("aeiou", () => {
         expect(sut("apple")).toEqual("A");
-        done();
+        
     });
-    test("bcdfg", done => {
+    test("bcdfg", () => {
         expect(sut("banana")).toEqual("B");
-        done();
+        
     });
-    test("hjklm", done => {
+    test("hjklm", () => {
         expect(sut("lemon")).toEqual("C");
-        done();
+        
     });
-    test('npqrstvxvz', done => {
+    test('npqrstvxvz', () => {
         expect(sut("nectarine")).toEqual("D");
-        done();
+        
     });
-    test('else', done => {
+    test('else', () => {
         expect(sut("12345")).toEqual("E");
-        done();
+        
     });
     test('bad string', done => {
         sut(["abc"], err => {
@@ -27,6 +27,6 @@ describe('return index of longest str', () => {
             expect(err).toEqual('Bad string request');
             done();
         });
-        done();
+        
     });
 });

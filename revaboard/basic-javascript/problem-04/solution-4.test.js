@@ -1,9 +1,8 @@
 const sut = require('./solution-4.js');
 
 describe('remove test in string', () => {
-    test('I will remove test', done => {
+    test('I will remove test', () => {
         expect(sut('I will remove test')).toBe('I will remove ');
-        done();
     });
     test('arry ["abc", "def"]', done => {
         sut(["abc", "def"], err => {
