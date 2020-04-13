@@ -33,18 +33,12 @@ const tictactoe = (arr) => {
             if (arr[(x + 1)].every(isX) || arr[(x + 1)].every(isO)) {
                 return 'Game invalid'
             }
-            else if (arr[(x + 1)].every(isX) || arr[(x + 1)].every(isO)) {
-                return 'Game invalid'
-            }
             else if (arr[(x + 2)].every(isX) || arr[(x + 2)].every(isO)) {
                 return 'Game invalid'
             }
             return checkWinner(arr[x]);
         }
         for (let y = 0; y < arr[x].length; y++) {
-            if(arr[y].some(isEmpty)){ //check is any element in the array is empty
-                return 'Game in progress, no winner yet';
-            }
             
             testEle = arr[y].slice(st, end)
             chkVertical.push(testEle[0]);
@@ -72,6 +66,11 @@ const tictactoe = (arr) => {
             if (checkWinner(final) != false) {
                 return checkWinner(final);
             }
+        }
+    }
+    for( let y =0; y < arr.length ; y++){
+        if(arr[y].some(isEmpty)){ //check is any element in the array is empty
+            return 'Game in progress, no winner yet';
         }
     }
     return 'no winner'

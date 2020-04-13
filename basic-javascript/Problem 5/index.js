@@ -1,6 +1,6 @@
-const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-let cypherAlphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 const caesarCypher = (cypher,key) => {
+    const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    let cypherAlphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     let err = 'Not a valid string';
     let err2 = 'Not a valid number';
     if(!cypher  && typeof err){
@@ -23,12 +23,13 @@ const caesarCypher = (cypher,key) => {
                 break;
             }
         }
-        newArray.push(cyphered)
-        result = newArray.join('')
+        newArray.push(cyphered);
+        result = newArray.join('');
+        result.toUpperCase();
         
     }
     return result;
     
 }
-
+console.log(caesarCypher('password',3));
 module.exports = caesarCypher;
