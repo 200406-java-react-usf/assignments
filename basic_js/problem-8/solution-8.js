@@ -17,6 +17,10 @@ function sumArrays(arr1, arr2, onComplete, onError) {
 
 }
 
+module.exports = {
+    sumArrays
+}
+
 a = [1,2,3,4,5];
 b = [1,2,3,4];
 c = [1,'m',2];
