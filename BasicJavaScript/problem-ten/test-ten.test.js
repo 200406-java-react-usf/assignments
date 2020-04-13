@@ -27,4 +27,16 @@ describe('testing a string that the first char is in for each set', () => {
 
     });
 
+    test('testing the letter w', () => {
+
+        expect(sut.testFirstCharOfString('what')).toBe('W is in none of these');
+
+    });
+
+    test('testing the thrown error', () => {
+
+        expect(() => {sut.testFirstCharOfString(5)}).toThrow();
+
+    });
+
 });

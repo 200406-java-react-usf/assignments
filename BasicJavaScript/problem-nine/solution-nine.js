@@ -14,6 +14,8 @@
 
 const findLongestString = (array) => {
 
+    if(!Array.isArray(array)) throw Error('Please input an Array');
+
     let maxLength = array[0];
 
     for (var i = 0; i < array.length; i++){

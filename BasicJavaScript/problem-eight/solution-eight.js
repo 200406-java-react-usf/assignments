@@ -9,10 +9,12 @@
 
 */
 
- let arrayOne = [1,2,3];
- let arrayTwo = [4,5,6,7];
+//  let arrayOne = [1,2,3];
+//  let arrayTwo = [4,5,6,7];
 
  function addArrays(one,two){
+
+    if(!Array.isArray(one) || !Array.isArray(two)) throw Error('Please input an Array');
 
     //test to see which array is larger, then add zeros to make the arrays match in length
 

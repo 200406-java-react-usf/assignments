@@ -19,4 +19,12 @@ describe('testing function to count the vowels in a given string', () =>{
 
     });
 
+    test('testing the input error', () => {
+
+        let randomString = 5;
+
+        expect(() => {sut.testForVowels(randomString)}).toThrow();
+
+    });
+
 });

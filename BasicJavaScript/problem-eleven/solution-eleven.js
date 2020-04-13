@@ -12,6 +12,8 @@
 // let two = [7,4,4,2,8];
 
 let equivArray = (arrayOne, arrayTwo) => {
+
+    if (!Array.isArray(arrayOne) || !Array.isArray(arrayTwo)) throw Error('Please enter an array');
     
     if (arrayOne.length !== arrayTwo.length) return false;
 

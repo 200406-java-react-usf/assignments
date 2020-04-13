@@ -32,4 +32,10 @@ describe('testing numbers to print out the matching', () => {
 
     });
 
+    test('testing the thrown error', () => {
+
+        expect(() => {sut.fibSequence('5')}).toThrow();
+
+    });
+
 });

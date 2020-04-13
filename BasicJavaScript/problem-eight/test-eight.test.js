@@ -22,4 +22,10 @@ describe('testing arrays of multiple lengths and trying to add them together', (
 
     });
 
+    test('testing the thrown error', () =>{
+
+        expect(() => {sut.addArrays(5,[1,2,3,4,5])}).toThrow();
+
+    });
+
 });

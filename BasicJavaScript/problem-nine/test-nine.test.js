@@ -16,4 +16,10 @@ describe('testing an array of strings, and returning the index of the longest st
 
     });
 
+    test('testing the thrown error', () => {
+
+        expect(() => {sut.findLongestString(11)}).toThrow();
+
+    });
+
 });

@@ -15,6 +15,9 @@
 //let inputValue = 8;
 
 let fibSequence = (input) => {
+
+    if (typeof input !== 'number') throw Error('Please enter a number');
+
     //need to specify the first two values since they will be added together in .push
     let fibArray = [0,1];
 

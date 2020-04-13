@@ -10,10 +10,12 @@
 
 
 
-let inputString = 'My name is Kevin';
+//let inputString = 'My name is Kevin';
 
 
 function testForVowels(input){
+
+    if (typeof input !== 'string') throw Error('Please enter a String');
 
     let vowelCounter = 0;
 
@@ -28,7 +30,7 @@ function testForVowels(input){
    return vowelCounter;
 }
 
-testForVowels(inputString);
+//testForVowels(inputString);
 
 module.exports = {
 

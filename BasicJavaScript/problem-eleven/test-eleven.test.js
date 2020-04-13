@@ -33,4 +33,17 @@ describe('testing multiple arrays to see if they have the same values, regardles
 
     });
 
+    test('testing the thrown error', () => {
+
+        expect(() => {sut.equivArray(5, [7,5,4,2,8])}).toThrow();
+
+    });
+
+    test('testing the thrown error', () => {
+
+        expect(() => {sut.equivArray([4,2,8,4,7], 5)}).toThrow();
+
+    });
+
+
 });

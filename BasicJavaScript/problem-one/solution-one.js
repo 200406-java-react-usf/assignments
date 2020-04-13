@@ -1,4 +1,4 @@
-let testDate = new Date('June 12, 1997');
+//let testDate = new Date('June 12, 2020');
 
 function testForLeapYear(date){
 
@@ -20,4 +20,4 @@ module.exports = {
 
 }
 
-console.log(testForLeapYear(testDate));
+//console.log(testForLeapYear(testDate));
