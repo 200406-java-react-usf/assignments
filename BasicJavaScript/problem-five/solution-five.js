@@ -1,40 +1,46 @@
 /*
     Ceasar Shift:
-        -in short, takes a letter, and replaces it by another letter 3 places down the alphabet
-            -a shifts to d, l shifts to o
+        -in short, takes a letter, and replaces it by another letter x places down the alphabet
 
     Idea for funtion:
-        -declare a string of the alphabet
-        -take an input string
-        -loop thru alphabet string, find the character that matches
-        -then using .replace method, replace the char in the input string with the char in the 
-         alphabet string + 3
-
-        *** might need double loop, one to run thru each char in input string, and test it against each 
-            alphabet char
+        -use .charcodeat, add three to that value
+            -charcodes for alphabet = 97 - 122
+            - need to check for values that go passed 122, and then loop back to 97
 */
 
-let alphaString = 'abcdefghijklmnopqrstuvwxyz';
 
-let inputString = 'ab';
 
-let ceasarString;
+// let inputString = 'zoom';
+// let caesarKey = 5;
 
-for (var i = 0; i < inputString.length; i++){
+function ceasarEncrypt(input,key){
 
-    for (var j = 0; j < alphaString.length; j++){
+    let outputString = [];
 
-        if (inputString[i] === alphaString[j]){
-            ceasarString = inputString.replace(inputString[i],alphaString[j+3]);
+    for (var i = 0; i < input.length; i++){
+
+        if (input.charCodeAt(i)+key > 122) {
+
+            outputString.push(String.fromCharCode(96 + ((input.charCodeAt(i)+key)-122)));
+
+        } else {
+
+            outputString.push(String.fromCharCode(input.charCodeAt(i)+key));
+
         }
 
-    }
+    } 
+
+    return outputString.join('');
 
 }
 
-console.log(ceasarString);
+module.exports = {
+
+    ceasarEncrypt
+
+}
 
 
-/*
-    Currently works with one letter strings
-*/
+   // console.log(ceasarEncrypt(inputString,caesarKey));
+
