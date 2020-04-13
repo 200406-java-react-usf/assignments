@@ -15,8 +15,3 @@ describe('vowel Counter', () => {
 })
 });
 
-// test('Should return error message', done => { 
-//     expect( () => {
-//         sut('This test is a test','for')
-//     }).toThrow('That word is not found in the string');
-//     done();
