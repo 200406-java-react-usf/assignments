@@ -14,51 +14,69 @@
 
 function tictactoe(twoDiArry){
     let count = 0;
-    let winner = '';
+    let winner = [];
     
     //test all winning scenario
     //for horizontal win
 
-    if((twoDiArry[0][0] == twoDiArry[0][1]) && (twoDiArry[0][1]== twoDiArry[0][2]) && (twoDiArry[0][2]!= '')){
-        count++;
-        winner = twoDiArry[0][0];
+    function matching(arr){
+        for(var i=1; i<arr.length; i++){
+            if(arr[0]!=arr[i])
+                return false;
+        }
+            return true;
     }
+
+    // if((twoDiArry[0][0] == twoDiArry[0][1]) && (twoDiArry[0][1]== twoDiArry[0][2]) && (twoDiArry[0][2]!= '')){
+    if(matching([twoDiArry[0][0],twoDiArry[0][1],twoDiArry[0][2]]) && !("")){    
+        count++;
+        winner.push(twoDiArry[0][0]);
+    }
+
     if((twoDiArry[1][0] == twoDiArry[1][1]) && (twoDiArry[1][1] == twoDiArry[1][2]) &&(twoDiArry[1][2] != '')){
         count++;
-        winner = twoDiArry[1][0];
+        winner.push(twoDiArry[1][0]);
     }
+
     if((twoDiArry[2][0] == twoDiArry[2][1]) && (twoDiArry[2][1] == twoDiArry[2][2]) && (twoDiArry[2][2]!= '')){
         count++;
-        winner = twoDiArry[2][0];
+        winner.push(twoDiArry[2][0]);
     }
+
     //for vertical wins
     if((twoDiArry[0][0] == twoDiArry[1][0]) && (twoDiArry[1][0] == twoDiArry[2][0]) && (twoDiArry[2][0]!= '')){
         count++;
-        winner = twoDiArry[0][0];
+        winner.push(twoDiArry[0][0]);
     }
+
     if((twoDiArry[0][1] == twoDiArry[1][1]) && (twoDiArry[1][1] == twoDiArry[2][1]) && (twoDiArry[2][1] != '')){
         count++;
-        winner = twoDiArry[0][1];
+        winner.push(twoDiArry[0][1]);
     }
+
     if((twoDiArry[0][2] == twoDiArry[1][2]) && (twoDiArry[1][2] == twoDiArry[2][2]) && (twoDiArry[2][2] != '')){
         count++;
-        winner = twoDiArry[0][2];
+        winner.push(twoDiArry[0][2]);
     }
+
     //for diagnol wins
     if((twoDiArry[0][0] == twoDiArry[1][1]) && (twoDiArry[1][1] == twoDiArry[2][2]) && (twoDiArry[2][2] != '')){
         count++;
-        winner = twoDiArry[0][0];
+        winner.push(twoDiArry[0][0]);
     }
+ 
     if((twoDiArry[0][2] == twoDiArry[1][1]) && (twoDiArry[1][1] == twoDiArry[2][0]) && (twoDiArry[2][0] != '')){
-            count++;
-            winner = twoDiArry[0][2];
+        count++;
+        winner.push(twoDiArry[0][2]);
     }
-    console.log('count' + count);
-    if(count > 1)
+ 
+
+    if((count > 1) && !(matching(winner)))
         return 'Invalid result';
-    if(count == 1)
-        return  winner + ' is the winner';
-    
+        console.log(winner);
+    if(count){
+        return (winner[0] + ' is the winner');
+     }
     //test if there are empty string in the array
     let complete = (twoDiArry.join().replace(/,/g, "").length == 9)?true:false;
     console.log(twoDiArry.join().replace(/,/g, ""));
@@ -68,7 +86,6 @@ function tictactoe(twoDiArry){
         return 'Tie game';
 }
 
-console.log(tictactoe([['X', 'X', 'X'], ['O', 'O', 'O'], ['X', 'O', 'X']]))
-console.log(tictactoe([['X', '', 'X'], ['O', '', ''], ['', 'O', '']]))
-console.log(tictactoe([['X', 'O', 'X'], ['O', 'X', 'O'], ['O', 'X', 'O']]));
+console.log(tictactoe([['X', 'O', 'X'] ,['O', 'X', 'O'], ['X', 'O', 'X']]))
+
 module.exports = {tictactoe}
