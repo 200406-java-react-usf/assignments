@@ -5,9 +5,9 @@
 const countVowels = string => Array.from(string)
   .filter(letter => 'aeiou'.includes(letter)).length;
 
-console.log(countVowels('abcdefghijklmnopqrstuvwxyz'));
-console.log(countVowels('test'));
-console.log(countVowels('does this work?'));
+console.log(countVowels('abcdefghijklmnopqrstuvwxyz'))
+console.log(countVowels('test'))
+console.log(countVowels('does this work?'))
 
 module.exports = {
     countVowels

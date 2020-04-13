@@ -12,7 +12,6 @@ function validateEmail(mail)
     return (false)
 }
 
-
 let inputEmail = 'peters.drew.dp@gmail.com'
 console.log(validateEmail(inputEmail));
 

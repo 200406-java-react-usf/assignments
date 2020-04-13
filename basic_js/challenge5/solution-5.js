@@ -20,12 +20,12 @@ function caesarShift(word, end) {
             counter++;
             if (counter >= a2.length) {
                 counter = 0;
-            };
-        };
+            }
+        }
         encrypt += a2[counter];
-    };
+    }
     return encrypt;
-};
+}
 
 module.exports = {
     caesarShift

@@ -1,11 +1,10 @@
-const sut = require('./solution-2');
+const sut = require('./solution-2')
 
-
-describe ('test for vaild email address',() =>{
+describe ('solution-2' ,() =>{
 
     test('should return true', done =>{
         let email = 'email@testing.com'
-        expect(email).toBeTruthy();
-        done();
-    });
-});
+        expect(email).toBeTruthy()
+        done()
+    })
+})
