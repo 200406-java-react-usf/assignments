@@ -5,10 +5,14 @@ function removeTest(str, onComplete, onError) {
         let newstr = str.replace(rep, '');
         onComplete(newstr);
     }
-    else onError('Input not a string');
+    else {
+        onError('Input not a string');
+    }
 }
 
-module.exports = removeTest();
-removeTest('this test rocks!', str => console.log(str), ()=>{});
-removeTest('this rocks!', str => console.log(str), ()=>{});
-removeTest('this test rocks!', () => {}, err=> console.log(err));
+module.exports = {
+removeTest
+}
+// removeTest('this test rocks!', str => console.log(str), ()=>{});
+// removeTest('this rocks!', str => console.log(str), ()=>{});
+// removeTest(2222, () => {}, err=> console.log(err));
