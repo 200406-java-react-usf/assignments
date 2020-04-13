@@ -2,7 +2,7 @@
 
 function removeCharacter(word, positionRemoved){
     const chars = word.split('');
-    if (positionRemoved > (chars.length -1)) throw Error("There's not that many letters in that word.")
+    if (positionRemoved > (chars.length - 1)) throw Error('There\'s not that many letters in that word.')
 
     //Loops through the array of letters combining the letters and skipping the one at the position
     let newWord = ''
@@ -12,8 +12,8 @@ function removeCharacter(word, positionRemoved){
             newWord = newWord + chars[position]
         }
     }
-    console.log(newWord)
+    return(newWord)
 
 }
 
-removeCharacter("test", 4);
+module.exports = removeCharacter;
