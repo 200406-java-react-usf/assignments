@@ -6,10 +6,15 @@
 **/
 
 function deleteChar(string, index){
-    str1 = string.slice(0, index)
-    str2 = string.slice((index + 1), (string.length - 1))
 
-    return str1 + str2
+    if(typeof(string) !== "string" || typeof(index) !== "number") throw new Error("Invalid inputs");
+
+    str1 = string.slice(0, index);
+    str2 = string.slice((index + 1), (string.length));
+
+    return str1 + str2;
 }
 
-//console.log(deleteChar("delete a the 'a'.", 7))
+module.exports = {
+    deleteChar
+}
