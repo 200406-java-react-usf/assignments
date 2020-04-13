@@ -10,8 +10,10 @@ function getVowels(str, onComplete, onError) {
     else onError('Input is not a string');
   }
 
-  module.exports = getVowels();
+  module.exports = {
+      getVowels
+    }
   
-  getVowels('abaegf', val => console.log(val), () => {});
-  getVowels('htmnjhg',  () => {}, err => console.log(err));
-  getVowels(25,  () => {}, err => console.log(err));
+//   getVowels('abaegf', val => console.log(val), () => {});
+//   getVowels('htmnjhg',  () => {}, err => console.log(err));
+//   getVowels(25,  () => {}, err => console.log(err));
