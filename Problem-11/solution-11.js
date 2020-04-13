@@ -24,6 +24,4 @@ function equivArr(arr1, arr2){
         return true;
 }
 
-console.log(equivArr([4,2,8,4,7],[7,4,4,2,8]));
-
 module.exports = {equivArr}
