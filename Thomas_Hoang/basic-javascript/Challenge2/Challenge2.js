@@ -5,4 +5,5 @@ function emailValidator(email){
     let str = /\S+@\S+\.\S+/
     return(str.test(email))
 }
-emailValidator('thomasgmaisl.com')
+
+module.exports = emailValidator;
