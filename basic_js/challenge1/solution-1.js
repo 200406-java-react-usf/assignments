@@ -16,6 +16,8 @@ function leapYear(userInput){
         
         else {
         console.log(false);};
+
+        return leapYear;
 };
 //instantiation
 leapYear(date);

@@ -11,8 +11,8 @@ describe('solution-2', () => {
         let eString4 = "Chek";
         expect(sut.removeCharAt(testString, 1)).toBe(eString1);
         expect(sut.removeCharAt(testString, 2)).toBe(eString2);
-        expect(sut.removeCharAt(testString, 4)).toBe(eString3);
-        expect(sut.removeCharAt(testString, 5)).toBe(eString4);
+        expect(sut.removeCharAt(testString, 3)).toBe(eString3);
+        expect(sut.removeCharAt(testString, 4)).toBe(eString4);
         done();
     });
 
