@@ -28,7 +28,10 @@ function fibonacci(num, onComplete, onError) {
     }
 }
 
-fibonacci(13, val => {console.log(val)}, () => {});
-fibonacci(-4, val => {console.log(val)}, () => {});
-fibonacci(0, val => {console.log(val)}, () => {});
-fibonacci('1',  () => {}, err => {console.log(err)});
+module.exports = {
+    fibonacci
+}
+// fibonacci(13, val => {console.log(val)}, () => {});
+// fibonacci(-4, val => {console.log(val)}, () => {});
+// fibonacci(0, val => {console.log(val)}, () => {});
+// fibonacci('1',  () => {}, err => {console.log(err)});

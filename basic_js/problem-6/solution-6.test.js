@@ -3,10 +3,11 @@ const sut = require('./solution-6');
 describe('Solution 6 Test', () => {
 
      /** 
-     * This test will check that when given a string and index
-     * the function will return a string where each character has
-     * been shifted the number indicated by the index. Will check
-     * to make sure the inputs are the correct type and 
+     * This test will check that when passed a string it will return
+     * the number of vowels in that string. Will test:
+     *  -when passed a string with vowels
+     *  -when passed a string without vowels
+     *  -when passed an input not a string
     */
    test('Should return number of vowels within the string', done => {
         sut.getVowels('test', str => {
