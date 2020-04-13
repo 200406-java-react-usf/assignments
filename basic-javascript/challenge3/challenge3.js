@@ -2,17 +2,21 @@
 // specified position of a given string and return the new string.
 
 let removeChar = (str, index) => {
+    //str should be a string
+    if(typeof str != 'string') throw(`${str} is not a string`)
     //making sure the index is a valid number
-    if (isNaN(index) || str.length < index || index < 0)
-        return 'Invalid index please try againg';
-    //String should not be empty
-    if (str.length <= 0) return 'please provide a non-empty string';
+    if (typeof index != 'number')
+        throw(`${index} is not a number`);
+    if(index > str.length || index < 0)
+    throw(`index out of range Error`)
+    //str should not be an empty string
+    if (str.length <= 0) throw(`An empty string was provide`);
     // remove a character and return string
     str = str.substring(0, index) + str.substring(index+1);
     //console.log(str);
-    return 'a character was removed form the string: \n' + str;
+    return str;
 }
 module.exports = {
     removeChar
 }
-console.log(removeChar("An  extra space was removed", 'l'));
+//console.log(removeChar("An  extra space was removed", 'l'))
