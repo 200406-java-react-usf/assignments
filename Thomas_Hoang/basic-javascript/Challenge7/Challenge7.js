@@ -2,13 +2,20 @@
 
 function fibonnacci(n){
     let sequence = [n]
-    sequence[0] = 1
-    sequence[1] = 1
+    if (n < 2) return 1
 
-    for(i = 2; i < n; i ++){
-    sequence[i] = sequence[i - 1] + sequence[i - 2]
+    let newNum = 0
+    let num1 = 1
+    let num2 = 1
+    for(i = 2; i <= n; i++){
+    newNum =  num1 + num2
+    //Sets the numbers to the next 2 values in the sequence
+    num2 = num1
+    num1 = newNum
+    
     }
-    return(sequence[n])
+    return(newNum)
 }
 
-fibonnacci(5)
+//fibonnacci(4)
+module.exports = fibonnacci;
