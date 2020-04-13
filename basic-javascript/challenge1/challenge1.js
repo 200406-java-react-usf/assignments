@@ -5,17 +5,22 @@
 
    
 
-function leapYear (myDate) {
-     
+const leapYear = (myDate, cb) => {
+    if(myDate.constructor.toString().indexOf("Date") <= -1) return 'wrong input format, please provide a date';
     //creating a boolean to check if it is a leap year
     let isLeap = false;       
     //obtaining the year from the provided date   
-    let myYear = myDate.getUTCFullYear();
+    let myYear = myDate.getFullYear();
     //checking if the year provided is a leap year 
     if (myYear % 400 == 0) isLeap = true;
     else if (myYear % 100 != 0 && myYear % 4 == 0) isLeap = true;
     //printing results to console log
-    console.log(isLeap);
+   // console.log(isLeap);
+   //cb(isLeap);
+   return isLeap;
          
 }
-leapYear(new Date('01/01/2000'));
+console.log(leapYear(new Date('01/01/2000')))
+module.exports = {
+    leapYear
+}
