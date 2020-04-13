@@ -28,3 +28,11 @@ test("this should print out issue statement", () => {
 test("this should print out issue statement", () => {
     expect(sut.compareArray()).toBe("Please input an array")
 })
+
+test("this should print true", () => {
+    expect(sut.compareArray([], arr1)).toBe('Please give arrays with elements')
+})
+
+test("this should print true", () => {
+    expect(sut.compareArray(arr1, [])).toBe('Please give arrays with elements')
+})

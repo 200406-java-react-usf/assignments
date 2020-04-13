@@ -1,6 +1,6 @@
 function caesarShift(word, end) {
-    if ((typeof word !== 'string') || typeof end !== 'number')
-        return "Parameters are incorrect";
+    if ((typeof word != 'string') || typeof end != 'number') throw new Error('Parameters are incorrect');
+
 
     word = word.toLowerCase()
     word = word.split("");
@@ -25,3 +25,5 @@ function caesarShift(word, end) {
 module.exports = {
     caesarShift
 }
+
+console.log(caesarShift('fjkldsajkl', 100));

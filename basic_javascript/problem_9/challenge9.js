@@ -1,10 +1,10 @@
 function longestString(input) {
     if (typeof(input) != 'object')
-        return ("Given Parameter incorrect please give me an array")
+        return ("Given Parameter incorrect please give me an array");
 
     for (i = 0; i < input.length; i++) {
         if (typeof(input[i]) != 'string')
-            return ("Your array contains elements that is not a string. Please fix")
+            return ("Your array contains elements that is not a string. Please fix");
     }
 
     wordArray = input;

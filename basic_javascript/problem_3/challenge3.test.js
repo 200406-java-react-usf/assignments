@@ -1,5 +1,7 @@
 const sut = require('./challenge3')
 
+
+
 test("Removes character in a given spot", () => {
     expect(sut.removeChar("jeremy is very cool", 18))
 });

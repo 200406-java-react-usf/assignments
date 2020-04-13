@@ -1,0 +1,14 @@
+{
+  "name": "problem_12",
+  "version": "1.0.0",
+  "description": "tick tac toe",
+  "main": "challenge12.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "jeremy elam",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}

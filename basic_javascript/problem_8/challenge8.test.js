@@ -7,7 +7,7 @@ let arr5 = [1, 2, 3, 6, 9, 9, 4];
 let arr6 = [];
 
 test("Will out put a new array containing the sum of two arrays", () => {
-    expect(sut.addingArrays(arr1, arr2))
+    expect(sut.addingArrays(arr1, arr2)).toEqual()
 })
 test("Will out put error message because one of the elements isn't a 'number'", () => {
     expect(sut.addingArrays(arr3, arr2))

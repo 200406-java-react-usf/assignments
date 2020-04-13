@@ -18,13 +18,21 @@ wordArray2 = test2.split(" ");
 test3 = ['fjkdla;fjlkd;', 329043248320234, [3, 3, 5, 5, 32, 2, 43, 2, 52, 2, 1, 23, 13, 5, 2, 3, 4, 32, 2, ]]
 
 test("Will output the index of the longest string inside the array", () => {
-    expect(sut.longestString(wordArray)).toBe(27)
+    expect(sut.longestString(wordArray)).toBe(27);
 })
 
 test("Will output the index of the longest string inside the array", () => {
-    expect(sut.longestString(wordArray2)).toBe(2)
+    expect(sut.longestString(wordArray2)).toBe(2);
 })
 
 test("Will output an error stating that array contains elements that are not a string", () => {
-    expect(sut.longestString(test3))
+    expect(sut.longestString(test3)).toBe("Your array contains elements that is not a string. Please fix");
+})
+
+test("Will output an error stating that array contains elements that are not a string", () => {
+    expect(sut.longestString(test3)).toBe("Your array contains elements that is not a string. Please fix");
+})
+
+test("Will output an error stating that array contains elements that are not a string", () => {
+    expect(sut.longestString('test3')).toBe("Given Parameter incorrect please give me an array");
 })

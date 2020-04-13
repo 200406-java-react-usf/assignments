@@ -1,6 +1,6 @@
 function firstCharacter(userInput) {
     if (typeof(userInput) != 'string')
-        return ("Please input a valid String data type")
+        return ("Please input a valid String data type");
 
     userInput = userInput.toLowerCase();
     let testCase = userInput[0];
