@@ -2,12 +2,6 @@ const sut = require('./solution-12');
 
 describe('solution-12', () => {
 
-    // test('should return the correct winner', () => {
-
-        
-
-    // });
-
     test('should throw an error if character is not "X","O" or empty string', () => {
         expect( () => {
             sut.ticTacToe([['a'],['b'],['c']]);
