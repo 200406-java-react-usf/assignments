@@ -3,7 +3,7 @@ const sut = require('./Problem4'); //system under test = sut
 describe('Problem4', () => {
     
     test('returns a string with all occurences of "test" removed', done => {
-        expect.assertions(6);
+        expect.assertions(7);
         let string1 = "this test is a test demo";
         let estring1 = "this is a demo";
         let string2 = "test";
@@ -16,12 +16,16 @@ describe('Problem4', () => {
         let estring5 = " this is a"
         let string6 = "abctestabc"
         let estring6 = "abcabc"
+        let wrongType = 123;
         expect(sut.deleteOccurencesofTest(string1)).toBe(estring1);
         expect(sut.deleteOccurencesofTest(string2)).toBe(estring2);
         expect(sut.deleteOccurencesofTest(string3)).toBe(estring3);
         expect(sut.deleteOccurencesofTest(string4)).toBe(estring4);
         expect(sut.deleteOccurencesofTest(string5)).toBe(estring5);
         expect(sut.deleteOccurencesofTest(string6)).toBe(estring6);
+        expect((wrongType) => {
+            sut.deleteOccurencesofTest(wrongType);
+        }).toThrow();
         done();
     });
 

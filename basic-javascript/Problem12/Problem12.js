@@ -27,6 +27,9 @@
 // 7 8 9
 
 const tictactoe = function (board) {
+    if (!(Array.isArray(board))) {
+        throw new TypeError();
+    }
     let validGame = true;
     let winner = "F";
     let gameInProgress = false;
@@ -58,6 +61,11 @@ const tictactoe = function (board) {
             let y1 = winConditions[i][0][1];
             let y2 = winConditions[i][1][1];
             let y3 = winConditions[i][2][1];
+            if (!(typeof board[x1][y1] === "string") ||
+                !(typeof board[x2][y2] === "string") ||
+                !(typeof board[x3][y3] === "string")) {
+                    throw new TypeError();
+                }
             if (board[x1][y1] == board[x2][y2] && board[x2][y2] == board[x3][y3]) {
                 if (winner == "F" || winner == board[x1][y1]) {
                     winner = board[x1][y1];

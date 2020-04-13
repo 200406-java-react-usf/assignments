@@ -14,6 +14,9 @@
 //An ascii implementation might be a little nicer
 
 const determineCase = function(myString) {
+    if (!(typeof myString === "string")) {
+        throw new TypeError();
+    }
     //Not case sensistive
     let caseA = ['a', 'e', 'i', 'o', 'u'];
     let caseB = ['b', 'c', 'd', 'f', 'g'];

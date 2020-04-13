@@ -5,8 +5,11 @@
 
 
 //There is probably a better solution if I learn the math... 
-//but this works for now
+//but this works for now [O(n^n)? complexity]
 const fibanacciSequence = function (index) {
+    if (!(typeof index === "number")) {
+        throw new TypeError();
+    }
     fibonnaciArray = [0,1]
     var isNeg = false;
     if (index < 0) {

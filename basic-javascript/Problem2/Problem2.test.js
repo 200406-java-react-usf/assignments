@@ -3,7 +3,7 @@ const sut = require('./Problem2'); //system under test = sut
 describe('Problem2', () => {
     
     test('should return true or false depending on whether or not a date given is on a leap year', done => {
-        expect.assertions(12);
+        expect.assertions(13);
         let email1 = "JohnDoe@gmail.com"
         let email2 = "JohnDoegmail.com"
         let email3 = "JohnDoe@gmail"
@@ -16,6 +16,7 @@ describe('Problem2', () => {
         let email10 = "JohnDoe@gmail.org"
         let email11 = "JohnDoe@gmail.cc"
         let email12 = "JohnDoe@amazon.com"
+        let wrongType = 123
         expect(sut.checkValidEmail(email1)).toBe(true);
         expect(sut.checkValidEmail(email2)).toBe(false);
         expect(sut.checkValidEmail(email3)).toBe(false);
@@ -28,7 +29,9 @@ describe('Problem2', () => {
         expect(sut.checkValidEmail(email10)).toBe(true);
         expect(sut.checkValidEmail(email11)).toBe(true);
         expect(sut.checkValidEmail(email12)).toBe(true);
-
+        expect((wrongType) => {
+            sut.checkValidEmail(wrongType);
+        }).toThrow();
         done();
     });
 

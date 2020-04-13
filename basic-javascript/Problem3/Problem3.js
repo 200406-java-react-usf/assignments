@@ -4,8 +4,11 @@
  */
 
 const removeCharAt = function (myString, index) {
-    return (myString.substring(0,index-1) + 
-            myString.substring(index,myString.length));
+        if (!(typeof myString === "string")) {
+                throw new TypeError();
+        }
+        return (myString.substring(0,index-1) + 
+                myString.substring(index,myString.length));
  }
 
 console.log(removeCharAt('potato', 3));

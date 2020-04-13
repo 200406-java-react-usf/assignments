@@ -4,6 +4,9 @@
  */
 
 const checkValidEmail = function (email) {
+    if (!(typeof email === "string")) {
+        throw new TypeError();
+    }
     let truthChecker = false;
     if (hasValidExtension(email) && 
         hasValidDomain(email) && 

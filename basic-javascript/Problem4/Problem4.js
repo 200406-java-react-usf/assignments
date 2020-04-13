@@ -5,6 +5,9 @@
  */
 
 const deleteOccurencesofTest = function(myString) {
+    if (!(typeof myString === "string")) {
+        throw new TypeError();
+    }
      while(myString.includes("test")) {
          var testIndex = myString.indexOf("test");
          if (myString.charAt(testIndex-1) === " ") {

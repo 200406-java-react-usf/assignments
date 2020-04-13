@@ -3,6 +3,9 @@
  */
 
 const countVowels = function(myString) {
+    if (!(typeof myString === "string")) {
+        throw new TypeError();
+    }
     vowelCount = 0;
     for (let i = 0; i < myString.length; i++) {
         if (isaVowel(myString[i])) {
