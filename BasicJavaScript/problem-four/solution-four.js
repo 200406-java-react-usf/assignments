@@ -2,11 +2,13 @@
 //var testString = "test";
 
 //string we are searching through to find test
-//var stringToFindTestIn = "I'm not testing";
+//var stringToFindTestIn = 5;
 
 //loop to find "test" within the stringToFindTestIn
 
 function removeTestString(testInput, searchInput){
+
+    if (typeof testInput !== 'string' || typeof searchInput !== 'string') throw Error('Please enter a String');
 
    for (var i = 0; i < searchInput.length; i++){
 

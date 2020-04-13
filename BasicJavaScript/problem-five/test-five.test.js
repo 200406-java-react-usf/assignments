@@ -26,5 +26,17 @@ describe('take in a string and an encryption key value, and return the caesar en
 
     });
 
+    test('testing throwing an error', () => {
+
+        expect(() => {sut.ceasarEncrypt(5,5)}).toThrow();
+
+    });
+
+    test('testing throwing an error', () => {
+
+        expect(() => {sut.ceasarEncrypt('zoom','5')}).toThrow();
+
+    });
+
 
 });

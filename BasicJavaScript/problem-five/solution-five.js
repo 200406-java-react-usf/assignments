@@ -15,6 +15,8 @@
 
 function ceasarEncrypt(input,key){
 
+    if (typeof input !== 'string' || typeof key !== 'number') throw Error('Please enter correct values');
+
     let outputString = [];
 
     for (var i = 0; i < input.length; i++){

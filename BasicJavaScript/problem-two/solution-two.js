@@ -23,6 +23,8 @@ let inputEmail = 'wagenheimk@me.com';
 
 let testEmailFunction = (regEx, input) => {
 
+    if(typeof input !== 'string') throw Error('Not a string');
+
     if (regEx.test(input)){
 
         return true;

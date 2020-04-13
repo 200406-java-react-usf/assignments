@@ -30,4 +30,15 @@ describe('testing the email validation func', () => {
 
     });
 
+    test('inputting a number to test thrown error', () =>{
+
+        let givenRegEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        let inputEmail = 5;
+
+        expect(() => {sut.testEmailFunction(givenRegEx,inputEmail)}).toThrow();
+
+    });
+
+
+
 });

@@ -29,4 +29,22 @@ describe('looping through a string, looking for the word "test" and removing it 
 
     });
 
+    test('testing the error message ', () => {
+        
+        let testString = 5;
+        let stringToFindTestIn = "Not in here";
+
+        expect(() => {sut.removeTestString(testString,stringToFindTestIn)}).toThrow();
+
+    });
+
+    test('testing the error message ', () => {
+        
+        let testString = "test";
+        let stringToFindTestIn = 5;
+
+        expect(() => {sut.removeTestString(testString,stringToFindTestIn)}).toThrow();
+
+    });
+
 });

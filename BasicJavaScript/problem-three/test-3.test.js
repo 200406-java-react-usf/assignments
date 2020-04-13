@@ -29,4 +29,22 @@ describe('test for removing a char from a string at a specific index', () =>{
 
     });
 
+    test('testing error, should throw string error', () => {
+
+        let myNameString = 5;
+        let deleteThisChar = 7;
+
+        expect(() => {sut.deleteTheChar(myNameString,deleteThisChar)}).toThrow();
+
+    });
+
+    test('testing error, should throw position error', () => {
+
+        let myNameString = 'Hi! My name is Kevin.';
+        let deleteThisChar = '7';
+
+        expect(() => {sut.deleteTheChar(myNameString,deleteThisChar)}).toThrow();
+
+    });
+
 });

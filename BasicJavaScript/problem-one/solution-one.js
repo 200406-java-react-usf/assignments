@@ -1,8 +1,8 @@
-let testDate = new Date('June 12, 2020');
+let testDate = new Date('June 12, 1997');
 
-function testForLeapYear(Date){
+function testForLeapYear(date){
 
-    if (Date.getFullYear() % 4 == 0  && Date.getFullYear() % 100 !== 0 ||  Date.getFullYear() % 400 == 0) {
+    if (date.getFullYear() % 4 == 0  && date.getFullYear() % 100 !== 0 ||  date.getFullYear() % 400 == 0) {
 
         return true;
 
@@ -20,4 +20,4 @@ module.exports = {
 
 }
 
-//console.log(testForLeapYear(testDate));
+console.log(testForLeapYear(testDate));
