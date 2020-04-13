@@ -4,14 +4,15 @@
 function removeTest(str, word) {
     //Splits the words by the spaces between the words
     const words = str.split(' ');
-
+    if (!str.includes(word)) throw Error('That word is not found in the string')
     let newStr = ''
 
     for (position = 0; position < words.length; position++){
         if (words[position] !== word){
-            newStr = newStr + ' ' + words[position]
+         
+           newStr = newStr + words[position] + ' '
         }
     }
-    console.log(newStr)
+    return(newStr)
 }
-removeTest('This test is a test','test')
+module.exports = removeTest;
