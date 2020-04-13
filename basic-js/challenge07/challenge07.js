@@ -9,5 +9,5 @@ function fibonacci(n){
 
 }
 
-fibonacci();
+console.log(fibonacci(456));
 

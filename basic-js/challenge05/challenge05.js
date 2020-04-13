@@ -1,15 +1,19 @@
 function CaesarShiftThisString(aString, aNumber){
-    let encryptedString = ""
-    let i=0
-    while (i<= aString.length){
-        i++
-        return encryptedString = String.fromCharCode(aString.charCodeAt(i)+ aNumber)
+    
+    let aStringArr = aString.split(" ");
+
+    console.log(aStringArr)
+for(i=0;i < aString.length; i++){
+    aStringArr.forEach( (i)=> (console.log(String.fromCharCode(aString.charCodeAt(i) + aNumber))));
+    
+}
+    
+    
     }
+    
+
+    CaesarShiftThisString('Hello',1);
 
 
-} 
-
-
-console.log(CaesarShiftThisString('Hello',1))
 
 
