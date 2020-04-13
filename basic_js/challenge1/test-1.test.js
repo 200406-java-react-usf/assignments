@@ -1,12 +1,19 @@
-const sut = require('./solution-1');
-var leapYear = userInput.getFullYear();
+const sut = require('./solution-1.js');
 
-describe('date', () => {
-    test ('should return boolean when getFullYear is called', done => {
+describe ('test for leap year' ,() => {
 
-        sut.getFullYear (date => {
-            expect(date).toBeTruthy();
+        test('2019 should return false', done =>{
+
+            let date = new Date('01/01/2019')
+            expect(sut(date)).toBe(false);
             done();
         });
-    });
+
+        test('2020 should return true', done =>{
+
+            let date = new Date('01/01/2020')
+            expect(sut(date)).toBe(true);
+            done();
+        });
+
 });

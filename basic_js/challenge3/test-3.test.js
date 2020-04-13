@@ -1,6 +1,6 @@
 const sut = require('./solution-3');
 
-describe('solution-2', () => {
+describe('solution-3', () => {
     
     test('Removes char in string location, and gives new string', done => {
         expect.assertions(4);
