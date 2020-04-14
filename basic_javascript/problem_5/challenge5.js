@@ -25,5 +25,3 @@ function caesarShift(word, end) {
 module.exports = {
     caesarShift
 }
-
-console.log(caesarShift('fjkldsajkl', 100));
