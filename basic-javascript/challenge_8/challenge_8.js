@@ -5,20 +5,22 @@
 * Write a function that adds the values of arrays, even if the arrays are different sizes
 **/
 
-sumArrays = (array1, array2) => {
-    delta = array1.length - array2.length;
+const sumArrays = (array1, array2) => {
+    if(!Array.isArray(array1) || !Array.isArray(array2)) throw new Error("At least one of the arguments was not an array")
+    
+    dLength = array1.length - array2.length;
     let newArray = [];
 
-    if(delta > 0) {
+    if(dLength > 0) {
         maxLength = array1.length;
         for(i = array2.length; i < maxLength; i++) {
-            array2[i] = 0
+            array2[i] = 0;
         }
     }
     else if(delta <0) {
         maxLength = array2.length;
         for(j = array1.length; j < array2.length; j++) {
-            array1[j] = 0
+            array1[j] = 0;
         }
     }
 
@@ -28,4 +30,6 @@ sumArrays = (array1, array2) => {
     return newArray;
 }
 
-console.log(sumArrays([1,2,3,4], [1,1,1]));
+module.exports = {
+    sumArrays
+}
