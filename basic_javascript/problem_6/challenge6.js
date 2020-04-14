@@ -1,5 +1,5 @@
 function getVowels(str) {
-    if (typeof str !== 'string')
+    if (typeof str != 'string')
         return ("Please give me a string value");
 
     var m = str.match(/[aeiou]/gi);
