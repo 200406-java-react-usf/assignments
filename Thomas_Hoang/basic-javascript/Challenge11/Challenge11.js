@@ -1,7 +1,6 @@
 //Check if two arrays have the same size and contents (including if content order is not the same).
-arr1 = [1, 2, 3]
-arr2 = [3, 2, 1]
-function checkArrays(array1, array2){
+
+function ArrayContentsNSize(array1, array2){
     let isTrue = true
     //Determines if the arrays are the same size
     if (array1.length !== array2.length){
@@ -17,6 +16,5 @@ function checkArrays(array1, array2){
             return(isTrue)
             }
         }
-    console.log(isTrue)
 }
-checkArrays(arr1, arr2)
+module.exports = ArrayContentsNSize;
