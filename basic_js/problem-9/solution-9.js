@@ -15,6 +15,10 @@ function longString (arr, onComplete, onError) {
         onComplete(index);
     }
 }
-a =['test', 'length', 'longest'];
-longString(a, val => console.log(val), () => {});
-longString('test', val => console.log(val), err => console.log(err));
+
+module.exports = {
+    longString
+}
+//a=['this', 'is', 'an', 'array'];
+//longString(a, val => console.log(val), () => {});
+ //longString(a, ()=>{}, err => console.log(err));
