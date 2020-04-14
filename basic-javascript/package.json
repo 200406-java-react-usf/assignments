@@ -1,0 +1,15 @@
+{
+  "name": "basic-javascript",
+  "version": "1.0.0",
+  "description": "The assignment 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Abraham Selenke",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}
