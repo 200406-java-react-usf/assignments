@@ -5,7 +5,6 @@ test('properly return true for leap year 1904', () =>
     expect(sut.isLeapYear('1904')).toBe(true);
 });
 
-
 test('properly return true for leap year 1988', () => 
 {
     expect(sut.isLeapYear('1988')).toBe(true);
@@ -20,7 +19,6 @@ test('properly return true for leap year 2000', () =>
 {
     expect(sut.isLeapYear('2000')).toBe(true);
 });
-
 
 test('properly return true for leap year 2020', () => 
 {
