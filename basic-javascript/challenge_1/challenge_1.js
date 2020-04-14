@@ -6,16 +6,24 @@
 **/
 
 function isLeapYear(dateToBeChecked){
-    year = dateToBeChecked.getUTCFullYear()
+
+    if(!dateToBeChecked) throw new Error("Input is not a Truthy value.");
+    //Checking for dateToBeChecked to be a date object
+    //if() throw new Error("Argument is not a Date object.");
+
+    //getting year from date object
+    year = dateToBeChecked.getUTCFullYear();
+
+
+    //determining if year is a leap year
     if (year % 4 === 0 || year % 400 === 0) {
-        return true
+        return true;
     }
     else {
-        return false
+        return false;
     }
 }
 
-//let date = new Date("2000")
-//console.log(isLeapYear(date))
-
-
+module.exports = {
+    isLeapYear
+}
