@@ -23,7 +23,7 @@ const ticTacToe = (input) => {
 
         for (let j = 0; j < input[i].length; j++){
 
-            //if (input[i][j] !== 'X' || input[i][j] !== 'O' || input[i][j] !== '') throw Error('Character other than X,O, or blank spot');
+            if (input[i][j] !== 'X' && input[i][j] !== 'O' && input[i][j] !== '') throw Error('Character other than X,O, or blank spot');
 
             if(input[i][j] === ''){
 
@@ -126,7 +126,9 @@ const ticTacToe = (input) => {
 
 }
 
-//console.log(ticTacToe(testInput));
+let testInput = [['X', 'O', 'X'], ['O', 'X', 'O'], ['O', 'X', 'O']];
+
+console.log(ticTacToe(testInput));
 
 module.exports = {
 
