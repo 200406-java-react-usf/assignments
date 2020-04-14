@@ -8,6 +8,7 @@ function main(input, onError) {
     let string = input.split("");
     let count = 0;
     string.forEach(element => {
+        //check if in the vowel arr
         if (vowel.includes(element)) {
             count += 1
         }

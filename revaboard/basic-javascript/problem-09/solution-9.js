@@ -4,6 +4,7 @@ function main(input, onError){
         return;
       }
     let index=0;
+    // hold the index of longest arr
     let max = 0;
     for (i = 0; i<= input.length-1; i++){
         if (typeof input[i] !== "string") {

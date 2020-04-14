@@ -9,6 +9,7 @@ function fibonacci(input, onError){
     output[1] = 1;
 
     if(input>=2){
+        //f2 = f0+f1
         for (i = 2; i<=input; i++){    
             output[i]=output[i-1]+output[i-2];
         }
