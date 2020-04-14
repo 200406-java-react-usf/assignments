@@ -2,7 +2,7 @@
 testArr = ["This is the first", "This is the second", "This is the third", "This is the fourth and the longest"]
 function findLongestIndex(arr){
     const str = []
-    if (Array.isArray(arr)) return Error('This is not an array')
+    if (!Array.isArray(arr)) return Error('This is not an array')
     for (i = 0; i < arr.length; i++){
         str[i] = arr[i]
 
@@ -14,6 +14,4 @@ function findLongestIndex(arr){
     }
     return("The longest string in the array is index: " + longestStr)
 }
-
-findLongestIndex('test')
 module.exports = findLongestIndex;
