@@ -5,16 +5,27 @@
 * Create a function which takes a 3x3 2-dimensional array. Validate that each array index holds only a value of “X”, “O”, or an empty string. Have the function evaluate a game of tic tac toe represented by the 2D array.  Should have a result for a tie, each winner, or an invalid game.
 **/
 
-whoWins = (gameBoard) => {
+const whoWins = (gameBoard) => {
+
+    //throw error if game board is not in correct structure
+    if(!Array.isArray(gameBoard) || !Array.isArray(gameBoard[0]) || !Array.isArray(gameBoard[1]) || !Array.isArray(gameBoard[2])) {
+        throw new Error("The gameboard is not in the correct format.");
+    }
+    //throw error if each row has three spots
+    if(gameBoard.length !== 3 || gameBoard[0].length !== 3 || gameBoard[1].length !== 3 || gameBoard[2].length !== 3) {
+        throw new Error("The gameboard is not in the correct format.");
+    }
+
     // need to see if there are any blanks on the board in case no winner yet exists which will determine game progress
     let blankExists = false;
+    
     for (row of gameBoard) {
         for (spot of row) {
             if (spot == '') {
                 blankExists = true;
             }
             //if it has some character other than x or o we want to throw an error
-            if (spot != 'X' && spot != 'O') throw new Error("Invalid character used!");
+            else if (spot != 'X' && spot != 'O') throw new Error("Invalid character used!");
         }
     }
     /*ways to win 1a,1b,1c ; 2a,2b,2c ; 3a,3b,3c; 1a,2a,3a; 1b,2b,3b; 1c,2c,3c; 1a,2b,3c; 1c,2b,3a : 8 ways
@@ -108,22 +119,29 @@ whoWins = (gameBoard) => {
 
     //checks to see game outcome (invalid, tie, in progress, x wins, or o wins)
     if(oIsWinner && xIsWinner){
-        console.log("Invalid result")
+        console.log("Invalid result");
+        return("Invalid result");
     }
     else if(!oIsWinner && !xIsWinner) {
         if(blankExists) {
             console.log('Game in progress, no winner yet');
+            return('Game in progress, no winner yet');
         }
         else {
             console.log("It was a tie");
+            return("It was a tie");
         }
     }
     else if(oIsWinner) {
         console.log('O is the winner');
+        return('O is the winner');
     }
     else if(xIsWinner) {
         console.log('X is the winner');
+        return('X is the winner');
     }
 }
-userBoard = [['X', 'O', 'X'], ['O', 'X', 'O'], ['O', 'X', 'O']]
-whoWins(userBoard);
+
+module.exports = {
+    whoWins
+}
