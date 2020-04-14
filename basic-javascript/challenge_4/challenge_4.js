@@ -2,7 +2,7 @@
 * 
 * by Kennedy Wandelt
 * 
-* Contains a function which checks for instances of the word test and returns it with those removed 
+* Contains a function which checks for instances of the word test/Test and returns it with those removed 
 **/
 
 function removeTest(userString){

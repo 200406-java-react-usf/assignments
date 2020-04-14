@@ -15,7 +15,9 @@ function countVowels(userString) {
 
     //iterate through each character and if vowel then increment
     for (i = 0; i < userString.length; i++) {
-        var char = userString.charAt(i);
+        
+        let char = userString.charAt(i);
+
         if (char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u') {
             numOfVowels++;
         }
