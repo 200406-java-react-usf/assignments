@@ -1,0 +1,17 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "Basic Javascript assignments",
+  "main": "index.js",
+  "dependencies": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^25.3.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Mohamed Aboulela",
+  "license": "ISC"
+}
