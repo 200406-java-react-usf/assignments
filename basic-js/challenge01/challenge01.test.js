@@ -3,8 +3,17 @@
 const sut = require('./challenge01.js');
 
 
+describe("test leapyear", () =>{
+    test("If multiple of 4 is passed",() =>{
+        expect(sut(2020)).toBe("It's a leap year!")
+    })
 
-    test("If value is added",() =>{
-        expect(sut.leapytest(x)).toBe(true)
-    });
+}, ()=>{
+    test("If not a multiple of 4 is false"), ()=>{
+        expect(sut(2001)).toBe("It is not a leap year")
+    }
+}
+
+)
+
     

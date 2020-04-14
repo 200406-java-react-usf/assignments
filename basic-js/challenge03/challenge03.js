@@ -6,3 +6,4 @@ function removeCharacter(givenString, letterToRemove){
 console.log(removeCharacter( "Hello my name is louis and I dont like the letter h", "h"))
 
 
+module.exports = (removeCharacter)

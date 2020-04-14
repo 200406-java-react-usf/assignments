@@ -5,7 +5,4 @@ function checkIfValidEmail(email) {
 
 }
 
-let anEmailToCheck = 'Someone@gmail.com'
-let anotherEmailToCheck = 'willnotgiveyouanemail,@(^)&.6$5you';
-console.log(checkIfValidEmail(anEmailToCheck));
-console.log(checkIfValidEmail(anotherEmailToCheck));
+module.exports = checkIfValidEmail
