@@ -6,23 +6,25 @@
 // If none of these, then return E.
 
 function firstCharacter(str){
-    const fChar = str.charAt(0)
-    const firstChar = fChar.toLowerCase()
-    const A = ['a', 'e', 'i', 'o', 'u']
-    const B = ['b', 'c', 'd', 'f', 'g']
-    const C = ['h', 'j', 'k', 'l', 'm']
-    const D = ['n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z']
+    if (typeof str !== "string") throw Error('This is not a string.');
+    const fChar = str.charAt(0);
+    const firstChar = fChar.toLowerCase();
+    const A = ['a', 'e', 'i', 'o', 'u'];
+    const B = ['b', 'c', 'd', 'f', 'g'];
+    const C = ['h', 'j', 'k', 'l', 'm'];
+    const D = ['n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z'];
 
         if (A.includes(firstChar)){
-            return("A")
+            return('A');
         }else if (B.includes(firstChar)){
-            return("B")
+            return('B');
         }else if (C.includes(firstChar)){
-            return("C")
+            return('C');
         }else if (D.includes(firstChar)){
-            return("D")
+            return('D');
         }else
-            return("E")
-    }
+        return('E');
 
-    firstCharacter('This is the test string it should be')
+    }
+    module.exports = firstCharacter;
+    firstCharacter('');
