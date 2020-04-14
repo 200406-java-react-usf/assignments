@@ -21,8 +21,3 @@ function findFib(number) {
 module.exports = {
     findFib
 }
-const testing = [9, 2, 5, 2, 3, 5, 13, 23];
-
-for (let i = 0; i < testing.length; i++) {
-    console.log(findFib(testing[i]))
-}
