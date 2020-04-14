@@ -5,13 +5,9 @@ function leapYear(userInput) {
         return (`Please Provide date formate in "mm/dd/yyyy"`);
 
     var s = Date.parse(userInput);
-    console.log(typeof(s));
-
     var d = new Date(s);
-    console.log(typeof(d));
-
     var date = d.getFullYear(s);
-    console.log(typeof(date));
+
 
 
     return (((date % 4 === 0) && (date % 100 !== 0)) || date % 400 === 0) ? true : false;
@@ -21,5 +17,3 @@ function leapYear(userInput) {
 module.exports = {
     leapYear,
 };
-
-console.log(leapYear('11-24-2019'));
