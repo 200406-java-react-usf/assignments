@@ -9,7 +9,10 @@
     If the first character is in the set {n, p, q, r, s, t, v, x, y, z}, then return D.
     If none of these, then return E.
 **/
-myFunction = (userString) => {
+const myFunction = (userString) => {
+    
+    if(typeof(userString) !== "string") throw new Error("Input was not a string");
+
     firstChar = userString[0];
     if (firstChar == 'a' || firstChar == 'e' || firstChar == 'i' || firstChar == 'o' || firstChar == 'u') {
         return 'A';
@@ -28,4 +31,6 @@ myFunction = (userString) => {
     }
 }
 
-console.log(myFunction('Aha! this is my test'));
+module.exports = {
+    myFunction
+}
