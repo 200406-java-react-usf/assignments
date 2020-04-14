@@ -7,16 +7,22 @@
 **/
 
 function countVowels(userString) {
-    var i
-    var numOfVowels = 0
-    userString.toLowerCase()
+
+    if(typeof(userString) !== "string") throw new Error("Input was not a string");
+
+    let numOfVowels = 0;
+    userString = userString.toLowerCase();
+
+    //iterate through each character and if vowel then increment
     for (i = 0; i < userString.length; i++) {
-        var char = userString.charAt(i)
+        var char = userString.charAt(i);
         if (char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u') {
-            numOfVowels++
+            numOfVowels++;
         }
     }
-    return numOfVowels
+    return numOfVowels;
 }
 
-console.log(countVowels('look at this string and gimme vowels'))
+module.exports = {
+    countVowels
+}
