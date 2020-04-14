@@ -24,4 +24,4 @@ function wordCategory(aString){
 
 
 
-console.log(wordCategory("hello"))
+module.exports = wordCategory

@@ -7,4 +7,4 @@ function stringFinder(arrayOfStrings){
     
 }
 
-console.log(stringFinder(["swedrfsd","arrayOfStrings","short"]))
+module.exports = stringFinder
