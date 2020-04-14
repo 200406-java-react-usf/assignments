@@ -7,7 +7,7 @@ const test_2 = [[[5,6,3,7,1,9,6,7], [-1], [4,6,3,7,1,9,6,7]], [[1],[],[1]], [[0,
 
 describe("getFibonacci", () => {
     
-    test.each(test_1)("throws error if the input is not a number or an integer", (a, b, expectedResult) => {
+    test.each(test_1)("throws error if at least one of the inputs is not an array", (a, b, expectedResult) => {
         expect( () => {sut.sumArrays(a, b)}).toThrow(expectedResult);
     });
 

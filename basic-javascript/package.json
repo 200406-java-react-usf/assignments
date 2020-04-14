@@ -1,0 +1,15 @@
+{
+  "name": "basic-javascript",
+  "version": "1.0.0",
+  "description": "Assignement number with 12 challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Kennedy Wandelt",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}
