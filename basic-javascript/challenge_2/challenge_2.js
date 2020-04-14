@@ -13,6 +13,18 @@
 **/
 
 function isValidEmail(email) {
-    
+
+    //tests to see if input is a string
+    if(typeof(email) !== "string") throw "Input is not valid";
+
+    //regex basically says (numbers letters and )@().()
+    const emailFormat = /^(\w+)*@(\w+)*(\.\w{2,3})+$/;
+
+    //checking agains format above
+    if(emailFormat.test(email)) return true;
+    else return false;
 }
 
+module.exports = {
+    isValidEmail
+}

@@ -6,10 +6,8 @@
 **/
 
 function isLeapYear(dateToBeChecked){
-
+    //checking to see if it is a truthy value (dates can only be truthy)
     if(!dateToBeChecked) throw new Error("Input is not a Truthy value.");
-    //Checking for dateToBeChecked to be a date object
-    //if() throw new Error("Argument is not a Date object.");
 
     //getting year from date object
     year = dateToBeChecked.getUTCFullYear();
