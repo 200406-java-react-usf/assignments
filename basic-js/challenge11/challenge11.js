@@ -1,11 +1,16 @@
 function equivArr(arr1,arr2){
-
+ let testArr = arr1.forEach((e1) => arr2.some((e2) => e1 == e2) )
     if (arr1.length !== arr2.length){
-        return false
-    } else if(arr1.every((e1) => e1==arr2[e1] )){
+        return false;
+        }  
+    if(arr1.forEach((e1) => arr2.some((e2) => e1 == e2) )){
         return  true;
-        };
+        }
+      else if(arr1.forEach((e1) => arr2.some((e2) => e1 != e2) )){
+          return false;
+        } else {return "bad"}
+
 };
 
-
-console.log(equivArr([1,2,3,5,6,71],[2,1,3,7,6,5]));
+console.log(testArr)
+console.log(equivArr([1,2,3,5,6,7],[2,1,3,7,6,5]));

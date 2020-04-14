@@ -1,13 +1,13 @@
 function fibonacci(n){
 
-    if (n<=!1) {
-        console.log(fibonacci(n-1) + fibonacci(n-2));
+    if (n>0) {
+        return Math.round((Math.pow(1.61803,n))/(Math.sqrt(5)));
     }
     else{
-        console.log(1);
+        return(1);
     }
 
 }
-
-console.log(fibonacci(456));
+//console.log(fibonacci(20))
+module.exports = fibonacci;
 

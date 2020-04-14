@@ -1,18 +1,21 @@
 function CaesarShiftThisString(aString, aNumber){
     
     let aStringArr = aString.split(" ");
+    let anEncryptedString = []
 
-    console.log(aStringArr)
+    
 for(i=0;i < aString.length; i++){
-    aStringArr.forEach( (i)=> (console.log(String.fromCharCode(aString.charCodeAt(i) + aNumber))));
+    aStringArr.forEach( ()=> 
     
+    anEncryptedString=(String.fromCharCode(aString.charCodeAt(i) + aNumber)));
+      
 }
-    
-    
-    }
-    
+    return anEncryptedString;
 
-    CaesarShiftThisString('Hello',1);
+    }
+    //how to make loop thru each letter, not just do first letter str.length times, removed i from "() => in line 8"
+    //console.log(CaesarShiftThisString('B', -1)); 
+    module.exports = CaesarShiftThisString
 
 
 

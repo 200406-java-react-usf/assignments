@@ -10,4 +10,4 @@ function test(test){
 
 
 
-console.log(test('exam'))
+module.exports = test

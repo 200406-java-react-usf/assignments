@@ -3,9 +3,11 @@ function vowelCount(aString){
 
     if (/a|e|i|o|u|y/i ){
         i++;
-        console.log(`This String has ${i} vowels`);
+        return(`This String has ${i} vowels`);
 
-    } else console.log("No vowels here")
+    } else return("No vowels here")
 }
 
-vowelCount("Testerino")
+//vowelCount("Testerino")
+
+module.exports = vowelCount

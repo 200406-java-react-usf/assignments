@@ -2,8 +2,8 @@
 const sut = require('./challenge03.js');
 
 
-describe("", () =>{
-        test("",() =>{
+describe("if a letter is a space instead", () =>{
+        test("if valid",() =>{
             expect(sut("Hello","H")).toBe(" ello")
         })
 
