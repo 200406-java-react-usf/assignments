@@ -8,7 +8,7 @@ describe("test", () =>{
 
     
         test("if invalid", ()=>{
-            expect(sut("uhh")).toThrow(TypeError)
+            expect(sut("uhh")).toBe("PLease give me 2 arrays")
         })
     
 

@@ -2,10 +2,10 @@ function addArr(arr1,arr2){
 let i = 0;
 let sum = []
 
-
-
-
-if (arr1.length > arr2.length){
+if(!arr2||!arr1){
+    return "PLease give me 2 arrays"
+}
+else if (arr1.length > arr2.length){
     let arr2long = arr2.concat(Array(arr1.length - arr2.length).fill(0))
     for(i=0;i<(arr1.length);i++){
 
@@ -31,6 +31,7 @@ else{ for(i=0;i<(arr1.length);i++){
 
 }
 
+console.log(addArr("uhh"))
 
 
 module.exports = addArr
