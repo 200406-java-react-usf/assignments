@@ -8,7 +8,7 @@ describe("test", () =>{
 
      
         test("if invalid", ()=>{
-            expect(sut("uhh")).toBe(0)
+            expect(sut(["uhh"])).toBe(0)
         })
     
 

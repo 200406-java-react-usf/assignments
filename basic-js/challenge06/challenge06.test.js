@@ -3,12 +3,12 @@ const sut = require('./challenge06.js');
 
 describe("test", () =>{
         test("if valid",() =>{
-            expect(sut("Test")).toBe("This String has 1 vowels")
+            expect(sut("Test")).toBe(1)
         })
 
     
         test("if invalid", ()=>{
-            expect(sut("LR")).toBe("No vowels here")
+            expect(sut("LR")).toBe(0)
         })
 
 
