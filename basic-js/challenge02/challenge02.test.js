@@ -7,10 +7,9 @@ describe("email validation", () =>{
             expect(sut('Someone@gmail.com')).toBe(true)
         })
 
-    }, ()=>{
-        test("if invalid"), ()=>{
+    
+        test("if invalid", ()=>{
             expect(sut("willnotgiveyouanemail,@(^)&.6$5you")).toBe(false)
-        }
-    }
-
-)
+        })
+    
+    })

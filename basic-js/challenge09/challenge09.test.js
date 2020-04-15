@@ -6,10 +6,10 @@ describe("test", () =>{
             expect(sut(["swedrfsd","arrayOfStrings","short"])).toBe(1)
         })
 
-    }, ()=>{
-        test("if invalid"), ()=>{
+     
+        test("if invalid", ()=>{
             expect(sut("uhh")).toBe(0)
-        }
-    }
+        })
+    
 
-)
+    })

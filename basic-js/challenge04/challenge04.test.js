@@ -6,10 +6,10 @@ describe("test", () =>{
             expect(sut("exam")).toBe("exam test")
         })
 
-    }, ()=>{
-        test("if invalid"), ()=>{
+    
+        test("if invalid", ()=>{
             expect(sut("test")).toBe("test")
-        }
-    }
+        })
+    
 
-)
+    })

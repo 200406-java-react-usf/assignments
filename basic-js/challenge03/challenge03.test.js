@@ -7,10 +7,10 @@ describe("if a letter is a space instead", () =>{
             expect(sut("Hello","H")).toBe(" ello")
         })
 
-    }, ()=>{
-        test("if invalid"), ()=>{
+     
+        test("if invalid", ()=>{
             expect(sut("Hello","e")).toBe("H llo")
-        }
-    }
+        })
+    
 
-)
+    })

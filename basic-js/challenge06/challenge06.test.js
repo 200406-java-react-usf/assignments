@@ -6,10 +6,10 @@ describe("test", () =>{
             expect(sut("Test")).toBe("This String has 1 vowels")
         })
 
-    }, ()=>{
-        test("if invalid"), ()=>{
+    
+        test("if invalid", ()=>{
             expect(sut("LR")).toBe("No vowels here")
-        }
-    }
+        })
 
-)
+
+    })

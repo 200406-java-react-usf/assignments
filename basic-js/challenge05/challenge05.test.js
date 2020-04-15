@@ -6,10 +6,10 @@ describe("test", () =>{
             expect(sut("A",1)).toBe("B")
         })
 
-    }, ()=>{
-        test("shifts negative"), ()=>{
+     
+        test("shifts negative", ()=>{
             expect(sut("B",-1)).toBe("A")
-        }
-    }
+        })
+    
 
-)
+    })

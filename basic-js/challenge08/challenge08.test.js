@@ -6,10 +6,10 @@ describe("test", () =>{
             expect(sut([1,2],[1,2,3])).toStrictEqual([ 2, 4, 3 ])
         })
 
-    }, ()=>{
-        test("if invalid"), ()=>{
+    
+        test("if invalid", ()=>{
             expect(sut("uhh")).toThrow()
-        }
-    }
+        })
+    
 
-)
+    })
