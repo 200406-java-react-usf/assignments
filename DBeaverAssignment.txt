@@ -1,0 +1,9 @@
+2.1 SELECT
+    1. select * from "Employee";
+    2. select *from "Employee"
+        where "LastName" = 'King';
+    3. select *from "Employee"
+        where "FirstName" = 'Andrew'
+        and "ReportsTo" is NULL;
+
+2.2 ORDER BY
