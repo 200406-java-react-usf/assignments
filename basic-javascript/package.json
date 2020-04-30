@@ -1,0 +1,22 @@
+{
+  "name": "assignments",
+  "version": "1.0.0",
+  "description": "basic-javascript assignments",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/200406-java-react-usf/assignments.git"
+  },
+  "author": "Scotty Thoms",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/200406-java-react-usf/assignments/issues"
+  },
+  "homepage": "https://github.com/200406-java-react-usf/assignments#readme",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}
