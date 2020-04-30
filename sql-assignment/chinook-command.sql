@@ -37,21 +37,79 @@ select * from "Invoice" where "Total" between '15' and '50'
 select * from "Employee" where "HireDate" between '2003-06-01' and '2004-03-01'
 -- 2.7 DELETE
 -- Task – Delete a record in Customer table where the name is Robert Walter (There may be constraints that rely on this, find out how to resolve them).
-
+delete from "Customer" where "FirstName" = 'Robert' and "LastName" = 'Walter' 
 
 -- 3.0 SQL Functions
 -- In this section you will be using the Oracle system functions, as well as your own functions, to perform various actions against the database
 -- 3.1 System Defined Functions
 
 -- Task – Create a function that returns the current time.
+CREATE OR REPLACE FUNCTION getCurrentTime() RETURNS TIME AS 
+$$
+BEGIN
+RETURN CURRENT_TIMESTAMP;
+END; 
+$$
+LANGUAGE PLPGSQL;
 -- Task – create a function that returns the length of a mediatype from the mediatype table
+CREATE OR REPLACE FUNCTION mediaTypelength(val integer) RETURNS integer AS 
+$$
+begin
+Return LENGTH("Name") from "MediaType" where "MediaTypeId" = val;
+END; 
+$$
+LANGUAGE PLPGSQL;
+
+
 -- 3.2 System Defined Aggregate Functions
 -- Task –Create a function that returns the average total of all invoices
+CREATE OR REPLACE FUNCTION meanInvoice() RETURNS float AS 
+$$
+begin
+Return avg("Total") from "Invoice";
+END; 
+$$
+LANGUAGE PLPGSQL;
+
 -- Task – Create a function that returns the most expensive track
+CREATE OR REPLACE FUNCTION maxCostTrack() RETURNS float AS 
+$$
+begin
+Return max("UnitPrice") from "Track" t ;
+END; 
+$$
+LANGUAGE PLPGSQL;
+
+
 -- 3.3 User Defined Scalar Functions
 -- Task – Create a function that returns the average price of invoice-line items in the invoice-line table
+CREATE OR REPLACE FUNCTION meanInvoiceLine() RETURNS float AS 
+$$
+begin
+Return avg("UnitPrice") from "InvoiceLine";
+END; 
+$$
+LANGUAGE PLPGSQL;
+
 -- 3.4 User Defined Table Valued Functions
 -- Task – Create a function that returns all employees who are born after 1968.
+CREATE OR REPLACE FUNCTION bornAfter1968 () 
+	RETURNS TABLE (
+		FirstName VARCHAR,
+		LasttName VARCHAR,
+		Birthdate TIMESTAMP
+) 
+AS $$
+BEGIN
+	RETURN QUERY SELECT
+		"FirstName", "LastName", "BirthDate" 
+	FROM
+		"Employee" 
+	WHERE
+		"BirthDate" >= '1968-01-01' ;
+END; $$ 
+LANGUAGE 'plpgsql';
+
 -- 4.0 Stored Procedures
 --  In this section you will be creating and executing stored procedures. You will be creating various types of stored procedures that take input and output parameters.
 -- 4.1 Basic Stored Procedure
