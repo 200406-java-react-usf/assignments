@@ -75,7 +75,7 @@ LANGUAGE PLPGSQL;
 CREATE OR REPLACE FUNCTION maxCostTrack() RETURNS float AS 
 $$
 begin
-Return max("UnitPrice") from "Track" t ;
+Return max("UnitPrice") from "Track";
 END; 
 $$
 LANGUAGE PLPGSQL;
@@ -114,24 +114,47 @@ LANGUAGE 'plpgsql';
 --  In this section you will be creating and executing stored procedures. You will be creating various types of stored procedures that take input and output parameters.
 -- 4.1 Basic Stored Procedure
 -- Task – Create a stored procedure that selects the first and last names of all the employees.
+CREATE or REPLACE PROCEDURE SelectCustomerName()
+as
+$$
+BEGIN
+SELECT "FirstName", "LastName" FROM "Employee";
+end;
+$$
+LANGUAGE plpgsql   
 -- 4.2 Stored Procedure Input Parameters
 -- Task – Create a stored procedure that updates the personal information of an employee.
+CREATE or REPLACE PROCEDURE updateEmployee(in id int, in firstNameNew VARCHAR, in lastNameNew VARCHAR)
+as
+$$
+BEGIN
+Update "Employee" set "FirstName" = firstNameNew, "LastName" = lastNameNew
+where "EmployeeId" = id;
+end;
+$$
+LANGUAGE plpgsql 
+
 -- Task – Create a stored procedure that returns the managers of an employee
+
 -- 4.3 Stored Procedure Output Parameters
 -- Task – Create a stored procedure that returns the name and company of a customer.
+
 -- 5.0 Transactions
 -- In this section you will be working with transactions. Transactions are usually nested within a stored procedure. You will also be working with handling errors in your SQL.
 -- Task – Create a transaction that given a invoiceId will delete that invoice (There may be constraints that rely on this, find out how to resolve them)...poiij
+
 -- Task – Create a transaction nested within a stored procedure that inserts a new record in the Customer table
+
 -- 6.0 Triggers 
 -- In this section you will create various kinds of triggers that work when certain DML statements are executed on a table.
 -- 6.1 AFTER/FOR
 -- Task - Create an after insert trigger on the employee table fired after a new record is inserted into the table.
 -- Task – Create an after update trigger on the album table that fires after a row is updated in the table
 -- Task – Create an after delete trigger on the customer table that fires after a row is deleted from the table.
-
 -- 6.2 BEFORE
 -- Task – Create a before trigger that restricts the deletion of any invoice that is priced over 50 dollars.
+
+
 -- 7.0 JOINS
 -- In this section you will be working with combining various tables through the use of joins. You will work with outer, inner, right, left, cross, and self joins.
 -- 7.1 INNER
