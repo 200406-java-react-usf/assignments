@@ -1,0 +1,33 @@
+body {
+    background-color: lightblue;
+}
+
+header {
+    font-size: 250%
+}
+
+h1 {
+    color: red;
+    font-size: xx-large;
+}
+
+h2 {
+    color: red;
+    font-size: 250%;
+}
+
+h3 {
+    color: red;
+    font-size: 250%;
+
+}
+
+ul {
+    font-size: 150%;
+}
+
+p {
+    color: black;
+    font-size: 20pt;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
