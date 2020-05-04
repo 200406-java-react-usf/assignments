@@ -110,9 +110,18 @@ Task – Create a stored procedure that updates the personal information of an e
     end;
     $$ language plpgsql;
 Task – Create a stored procedure that returns the managers of an employee
-
+    create function showManger(id int) returns varchar as $$
+    begin
+        select "ReportsTo" from "Employee" e where "EmployeeId" = id;
+    end;
+    $$ language plpgsql;
 4.3 Stored Procedure Output Parameters
 Task – Create a stored procedure that returns the name and company of a customer.
+    create function nameAndCompany(id int) returns table (FirstName varchar, LastName varchar, Company varchar) as $$
+    begin
+        select ("FirstName" , "LastName" , "Company" ) from "Customer" where "CustomerId" = id;
+    end;
+    $$ language plpgsql;
 5.0 Transactions
 In this section you will be working with transactions. Transactions are usually nested within a stored procedure. You will also be working with handling errors in your SQL.
 Task – Create a transaction that given an invoiceId will delete that invoice (There may be constraints that rely on this, find out how to resolve them)...
