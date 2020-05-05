@@ -1,0 +1,76 @@
+#maindiv{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(147, 151, 202) ;
+    border-radius: 200px;
+    text-align: center;
+}
+
+#whereImFromText{
+    visibility: hidden;
+    text-align: center;
+}
+
+#whereImFrom{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: rgb(179, 183, 243);
+    border-radius: 20px;
+    width: fit-content;
+    height: 50px;
+}
+
+#whereImFrom:hover{
+    height: fit-content;
+}
+
+#whereImFrom:hover > #whereImFromText{
+    visibility: visible;
+}
+
+#schoolText{
+    visibility: hidden;
+    text-align: center;
+}
+
+#school{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: rgb(179, 183, 243);
+    border-radius: 20px;
+    width: fit-content;
+    height:50px;
+}
+
+#school:hover{
+    height: fit-content;
+}
+
+#school:hover > #schoolText{
+    visibility: visible;
+}
+
+#familyText{
+    visibility: hidden;
+    text-align: center;
+}
+
+#family{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: rgb(179, 183, 243);
+    border-radius: 20px;
+    width: fit-content;
+    height:50px;
+}
+
+#family:hover{
+    height: fit-content;
+}
+
+#family:hover > #familyText{
+    visibility: visible;
+}
