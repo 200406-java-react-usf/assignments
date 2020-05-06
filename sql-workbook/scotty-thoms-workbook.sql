@@ -28,26 +28,38 @@
 
 -- 2.3 INSERT INTO
     -- Task – Insert two new records into Genre table
+    insert into "Genre" ("GenreId", "Name") values ('26', 'Punk-Rock'),('27','Lo-Fi Hip Hop');
+
     -- Task – Insert two new records into Employee table
+    insert into "Employee" ("EmployeeId" ,"FirstName" ,"LastName" ) values ('9','Scotty','Thoms'),('10', 'Maeve', 'Dubya')
     -- Task – Insert two new records into Customer table
+    insert into "Customer" ("CustomerId" ,"FirstName" ,"LastName", "Email" ) values('60', 'Scotty', 'Thoms','myemail@gmail.com'),('61', 'Maeve', 'Dubya','mk@email.com')
 
 
 -- 2.4 UPDATE
     -- Task – Update Aaron Mitchell in Customer table to Robert Walter
+    update "Customer" set "FirstName" = 'Robert', "LastName" = 'Walter' where "FirstName"='Aaron' and "LastName" = 'Mitchell'
+
     -- Task – Update name of artist “Creedence Clearwater Revival” to “CCR”
+    update "Artist" set "Name" = 'CCR' where "Name" = 'Creedence Clearwater Revival'
 
 
 -- 2.5 LIKE
     -- Task – Select all invoices with a billing address like “T”
+    select * from "Invoice" where "BillingAddress" like '%T%'
 
 
 -- 2.6 BETWEEN
     -- Task – Select all invoices that have a total between 15 and 50
+    select * from "Invoice" where "Total" between 15 and 50
     -- Task – Select all employees hired between 1st of June 2003 and 1st of March 2004
+    select * from "Employee" where "HireDate" between '2003-06-01 00:00:00' and '2004-03-01 00:00:00' 
 
 
 -- 2.7 DELETE
     -- Task – Delete a record in Customer table where the name is Robert Walter (There may be constraints that rely on this, find out how to resolve them).
+    update "Customer" set "FirstName" = 'empty', "LastName" = 'empty' where "FirstName" = 'Robert' and "LastName" = 'Walter'
+	update "Customer" set "Address" = null, "City" = null, "State" = null, "Country" = null, "PostalCode" = null, "Phone" = null, "Email" = 'empty' where "LastName" = 'empty'
 
 /*
 3.0 SQL Functions
@@ -56,9 +68,25 @@ In this section you will be using the PostGreSQL system functions, as well as yo
 
 -- 3.1 System Defined Functions
     -- Task – Create a function that returns the current time.
+    create function public.getCurrentTime() 
+    returns time as 
+    $$ 
+    begin 
+    return current_timestamp; 
+    end
+    $$ language plpgsql;
+
+    select public.getCurrentTime();
     -- Task – create a function that returns the length of a mediatype from the mediatype table
+    create or replace function public.MediaLength(a int) 
+    returns int as 
+    $$ 
+    begin 
+		return length("Name") from "MediaType" where "MediaTypeId" = a; 
+    end
+    $$ language plpgsql;
 
-
+    select public.MediaLength(1);
 -- 3.2 System Defined Aggregate Functions
     -- Task –Create a function that returns the average total of all invoices
     -- Task – Create a function that returns the most expensive track
