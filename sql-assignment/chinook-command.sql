@@ -114,14 +114,60 @@ LANGUAGE 'plpgsql';
 --  In this section you will be creating and executing stored procedures. You will be creating various types of stored procedures that take input and output parameters.
 -- 4.1 Basic Stored Procedure
 -- Task – Create a stored procedure that selects the first and last names of all the employees.
-CREATE or REPLACE PROCEDURE SelectCustomerName()
+CREATE or REPLACE PROCEDURE SelectEmployeeName()
 as
 $$
-BEGIN
+begin
+create view VIEW_Employee AS
 SELECT "FirstName", "LastName" FROM "Employee";
 end;
 $$
-LANGUAGE plpgsql   
+LANGUAGE plpgsql 
+
+CREATE OR REPLACE FUNCTION SelectEmployeeName () 
+	RETURNS TABLE (
+		FirstName VARCHAR,
+		LasttName VARCHAR
+) 
+AS $$
+BEGIN
+	RETURN QUERY SELECT
+		"FirstName", "LastName"
+	FROM
+		"Employee"; 
+end;
+$$ 
+LANGUAGE 'plpgsql';
+
+select SelectEmployeeName () 
+
+--
+
+CREATE or REPLACE Function SelectEmployeeName()
+returns setof "Employee" as
+$$
+begin
+	return query SELECT "FirstName", "LastName" FROM "Employee";
+end;
+$$
+LANGUAGE plpgsql
+
+EXECUTE SelectEmployeeName()
+
+--
+
+CREATE OR REPLACE PROCEDURE SelectEmployeeName(my_data inout refcursor)
+LANGUAGE plpgsql
+AS $BODY$
+begin
+  open my_data for select "FirstName" from "Emplyee";
+end;
+$BODY$;
+
+begin; -- not required if you turned off autocommit
+call SelectEmployeeName();
+fetch all in my_data;
+commit;
 -- 4.2 Stored Procedure Input Parameters
 -- Task – Create a stored procedure that updates the personal information of an employee.
 CREATE or REPLACE PROCEDURE updateEmployee(in id int, in firstNameNew VARCHAR, in lastNameNew VARCHAR)
