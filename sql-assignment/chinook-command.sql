@@ -205,14 +205,20 @@ LANGUAGE plpgsql
 -- In this section you will be working with combining various tables through the use of joins. You will work with outer, inner, right, left, cross, and self joins.
 -- 7.1 INNER
 -- Task – Create an inner join that joins customers and orders and specifies the name of the customer and the invoiceId.
+select "Customer"."FirstName", "Customer"."LastName", "Invoice"."InvoiceId" from "Customer" INNER join "Invoice" ON "Customer"."CustomerId" = "Invoice"."CustomerId"
 -- 7.2 OUTER
 -- Task – Create an outer join that joins the customer and invoice table, specifying the CustomerId, firstname, last name, invoiceId, and total.
+SELECT "Customer"."CustomerId", "Customer"."FirstName", "Customer"."LastName" , "Invoice"."InvoiceId", "Invoice"."Total" from "Customer" INNER join "Invoice" ON "Customer"."CustomerId" = "Invoice"."CustomerId"
 -- 7.3 RIGHT
 -- Task – Create a right join that joins album and artist specifying artist name and title.
+
 -- 7.4 CROSS
 -- Task – Create a cross join that joins album and artist and sorts by artist name in ascending order.
+
 -- 7.5 SELF
 -- Task – Perform a self-join on the employee table, joining on the reports to column.
+
+
 -- 8.0 Indexes
 -- In this section you will be creating Indexes on various tables. Indexes can speed up performance of reading data.
 -- 8.1 Indexes
