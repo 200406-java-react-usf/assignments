@@ -68,7 +68,7 @@ In this section you will be using the PostGreSQL system functions, as well as yo
 
 -- 3.1 System Defined Functions
     -- Task – Create a function that returns the current time.
-    create function public.getCurrentTime() 
+    create function getCurrentTime() 
     returns time as 
     $$ 
     begin 
@@ -76,9 +76,9 @@ In this section you will be using the PostGreSQL system functions, as well as yo
     end
     $$ language plpgsql;
 
-    select public.getCurrentTime();
+    select getCurrentTime();
     -- Task – create a function that returns the length of a mediatype from the mediatype table
-    create or replace function public.MediaLength(a int) 
+    create or replace function MediaLength(a int) 
     returns int as 
     $$ 
     begin 
@@ -86,19 +86,55 @@ In this section you will be using the PostGreSQL system functions, as well as yo
     end
     $$ language plpgsql;
 
-    select public.MediaLength(1);
+    select MediaLength(1);
 -- 3.2 System Defined Aggregate Functions
     -- Task –Create a function that returns the average total of all invoices
-    -- Task – Create a function that returns the most expensive track
+        create or replace function averageInvoices()
+        returns decimal(10,2) as 
+        $$
+        begin 
+            return round(avg("Total"),2) from "Invoice";
+        end
+        $$ language plpgsql;
 
+        select averageInvoices()
+    
+    -- Task – Create a function that returns the most expensive track
+        create or replace function mostExpensiveTrack()
+        returns setof "Track" as
+        $$
+        declare 
+            max_price numeric(4,2) := max("UnitPrice") from "Track";
+        begin
+            return query (select * from "Track" where "UnitPrice" = max_price);
+        end
+        $$ language plpgsql;
+
+        select mostExpensiveTrack()
 
 -- 3.3 User Defined Scalar Functions
     -- Task – Create a function that returns the average price of invoice-line items in the invoice-line table
+    create or replace function avgInvoice()
+    returns numeric(4,2) as 
+    $$
+    begin 
+        return round(avg("UnitPrice"),2) from "InvoiceLine";
+    end
+    $$ language plpgsql;
 
+    select avgInvoice()
 
 -- 3.4 User Defined Table Valued Functions
     -- Task – Create a function that returns all employees who are born after 1968.
+    create or replace function bornAfter68()
+    returns setof "Employee" as
+    $$
+    begin 
+        return query select * from "Employee" where "BirthDate" >= '1969-01-01 00:00:00';
+    end
+    $$ language plpgsql;
 
+    select bornAfter68()
 /*
 4.0 Stored Procedures
  In this section you will be creating and executing stored procedures. You will be creating various types of stored procedures that take input and output parameters.
@@ -121,7 +157,7 @@ In this section you will be using the PostGreSQL system functions, as well as yo
 In this section you will be working with transactions. Transactions are usually nested within a stored procedure. You will also be working with handling errors in your SQL.
 */
 
-    -- Task – Create a transaction that given a invoiceId will delete that invoice (There may be constraints that rely on this, find out how to resolve them)...poiij
+    -- Task – Create a transaction that given a invoiceId will delete that invoice (There may be constraints that rely on this, find out how to resolve them)
     -- Task – Create a transaction nested within a stored procedure that inserts a new record in the Customer table
 
 /*
