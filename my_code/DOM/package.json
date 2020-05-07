@@ -1,0 +1,12 @@
+{
+  "name": "dom",
+  "version": "1.0.0",
+  "description": "Working with the DOM Assignment",
+  "main": "dom.js",
+  "scripts": {
+    "start": "",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
