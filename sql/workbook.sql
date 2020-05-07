@@ -70,6 +70,7 @@
          where "LastName" = 'empty'
 		
 -- 3.0 SQL Functions - In this section you will be using the Oracle system functions, as well as your own functions, to perform various actions against the database
+
 -- 3.1 System Defined Functions --
 	-- Task – Create a function that returns the current time.
 		create function public.currentTime() returns time as $$ begin return current_timestamp; end; $$ language plpgsql;
@@ -117,6 +118,7 @@
 		select public.Dob();	
 	
 -- 4.0 Stored Procedures - In this section you will be creating and executing stored procedures. You will be creating various types of stored procedures that take input and output parameters.
+
 -- 4.1 Basic Stored Procedure --
 	-- Task – Create a stored procedure that selects the first and last names of all the employees.
 		create function employeeNames() returns setof shinook."Employee" 
