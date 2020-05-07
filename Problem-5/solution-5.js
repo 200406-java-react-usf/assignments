@@ -6,8 +6,8 @@ function caesarShift(num, str){
 
     for(var i=0;i<str.length;i++){
         //to ignore symboles
-        const regex = /\W/;
-        if(!regex.test(str[i])){
+        const regex = /[A-Za-z]/;
+        if(regex.test(str[i])){
             charCode = (str[i].charCodeAt()) + num;
             result += String.fromCharCode(charCode);
         }    
