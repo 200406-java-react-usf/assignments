@@ -10,6 +10,7 @@ function main(input, index, onError) {
   }
   let charArray = input.split("");
   for (i = 0; i <= charArray.length - 1; i++) {
+    //change char into code
     charArray[i] = charArray[i].charCodeAt();
     let newCode;
     //charcode lowercase start at 97 ends at 122
@@ -29,6 +30,7 @@ function main(input, index, onError) {
     } else {
       newCode = charArray[i];
     }
+    //change code back to char
     charArray[i] = String.fromCharCode(newCode);
   }
   return charArray.join("");

@@ -1,5 +1,5 @@
 function main(input, onError){
-    //use replace method
+    //use replace method to relace test with empty str
     if (typeof input !== "string"){
         onError('Bad string request');
         return;

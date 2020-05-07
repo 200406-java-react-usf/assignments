@@ -1,9 +1,11 @@
 function addArr(arr1, arr2, onError){
+   
     if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
         onError('Bad array request');
         return;
       }
-    // get the longer array
+    // get the longer array 
+    // create prototype method to compare arr
     function compareArr(arr1, arr2){
     if (arr1.length>=arr2.length){
         return [arr1, arr2];
