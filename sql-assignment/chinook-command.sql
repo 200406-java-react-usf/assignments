@@ -178,17 +178,8 @@ $ $ LANGUAGE 'plpgsql';
 --  In this section you will be creating and executing stored procedures. You will be creating various types of stored procedures that take input and output parameters.
 -- 4.1 Basic Stored Procedure
 -- Task – Create a stored procedure that selects the first and last names of all the employees.
+
 CREATE
-or REPLACE PROCEDURE SelectEmployeeName() as $ $ begin create view VIEW_Employee AS
-SELECT
-	"FirstName",
-	"LastName"
-FROM
-	"Employee";
-
-end;
-
-$ $ LANGUAGE plpgsql CREATE
 OR REPLACE FUNCTION SelectEmployeeName () RETURNS TABLE (FirstName VARCHAR, LasttName VARCHAR) AS $ $ BEGIN RETURN QUERY
 SELECT
 	"FirstName",
@@ -200,38 +191,6 @@ end;
 
 $ $ LANGUAGE 'plpgsql';
 
-select
-	SelectEmployeeName () --
-	CREATE
-	or REPLACE Function SelectEmployeeName() returns setof "Employee" as $ $ begin return query
-SELECT
-	"FirstName",
-	"LastName"
-FROM
-	"Employee";
-
-end;
-
-$ $ LANGUAGE plpgsql EXECUTE SelectEmployeeName() --
-CREATE
-OR REPLACE PROCEDURE SelectEmployeeName(my_data inout refcursor) LANGUAGE plpgsql AS $ BODY $ begin open my_data for
-select
-	"FirstName"
-from
-	"Emplyee";
-
-end;
-
-$ BODY $;
-
-begin;
-
--- not required if you turned off autocommit
-call SelectEmployeeName();
-
-fetch all in my_data;
-
-commit;
 
 -- 4.2 Stored Procedure Input Parameters
 -- Task – Create a stored procedure that updates the personal information of an employee.
@@ -254,19 +213,31 @@ end;
 $ $ LANGUAGE plpgsql 
 -- Task – Create a stored procedure that returns the managers of an employee
 
+create or replace function managers(firstName text, lastName text)
+returns table(fn varchar, ln varchar, title varchar)
+as $$
+begin 
+	return query select 
+	"FirstName", "LastName", 
+	"Title" from "Employee" 
 
-
-
-
-
-
+where "EmployeeId" = (select "ReportsTo" from "Employee" where "FirstName" = firstName and "LastName" = lastName) ;
+end;
+$$
+language plpgsql;
 
 
 -- 4.3 Stored Procedure Output Parameters
 -- Task – Create a stored procedure that returns the name and company of a customer.
 
-
-
+create or replace function companyName(firstName text, lastName text)
+returns table(fn varchar, ln varchar, Company_Title varchar)
+as $$
+begin
+	return query select "FirstName", "LastName", "Company" from "Customer" where "FirstName" = firstName and "LastName" = lastName;
+end;
+$$
+language plpgsql;
 
 -- 5.0 Transactions
 -- In this section you will be working with transactions. Transactions are usually nested within a stored procedure. You will also be working with handling errors in your SQL.
