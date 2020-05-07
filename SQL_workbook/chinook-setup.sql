@@ -80,126 +80,42 @@ add constraint "PK_Customer";
 --create a function that returns the current time
 
 select public.getdate()
-CREATE OR REPLACE FUNCTION public.getdate()
- RETURNS time without time zone
- LANGUAGE plpgsql
-AS $function$
-begin 
-return current_timestamp;
-end; $function$
-;
 
 --create a function that returns the length of a mediatype from the mediatype table
 
 select mediatypeLength(1)
-CREATE OR REPLACE FUNCTION public."mediatype-length"(a integer)
- RETURNS integer
- LANGUAGE plpgsql
-AS $function$
-begin
-	return length("Name") from "MediaType" where "MediaTypeId" = a;
-end; $function$
-;
 
 --create a function that returns the average total of all invoices
 
 select averageinvoice()
-CREATE OR REPLACE FUNCTION public.averageinvoice()
- RETURNS numeric
- LANGUAGE plpgsql
-AS $function$
-begin
-	return round(avg("Total"),2) from "Invoice";
-end; $function$
-;
 
 --create a function that returns the mst expensive track
 
 select expensivetrack()
-CREATE OR REPLACE FUNCTION public.expensivetrack()
- RETURNS SETOF "Track"
- LANGUAGE plpgsql
-AS $function$
-declare
-	max_p numeric(3,2) := max("UnitPrice") from "Track"; 
-begin
-	return query select * from "Track" where "UnitPrice" = max_p; 
-end; $function$
-;
 
 --create a function that returns the average price of invoice-line items in the invoice-line table
 
 select averageinvoiceline()
-CREATE OR REPLACE FUNCTION public.averageinvoiceline()
- RETURNS numeric
- LANGUAGE plpgsql
-AS $function$
-begin
-	return round(avg("UnitPrice"),2) from "InvoiceLine";
-end; $function$
-;
 
 --create a function that returns all employees who were born after 1968
 
 select bornafter1968()
-CREATE OR REPLACE FUNCTION public.bornafter1968()
- RETURNS SETOF "Employee"
- LANGUAGE plpgsql
-AS $function$
-begin
-	return query select * from "Employee" where "BirthDate" > '1968-12-31 00:00';
-end; $function$
-;
-
 
 -- create a stored procedure that selects the first and last name of all employees
 
 call firstandlast()
-CREATE OR REPLACE PROCEDURE public.firstandlast()
- LANGUAGE plpgsql
-AS $procedure$
-	declare
-		names text;
-	begin
-		names = "FirstName", "LastName" from "Employee";
-	end;
-$procedure$
-;
 
 -- create a stored procedure that updates the personal information of an employee (I only did FN anf LN but more parameters could easily be updated)
 
 call updatepersonal(10, 'Elton', 'John')
-CREATE OR REPLACE PROCEDURE public.updatepersonal(id integer, newfirst character varying, newlast character varying)
- LANGUAGE plpgsql
-AS $procedure$
-	begin
-	update "Employee" set "FirstName" = newfirst, "LastName" = newlast where "EmployeeId" = id;
-	end;
-$procedure$
-;
-
 
 -- create a stored procedure that returns the manager of an employee
 
 call getmanager(1) -- doesn't output
-CREATE OR REPLACE PROCEDURE public.getmanager(id integer)
- LANGUAGE sql
-AS $procedure$
-
-	select * from "Employee" where "EmployeeId" = (select "ReportsTo" from "Employee" where "EmployeeId" = id);
-
-$procedure$
-;
 
 --create a stored procedure that returns the name and company of a customer
 
 call customerinfo(1) -- doesnt output
-CREATE OR REPLACE PROCEDURE public.customerinfo(id integer)
- LANGUAGE sql
-AS $procedure$
-	select "FirstName" , "Company" from "Customer" where "CustomerId" = id;
-$procedure$
-;
 
 -- create a transaction that given a invoiceID will delete that invoice
 
@@ -211,112 +127,40 @@ call deleteinvoice(1) -- doesn't work
 
 --crate an after trigger on the employee table after a new record is inserted into the table
 
-
+create trigger trig1 after insert on "Employees" for each row execute procedure getManager();
 
 --create an after update trigger on the album table that fires after a row is updated in the table
 
-
+create trigger trig2 after update on "Albums" for each row execute procedure getDate();
 
 --create an after delete trigger on the customer table that fires after a row is delted from the table
 
-
+creat trigger trig3 after delete on "Customers" for each row execute procedure firstandlast();
 
 --create a before trigger that restricts the deletion of any invoice that is priced over 50 dollars
 
-
+create trigger trig4 before delete "Invoice" for each row execute procedure over50();
 
 --create an inner join that noijs customers and orders and specifies the name of the customer and the invoiceId
 
+select "FirstName", "LastName", "InvoiceId" from "Customer" inner join "Invoice" on "Customer"."CustomerId" = "Invoice"."CustomerId";
 
 
 --create an outer join that joins the customer and invoice table specifying the customerId, firstname, lastname, invoiceID, and total
 
-
+select "CustomerId", "FirstName", "LastName", "InvoiceId", "Total" from "Customer" full outer join "Invoice" on "Customer"."CustomerId" = "Invoice"."CustomerId";
 
 --create a right join that joins album and artist specifying artist name and title
 
+select "Name", "Title" from "Album" right join "Artist" on "Artist"."ArtistId" = "Album"."ArtistId";
 
 
 --create a cross join that joins album and artist and sorts by artist name in ascending order
 
-
+select "Name", "Title" from "Album" cross join "Artist";
 
 --perform a selfjoin on the employee table joining on the reports to column
 
-
+select e."FirstName" employee, m."FirstName" manager from e."Employee" inner join m."Employee" on m."EmployeeId" = e."ReportsTo"
 
 --create an index on a table of your choice
-
-set 
-create table user_roles(
-	id serial,
-	name varchar(25) not null,
-	
-	constraint user_roles_pk primary key (id)
-	
-);
-
-create table app_users(
-	id serial ,
-	username varchar(25) unique not null,
-	password varchar(256) not null,
-	first_name varchar(25) not null,
-	last_name varchar(25) not null,
-	email varchar(256) unque not null,
-	role_id int not null,
-	
-	constraint app_users_pk primary key (id),
-	constraint user_role_fk foreign key (role_id) references user_roles
-	
-);
-
-create table threads(
-	id serial,
-	title varchar(35) not null,
-	created_time timestamp with time zone default current_timestamp,
-	creator_id int not null,
-	
-	constraint threads_pk primary key (id),
-	constraint thread_creator_fk foreign key (creator_id) references app_users
-	
-);
-
-create table posts(
-	id serial,
-	title varchar(35) not null,
-	body varchar(2056) not null,
-	created_time timestamp with time zone default current_timestamp,
-	likes int default 0,
-	thrad_eid int not null,
-	posterid int no_t null,
-	
-	constraint posts_pk primary key (id),)
-	
-	constraint post_thread_fk foreign key (thread_id)
-	references threads on delete cascade,
-	
-	constraint post_user_fk foreign key (poster_id)
-	references app_users
-	
-);
-
-create table post_likers(
-	user_id int not null,
-	post_id int not null,
-	
-	constraint post_likers_pks primary key (user_id, post_id),
-	constraint pl_user foreign key (user_id) references app_users,
-	constraint pl_post foreign key (post_id) references posts
-	
-);
-
-create table thread_followers(
-	user_id int not null,
-	thread_id int not null,
-	
-	constraint thread_followers_pks primary key (user_id, thread_id),
-	constraint tf_user foreign key (user_id) references app_users,
-	constraint tf_post foreign key (post_id) references threads
-	
-);
-
