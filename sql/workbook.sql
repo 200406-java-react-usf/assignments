@@ -121,14 +121,6 @@
 
 -- 4.1 Basic Stored Procedure --
 	-- Task – Create a stored procedure that selects the first and last names of all the employees.
-		create function employeeNames() returns setof shinook."Employee" 
-		    as $$ 
-		    begin
-			    return query select "FirstName","LastName" from shinook."Employee";
-		    end;
-		    $$ language plpgsql;
-	
-		select public.employeeNames();
 	
 -- 4.2 Stored Procedure Input Parameters --
 	-- Task – Create a stored procedure that updates the personal information of an employee.
