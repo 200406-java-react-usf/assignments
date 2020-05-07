@@ -1,52 +1,65 @@
-2.1 SELECT
+x2.1 SELECT
 Task – Select all records from the Employee table. 
     select * from "Employee";
+
 Task – Select all records from the Employee table where last name is King.
     select *from "Employee"
         where "LastName" = 'King';
+
 Task – Select all records from the Employee table where first name is Andrew and REPORTSTO is NULL.
     select * from "Employee"
         where "FirstName" = 'Andrew'
         and "ReportsTo" is NULL;
+
 2.2 ORDER BY
 Task – Select all albums in album table and sort result set in descending order
     select *
     from "Album" a
     order by "Title" desc;
+
 Task – Select first name from Customer and sort result set in ascending order
     select 
         c."FirstName" 
     from "Customer" c
     order by c."FirstName" asc;
+
 2.3 INSERT INTO
 Task – Insert two new records into Genre table
     insert into "Genre" ("GenreId", "Name") values
         (26, 'EDM'),
         (27, 'House');
+
 Task – Insert two new records into Employee table
     insert into "Employee" values
         (9, 'Hoang', 'Thomas', 'NewGuy1', 1, to_timestamp(1997-08-15), to_timestamp(2020-05-04), '1601 Willow Road', 'Menlo Park', 'CA', 'USA', '94025', '888-8888-8888', '111-1111-1111', 'test@email.com'),
         (10, 'Guy', 'New', 'NewGuy2', 4, to_timestamp(1997-08-17), to_timestamp(2020-05-03), '1602 Willow Road', 'Menlo Park', 'CA', 'USA', '94025', '888-8888-8881', '222-2222-2222', 'test2@email.com');
+
 Task – Insert two new records into Customer table
     insert into "Customer" values
         (60, 'Thomas', 'Hoang', 'Revature', '1601 Willow Road', 'Menlo Park', 'CA', 'USA', '94025', '888-8888-8888', '111-1111-1111', 'test@email.com', 3),
         (61, 'Guy', 'New', 'Revature', '1602 Willow Road', 'Menlo Park', 'CA', 'USA', '94025', '888-8888-8881', '222-2222-2222', 'test2@email.com', 5);
+
 2.4 UPDATE
 Task – Update Aaron Mitchell in Customer table to Robert Walter
     update "Customer" set ("FirstName", "LastName") = ('Robert', 'Walter') where ("FirstName", "LastName") = ('Aaron', 'Mitchell');
+
 Task – Update name of artist “Creedence Clearwater Revival” to “CCR”
     update "Artist" set "Name" = 'CCR' where "Name" = 'Creedence Clearwater Revival';
+
 2.5 LIKE
 Task – Select all invoices with a billing address like “T”
     select * from "Invoice" i 
     where "BillingAddress" like 'T%';
+
 2.6 BETWEEN
 Task – Select all invoices that have a total between 15 and 50
     select * from "Invoice" i 
     where "Total" between 15 and 50;
+
 Task – Select all employees hired between 1st of June 2003 and 1st of March 2004
     select * from "Employee" e 
     where "HireDate" between to_timestamp('2003-06-01 01:00:00', 'YYYY-MM-DD HH:MI:SS') and to_timestamp('2004-03-01 01:00:00', 'YYYY-MM-DD HH:MI:SS');  
+
 2.7 DELETE
 Task – Delete a record in Customer table where the name is Robert Walter (There may be constraints that rely on this, find out how to resolve them).
     delete from "InvoiceLine" where "InvoiceId" in
@@ -55,36 +68,43 @@ Task – Delete a record in Customer table where the name is Robert Walter (Ther
     delete from "Invoice" where "CustomerId" in 
         (select "CustomerId" from "Customer" where ("FirstName" , "LastName" ) = ('Robert', 'Walter'));
     delete from "Customer" where ("FirstName" , "LastName" ) = ('Robert', 'Walter');
+
 3.0 SQL Functions
 In this section you will be using the PostGreSQL system functions, as well as your own functions, to perform various actions against the database
+
 3.1 System Defined Functions
 Task – Create a function that returns the current time.
     create function getTimestamp() returns timestamp with time zone as $$ 
         select now() ;
     $$ language sql;
     select * from getTimestamp;
+
 Task – create a function that returns the length of a mediatype from the mediatype table
     create function getLength() returns int as $$
         select length("Name") from "MediaType" mt where "MediaTypeId"  = 1;
     $$ language sql;
     select * from getLength();
+
 3.2 System Defined Aggregate Functions
 Task –Create a function that returns the average total of all invoices
     create function getAvg() returns numeric as $$
         select avg("Total") from "Invoice" i;
     $$ language sql;
     select * from getavg();
+
 Task – Create a function that returns the most expensive track
     create function getMax() returns numeric as $$
         select max("UnitPrice") from "Track" t;
     $$ language sql;
     select * from getMax();
+
 3.3 User Defined Scalar Functions
 Task – Create a function that returns the average price of invoice-line items in the invoice-line table
     create function getAvgInvoiceLine() returns numeric as $$
         select avg("UnitPrice") from "InvoiceLine" il;
     $$ language sql;
     select * from getAvgInvoiceLine();
+
 3.4 User Defined Table Valued Functions
 Task – Create a function that returns all employees who are born after 1968.
     create function date_after1968() returns table (Employeeid int, LastName varchar, FirstName varchar, Title varchar, ReportsTo int, BirthDate timestamp, HireDate timestamp, Address varchar, city varchar, state varchar, country varchar, PostalCode varchar, Phone varchar, Fax varchar, Email varchar)
@@ -92,6 +112,8 @@ Task – Create a function that returns all employees who are born after 1968.
         where "BirthDate" > to_timestamp('1968-01-01 01:00:00','YYYY-MM-DD HH:MI:SS')
     $$ language sql;
     select * from date_after1968();
+
+/*Realized these were not procedures,but left them because could not figure out how to create a procedure*//
 4.0 Stored Procedures
  In this section you will be creating and executing stored procedures. You will be creating various types of stored procedures that take input and output parameters.
 4.1 Basic Stored Procedure
@@ -109,12 +131,14 @@ Task – Create a stored procedure that updates the personal information of an e
 	    update "Employee" set "Email" = email where "EmployeeId" = id;
     end;
     $$ language plpgsql;
+
 Task – Create a stored procedure that returns the managers of an employee
     create function showManger(id int) returns varchar as $$
     begin
         select "ReportsTo" from "Employee" e where "EmployeeId" = id;
     end;
     $$ language plpgsql;
+
 4.3 Stored Procedure Output Parameters
 Task – Create a stored procedure that returns the name and company of a customer.
     create function nameAndCompany(id int) returns table (FirstName varchar, LastName varchar, Company varchar) as $$
@@ -125,29 +149,69 @@ Task – Create a stored procedure that returns the name and company of a custom
 5.0 Transactions
 In this section you will be working with transactions. Transactions are usually nested within a stored procedure. You will also be working with handling errors in your SQL.
 Task – Create a transaction that given an invoiceId will delete that invoice (There may be constraints that rely on this, find out how to resolve them)...
+
 Task – Create a transaction nested within a stored procedure that inserts a new record in the Customer table
+
 6.0 Triggers 
 In this section you will create various kinds of triggers that work when certain DML statements are executed on a table.
 6.1 AFTER/FOR
 Task - Create an after insert trigger on the employee table fired after a new record is inserted into the table.
+
 Task – Create an after update trigger on the album table that fires after a row is updated in the table
+
 Task – Create an after delete trigger on the customer table that fires after a row is deleted from the table.
 
 6.2 BEFORE
 Task – Create a before trigger that restricts the deletion of any invoice that is priced over 50 dollars.
+
 7.0 JOINS
 In this section you will be working with combining various tables through the use of joins. You will work with outer, inner, right, left, cross, and self joins.
 7.1 INNER
 Task – Create an inner join that joins customers and orders and specifies the name of the customer and the invoiceId.
+  select 
+  	"FirstName",
+  	"LastName" 
+  from "Invoice" i
+  inner join "Customer" c
+  on i."CustomerId" = c."CustomerId" ;
+
 7.2 OUTER
 Task – Create an outer join that joins the customer and invoice table, specifying the CustomerId, firstname, last name, invoiceId, and total.
+  select
+  	i."CustomerId",
+  	"FirstName" ,
+  	"LastName" ,
+  	"InvoiceId" ,
+  	"Total" 
+  from "Customer" c 
+  full outer join "Invoice" i
+  on i."CustomerId" = c."CustomerId" ;
+
 7.3 RIGHT
 Task – Create a right join that joins album and artist specifying artist name and title.
+ select 
+ 	"Name",
+ 	"Title"
+ from "Album" a 
+ right join "Artist" ar
+ on a."ArtistId" = ar."ArtistId" ;
+
 7.4 CROSS
 Task – Create a cross join that joins album and artist and sorts by artist name in ascending order.
+select *
+from "Album" a 
+cross join "Artist" ar 
+order by "Name" asc ;
+
 7.5 SELF
 Task – Perform a self-join on the employee table, joining on the reports to column.
+select *
+from "Employee" e1
+inner join "Employee" e2 on e2."ReportsTo" = e1."ReportsTo"  ;
+
 8.0 Indexes
 In this section you will be creating Indexes on various tables. Indexes can speed up performance of reading data.
 8.1 Indexes
 Task – Create an index on of table of your choice
+create index toLower
+on "Artist" (lower("Name",));
