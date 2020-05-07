@@ -1,3 +1,4 @@
+--set search_path to public;
 2.1 select 
 --Task – Select all records from the Employee table.
 select * from "Employee"
@@ -118,3 +119,75 @@ begin
 end;
 $$ language plpgsql;
 select after1968();
+
+--4.0 Stored Procedures
+-- In this section you will be creating and executing stored procedures. You will be creating various types of stored procedures that take input and output parameters.
+
+--4.1 Basic Stored Procedure
+-- Create a stored procedure that selects the first and last names of all the employees.
+
+--4.2 Stored Procedure Input Parameters
+-- Create a stored procedure that updates the personal information of an employee.
+-- Create a stored procedure that returns the managers of an employee
+
+--4.3 Stored Procedure Output Parameters
+-- Create a stored procedure that returns the name and company of a customer.
+
+--5.0 Transactions
+--In this section you will be working with transactions. Transactions are usually nested within a stored procedure. You will also be working with handling errors in your SQL.
+-- Create a transaction that given an invoiceId will delete that invoice (There may be constraints that rely on this, find out how to resolve them)...
+-- Create a transaction nested within a stored procedure that inserts a new record in the Customer table
+
+
+--6.1 AFTER/FOR
+--Task - Create an after insert trigger on the employee table fired after a new record is inserted into the table.
+
+create trigger employee_insert
+    after insert on "Employee"
+    for each row
+    execute procedure some_function();
+--Task – Create an after update trigger on the album table that fires after a row is updated in the table
+
+create trigger album_update
+	after update on "Album"
+	for each row 
+	execute procedure some_function(); 
+--Task – Create an after delete trigger on the customer table that fires after a row is deleted from the table.
+create trigger customer_delete
+	after delete on "Customer"
+	for each row
+	execute procedure some_function()
+	
+--6.2 BEFORE
+--Task – Create a before trigger that restricts the deletion of any invoice that is priced over 50 dollars.
+
+
+--7.1 INNER
+--Task – Create an inner join that joins customers and orders and specifies the name of the customer and the invoiceId.
+select "FirstName", "LastName", "InvoiceId" from "Customer" inner join "Invoice" on "Customer"."CustomerId"  = "Invoice"."InvoiceId";
+
+--7.2 OUTER
+--Task – Create an outer join that joins the customer and invoice table, specifying the CustomerId, firstname, last name, invoiceId, and total.
+select "Customer"."CustomerId", "FirstName", "LastName", "InvoiceId", "Total" from "Customer" full outer join "Invoice" on "Customer"."CustomerId" = "Invoice"."InvoiceId";
+
+
+--7.3 RIGHT
+--Task – Create a right join that joins album and artist specifying artist name and title.
+select "Name", "Title" from "Album" right join "Artist" on "Album"."ArtistId" = "Artist"."ArtistId";
+
+--7.4 CROSS
+--Task – Create a cross join that joins album and artist and sorts by artist name in ascending order.
+select "Name" as "Artist", "Title" as "Album" from "Artist" 
+cross join "Album" where "Artist"."ArtistId" = "Album"."ArtistId" 
+order by "Artist"."Name" asc;
+
+--7.5 SELF
+--Task – Perform a self-join on the employee table, joining on the reports to column.
+
+--8.1 Indexes
+--Task – Create an index on of table of your choice
+create index something_ranomd
+on "Artist" ("Name");
+
+
+
