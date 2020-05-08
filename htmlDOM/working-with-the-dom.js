@@ -180,3 +180,14 @@ document.getElementById("n2").addEventListener("input", calc);
 // Define function walkTheDom(node, func)
 // 	This function should traverse every node in the DOM. 
 // 	Use recursion. On each node, calle func(node).
+
+function walkTheDOM(node, func) {
+    func(node);
+    //go to the child
+    node = node.firstChild;
+    while (node) {
+        walkTheDOM(node, func);
+        // go to next sibling
+        node = node.nextSibling;
+    }
+}
