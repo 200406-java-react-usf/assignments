@@ -153,6 +153,75 @@ function getInfo(){
 
 }
 
-
-
 document.getElementById('form-sub').addEventListener('click',getInfo);
+
+/* FIVE */
+
+function openDetails(){
+
+    document.getElementsByTagName('details')[0].setAttribute('open', true);
+
+}
+
+function closeDetails(){
+
+    document.getElementsByTagName('details')[0].removeAttribute('open');
+
+}
+
+document.getElementsByTagName('details')[0].addEventListener('mouseover', openDetails);
+document.getElementsByTagName('details')[0].addEventListener('mouseout', closeDetails);
+
+/* SIX */ 
+
+function catSpan() {
+
+    let spanString = '';
+
+    for (span of document.getElementsByTagName('span')){
+
+        spanString = spanString + span.innerHTML;
+
+    }
+
+    console.log(spanString);
+
+}
+
+catSpan();
+
+/* SEVEN */
+
+document.getElementById('earth_time_check').addEventListener('click', () => {
+
+    let currentTime = new Date();
+
+    document.getElementById('earth_time').innerHTML = currentTime.toLocaleTimeString();
+
+});
+
+/* EIGHT */
+
+function changeColor(){
+
+    setTimeout(() => {
+
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+
+        let randColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+        if(randColor !== 'rgb(0,0,0)'){
+            document.getElementsByTagName('body')[0].setAttribute('style', 'background-color: ' + randColor);
+        }
+
+    }, 3000);    
+
+}
+
+document.getElementsByTagName('h1')[0].addEventListener('click', changeColor);
+
+/* Nine */
+
+//document.getElementById('n1')
