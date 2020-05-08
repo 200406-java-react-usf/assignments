@@ -41,6 +41,15 @@ Make sure no input is empty, check that first and last name
 are at least two letters each. Validate for valid phone number 
 and email structure. This should continue to work for 
 multiple entries and rows. */
+let submitBtn = document.getElementById('form-sub');
 function newForm () {
-    
+    let row = document.createComment('tr');
+    let fName = document.createComment('td');
+    let email = document.createElement('td');
+    let birthday = document.createElement('td');
+    let favColor = document.createElement('td');
+    let gender = document.createElement('td');
+    let activities = document.createElement('td');
+
 }
+submitBtn.addEventListener('click', newForm);
