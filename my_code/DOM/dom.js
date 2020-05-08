@@ -117,9 +117,7 @@ function getInfo() {
 	newRow.appendChild(genderCell).innerText = gender;
 	newRow.appendChild(actCell);
 
-	// Append row to table
-	console.log(newRow);
-	
+	// Append row to table	
 	document.getElementsByTagName('tbody')[0].appendChild(newRow);	
 
 	// Empty form
@@ -143,9 +141,25 @@ function getInfo() {
 
 document.getElementById('form-sub').addEventListener('click', getInfo);
 
-// #5) Create a function openDetails() which opens the details element. Invoke this function when the details’ summary is moused over. The details should be hidden when the mouse is removed from the summary.
+// #5) Create a function openDetails() which opens the details element. Invoke this function when the details’ summary is moused over. 
+//		The details should be hidden when the mouse is removed from the summary.
+
+document.getElementsByTagName('details')[0].addEventListener('mouseover', () => {	
+	document.getElementsByTagName('details')[0].setAttribute('open',true);
+});
+
+document.getElementsByTagName('details')[0].addEventListener('mouseout', () => {	
+	document.getElementsByTagName('details')[0].removeAttribute('open');
+})
 
 // #6) Create a function that concatenates the inner HTML of all of the span elements and prints the results to the console.
+function secretMessage(){
+let spans = document.getElementsByTagName('span');
+let string = '';
+	for(item of spans){
+		string = string + item.innerHTML;
+	}
+}
 
 // #7) Create a function that displays the current time on earth in the span with id “earth_time”. Invoke this function when “Earth time” button is clicked. 
 
