@@ -145,19 +145,85 @@ document.getElementById('form-sub').addEventListener('click', getInfo);
 
 //5 - Create a function openDetails() which opens the details element. Invoke this function when the details’ summary is moused over. The details should be hidden when the mouse is removed from the summary.
 
+function openDetails(){
+    document.getElementsByTagName('details')[0].setAttribute('open', true);
+    
+}
+
+document.getElementsByTagName('summary')[0].addEventListener('mouseover', openDetails);
+
+document.getElementsByTagName('summary')[0].addEventListener('mouseout', function () {
+    document.getElementsByTagName('details')[0].removeAttribute('open');
+});
 
 //6 - Create a function that concatenates the inner HTML of all of the span elements and prints the results to the console.
 
+function catInnerHTML() {
+    let spans = document.getElementsByTagName('span');
+    let totalString = '';
+    for (item of spans){
+        totalString = totalString + item.innerHTML;
+    }
+    console.log(totalString);
+}
+
+catInnerHTML();
 
 //7 - Create a function that displays the current time on earth in the span with id “earth_time”. Invoke this function when “Earth time” button is clicked. 
 
+function earthTime() {
+    let time = new Date();
+    document.getElementById('earth_time').innerHTML = time.toLocaleTimeString()
+}
+document.getElementById('earth_time_check').addEventListener('click', earthTime);
 
 //8 - Three seconds after a user clicks on the “Intergalactic Directory” heading, the background color should change to a random color. Make sure this color is never black so we can still read our black text! (there are other dark colors it could change to where we also couldn’t see the text but it’s enough to just accomodate for a black background)
 
+document.getElementsByTagName('h1')[0].addEventListener('click', function() {
+    setTimeout(() => {
+
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+
+            let randColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+        if(randColor == 'rgb(0,0,0)'){
+            return;
+        }
+    
+        document.body.style.backgroundColor = randColor;
+    }, 3000);
+})
 
 //9 - When inputs with id n1 and n2 have valid numerical input, perform the operation specified in the select. Display the result in the element with id result.
 
+function calculator () {
+    let e = document.getElementById('operation');
+    let operation = e.options[e.selectedIndex].innerHTML;
+    let n1 = +document.getElementById('n1').value;
+    let n2 = +document.getElementById('n2').value;
+    let result = 0;
+
+    if(n1 && n2 && typeof(n1) != NaN && typeof(n2) != NaN) {
+        if(operation == 'Add'){
+            result = n1 + n2;
+        } else if(operation == 'Subtract') {
+            result = n1 - n2;
+        } else if(operation == 'Multiply') {
+            result = n1 * n2;
+        } else if(operation == 'Divide') {
+            result = n1 / n2;
+        }
+
+        document.getElementById('result').innerHTML = result
+    }
+}
+
+document.getElementById('n1').addEventListener('blur', calculator);
+document.getElementById('operation').addEventListener('blur', calculator);
+document.getElementById('n2').addEventListener('blur', calculator);
 
 //10 - Define function walkTheDom(node, func) This function should traverse every node in the DOM. Use recursion. On each node, calle func(node).
+
 
 
