@@ -41,7 +41,6 @@ document.getElementById('planet').addEventListener('click', alienText);
 
 
 function getInfo(){
-    
 
     let fn = document.getElementById('firstname').value;
     if(!fn || fn.length < 2) return;
@@ -54,6 +53,7 @@ function getInfo(){
     let phoneRegex = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
     if(!phone || !phoneRegex.test(phone)) return;
     let dob = document.getElementById('bday').value;
+    //could change format
     if(!dob) return;
     let planet = document.getElementById('planet').options[document.getElementById('planet').selectedIndex].text;
     let gender;
@@ -119,15 +119,27 @@ function getInfo(){
     ecolor.innerText  = color;
     egender.innerText = gender;
 
-
     for(item of activities){
-        let e = document.createElement('li')
-        actlist.appendChild(item);
-        //e.innerText = item;
+        let e = document.createElement('li');
+        actlist.appendChild(e);
+        e.innerHTML = item;
     }
 
-}
+    document.getElementById('firstname').value = '';
+    document.getElementById('lastname').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('bday').value = '';
+    document.getElementById('color').value = '#000000';
+    document.getElementById('planet').selectedIndex = 0;
 
+    for (option of document.getElementsByName('gender')){
+        option.checked = false;
+    }
+    for (option of document.getElementsByClassName('activity')) {
+        option.checked = false;
+    }
+}
 
 document.getElementById('form-sub').addEventListener('click', getInfo);
 
