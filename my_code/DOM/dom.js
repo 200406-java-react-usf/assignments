@@ -163,7 +163,32 @@ let string = '';
 
 // #7) Create a function that displays the current time on earth in the span with id “earth_time”. Invoke this function when “Earth time” button is clicked. 
 
-// #8) Three seconds after a user clicks on the “Intergalactic Directory” heading, the background color should change to a random color. Make sure this color is never black so we can still read our black text! (there are other dark colors it could change to where we also couldn’t see the text but it’s enough to just accomodate for a black background)
+document.getElementById('earth_time_check').addEventListener('click', () => {
+	document.getElementById('earth_time').innerText = new Date().toLocaleTimeString();
+});
+
+// #8) Three seconds after a user clicks on the “Intergalactic Directory” heading, the background color should change to a random color. 
+//	Make sure this color is never black so we can still read our black text! (there are other dark colors it could change to where we also 
+//	couldn’t see the text but it’s enough to just accomodate for a black background)
+function randomColor() {
+
+		let letters = '0123456789ABCDEF';
+		let color = '#';
+		for (i = 0; i < 6; i++) {
+		  color += letters[Math.floor(Math.random() * 16)];
+		}
+
+		if(color == '#000000') return;
+		
+	setTimeout( () => {
+
+		document.body.style.backgroundColor = color
+
+	}, 3000);
+}
+
+document.getElementsByTagName('h4')[0].addEventListener('click', randomColor);
+
 
 // #9) When inputs with id n1 and n2 have valid numerical input, perform the operation specified in the select. Display the result in the element with id result.
 
