@@ -135,6 +135,22 @@ function getInfo(){
         li.innerHTML = activity;
     }
 
+    document.getElementById('firstname').value = '';
+    document.getElementById('lastname').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('bday').value = '';
+    document.getElementById('color').value = '#000000';
+    document.getElementById('planet').selectedIndex = 0;
+
+    for (option of document.getElementsByName('gender')){
+        option.checked = false;
+    }
+
+    for (option of document.getElementsByClassName('activity')){
+        option.checked = false;
+    }
+
 }
 
 
