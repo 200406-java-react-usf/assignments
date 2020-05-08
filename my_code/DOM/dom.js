@@ -21,6 +21,9 @@ document.getElementsByName('javadocs')[0].innerText = 'JavaDocs';
 
 // #2) Disable the Pluto Planet of Residency option. (Pluto isn’t a planet!! Dwarf Planets are planets too)
 
+document.getElementById('planet').options[3].disabled = true;
+document.getElementById('planet').options[3].setAttribute('hidden', true)
+
 // #3) Define a function alienText() which shows the hidden element displaying an alien message. When any planet other than Earth is selected, execute this function.
 
 // #4) When the submit button is pressed, get the values from all of the input into a new row in the table below.  Make sure no input is empty, check that first and last name are at least two letters each. Validate for valid phone number and email structure. This should continue to work for multiple entries and rows.
