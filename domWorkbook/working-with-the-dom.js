@@ -141,9 +141,26 @@ function fillTable() {
 }
 
 document.getElementById('form-sub').addEventListener('click', fillTable);
+
 //Problem 5: Create a function openDetails() which opens the details element. Invoke this function when the details’ summary is moused over. The details should be hidden when the mouse is removed from the summary.
+//function openDetails() {
+//    let run = document.getElementsByTagName('detail', open = true)[0];
+
+//}
+
+//document.getElementsByTagName[0]('detail').addEventListener('mousover', openDetails);
 
 //Problem 6: Create a function that concatenates the inner HTML of all of the span elements and prints the results to the console.
+function catInnerHTML() {
+    
+    let spanString = '';
+    for (span of document.getElementsByTagName('span')){
+        spanString += span.innerHTML;
+    }
+    console.log(spanString);
+}
+
+catInnerHTML();
 
 //Problem 7: Create a function that displays the current time on earth in the span with id “earth_time”. Invoke this function when “Earth time” button is clicked. 
 
