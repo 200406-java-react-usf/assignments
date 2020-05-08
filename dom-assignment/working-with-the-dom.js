@@ -130,7 +130,9 @@ function getInfo(){
     genderCell.innerText = gender;
 
     for (activity of activities){
-        activityList.append(document.createElement('li').innerHTML = activity);
+        let li = document.createElement('li');
+        activityList.appendChild(li);
+        li.innerHTML = activity;
     }
 
 }
