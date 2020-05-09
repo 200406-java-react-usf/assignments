@@ -179,7 +179,7 @@ function randomColor() {
 		}
 
 		if(color == '#000000') return;
-		
+
 	setTimeout( () => {
 
 		document.body.style.backgroundColor = color
@@ -187,11 +187,58 @@ function randomColor() {
 	}, 3000);
 }
 
-document.getElementsByTagName('h4')[0].addEventListener('click', randomColor);
-
+document.getElementsByTagName('h1')[0].addEventListener('click', randomColor);
 
 // #9) When inputs with id n1 and n2 have valid numerical input, perform the operation specified in the select. Display the result in the element with id result.
 
+document.getElementById('n1').addEventListener('blur', operation);
+document.getElementById('n2').addEventListener('blur', operation);
+document.getElementById('operation').addEventListener('blur', operation);
+
+function operation() {
+
+	let e = document.getElementById('operation')
+	let select = e.options[e.selectedIndex].text;
+
+	let n1 = +document.getElementById('n1').value;
+	let n2 = +document.getElementById('n2').value;
+
+	
+	if(select == 'Add'){
+		result = n1 + n2;
+	}
+	if(select == 'Subtract'){
+		seult = n1 - n2;
+	}
+	if(select == 'Multiply'){
+		result = n1 * n2;
+	}
+	if(select == 'Divide'){
+		result = n1 / n2;
+	}
+
+	if(typeof n1 !== 'number' || typeof n2 !== 'number'){
+		return;
+	} else if(n1 && n2){
+
+		document.getElementById('result').innerText = result;
+
+	}
+}
+
 // #10) Define function walkTheDom(node, func)
-// 	This function should traverse every node in the DO
+// 	This function should traverse every node in the DOM
 //	Use recursion. On each node, calle func(node).
+
+function walkTheDom(node, func){
+
+	func(node);
+
+	node = node.firstChild;
+	while (node) {
+		walkTheDom(node, func);
+		node = node.nextSibling;
+	}
+}
+
+walkTheDom(document.getElementsByTagName('body')[0], (node) => console.log(node));
