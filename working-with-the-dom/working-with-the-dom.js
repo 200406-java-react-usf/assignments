@@ -225,5 +225,14 @@ document.getElementById('n2').addEventListener('blur', calculator);
 
 //10 - Define function walkTheDom(node, func) This function should traverse every node in the DOM. Use recursion. On each node, calle func(node).
 
+function walkTheDom(node, func){
+    func(node);
+    node = node.firstChild;
+    while (node) {
+        walkTheDom(node, func);
+        node = node.nextSibling;
+    }
+}
 
+walkTheDom(document.getElementsByTagName('body')[0], (node) => console.log(node));
 
