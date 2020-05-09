@@ -180,10 +180,60 @@ document.getElementById('earth_time_check').addEventListener('click', currentTim
 /*Three seconds after a user clicks on the “Intergalactic Directory” heading, the background color should change to a random color. 
 Make sure this color is never black so we can still read our black text! (there are other dark colors it could change to where we also 
     couldn’t see the text but it’s enough to just accomodate for a black background) */
+    function randomColor() {
 
+		let colorCode = '0123456789ABCDEF';
+		let color = '#';
+		for (i = 0; i < 6; i++) {
+		  color += colorCode[Math.floor(Math.random() * 16)];
+		}
+
+		if(color == '#000000') return;
+
+	setTimeout( () => {
+
+		document.body.style.backgroundColor = color
+
+	}, 3000);
+}
+
+document.getElementsByTagName('h1')[0].addEventListener('click', randomColor);
 /*When inputs with id n1 and n2 have valid numerical input, perform the operation specified in the select. Display the result in the 
-element with id result.
+element with id result.*/
+function calculate(){
+    let n1 = +document.getElementById('n1').value;
+    let n2 = +document.getElementById('n2').value;
+    let method = document.getElementById('operation').options[(document.getElementById('operation').selectedIndex)].text;
 
-Define function walkTheDom(node, func)
+    if (isNaN(n1) || isNaN(n2)){
+        return;
+    }
+
+    if (method == 'Add'){
+        document.getElementById('result').innerHTML = (n1 + n2);
+    }else if (method == 'Subtract'){
+        document.getElementById('result').innerHTML = (n1 - n2);
+    }else if (method == 'Multiply'){
+        document.getElementById('result').innerHTML = (n1 * n2);
+    }else if (method == 'Divide'){
+        document.getElementById('result').innerHTML = (n1 / n2);
+    }
+}
+document.getElementById('n1').addEventListener('blur', calculate);
+document.getElementById('n2').addEventListener('blur', calculate);
+/*Define function walkTheDom(node, func)
 	This function should traverse every node in the DOM. 
-	Use recursion. On each node, calle func(node). */
+    Use recursion. On each node, calle func(node). */
+    
+function walkTheDom(node, func){
+
+    func(node);
+
+    node = node.firstChild;
+    while (node) {
+        walkTheDom(node, func);
+        node = node.nextSibling;
+    }
+}
+
+walkTheDom(document.documentElement, node => console.log(node));
