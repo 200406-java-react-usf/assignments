@@ -222,6 +222,52 @@ function changeColor(){
 
 document.getElementsByTagName('h1')[0].addEventListener('click', changeColor);
 
-/* Nine */
+/* NINE */
 
-//document.getElementById('n1')
+function calculator(){
+
+    let x = +document.getElementById('n1').value;
+    let y = +document.getElementById('n2').value;
+    let dropDown = document.getElementById('operation');
+    let operation = dropDown.options[dropDown.selectedIndex].text;
+    let result = document.getElementById('result');
+    
+    if (!x || !y) return;
+
+    if (operation === 'Add'){
+        result.innerHTML = x + y;
+    }
+
+    if (operation === 'Subtract'){
+        result.innerHTML = x - y;
+    }
+
+    if (operation === 'Multiply'){
+        result.innerHTML = x * y;
+    }
+
+    if (operation === 'Divide'){
+        result.innerHTML = x / y;
+    }
+
+}
+
+document.getElementById('n1').addEventListener('blur', calculator);
+document.getElementById('n2').addEventListener('blur', calculator);
+
+/* TEN */
+
+function walkTheDom(node, func){
+
+    func(node);
+
+    node = node.firstChild;
+    while(node){
+        walkTheDom(node,func);
+        node = node.nextSibling;
+    }
+
+}
+
+walkTheDom(document.getElementsByTagName('body')[0], node => console.log(node));
+
