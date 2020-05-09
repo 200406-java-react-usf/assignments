@@ -151,18 +151,37 @@ document.getElementById('form-sub').addEventListener('click', () => {
 });
 
 /*Create a function openDetails() which opens the details element. Invoke this function when the details’ summary is moused over. 
-The details should be hidden when the mouse is removed from the summary.
-
-Create a function that concatenates the inner HTML of all of the span elements and prints the results to the console.
-
-Create a function that displays the current time on earth in the span with id “earth_time”. Invoke this function when “Earth time” 
-button is clicked. 
-
-Three seconds after a user clicks on the “Intergalactic Directory” heading, the background color should change to a random color. 
+The details should be hidden when the mouse is removed from the summary.*/
+function openDetails(){
+    document.getElementsByTagName('details')[0].setAttribute('open', true);
+}
+function closeDetails(){
+    document.getElementsByTagName('details')[0].removeAttribute('open');
+}
+document.getElementsByTagName('details')[0].addEventListener('mouseenter', openDetails);
+document.getElementsByTagName('details')[0].addEventListener('mouseleave', closeDetails);
+/*Create a function that concatenates the inner HTML of all of the span elements and prints the results to the console.*/
+function concatSpans(){
+    let allSpans= '';
+    for (let i = 0;i < (document.getElementsByTagName('span')).length;i++){
+        let newSpan = document.getElementsByTagName('span')[i].innerHTML;
+        allSpans = allSpans + newSpan;
+    }
+    console.log(allSpans);
+}
+concatSpans();
+/*Create a function that displays the current time on earth in the span with id “earth_time”. Invoke this function when “Earth time” 
+button is clicked.*/
+function currentTime(){
+    let t = new Date();
+    document.getElementById("earth_time").innerHTML = new Date().toLocaleTimeString();;
+}
+document.getElementById('earth_time_check').addEventListener('click', currentTime);
+/*Three seconds after a user clicks on the “Intergalactic Directory” heading, the background color should change to a random color. 
 Make sure this color is never black so we can still read our black text! (there are other dark colors it could change to where we also 
-    couldn’t see the text but it’s enough to just accomodate for a black background)
+    couldn’t see the text but it’s enough to just accomodate for a black background) */
 
-When inputs with id n1 and n2 have valid numerical input, perform the operation specified in the select. Display the result in the 
+/*When inputs with id n1 and n2 have valid numerical input, perform the operation specified in the select. Display the result in the 
 element with id result.
 
 Define function walkTheDom(node, func)
