@@ -43,60 +43,112 @@ function alienText(){
         document.getElementsByTagName('p')[5].setAttribute('hidden', true);
 }
 document.getElementById('planet').addEventListener('click', alienText);
-document.getElementById('planet').addEventListener('click', alienText);
 
 /*When the submit button is pressed, get the values from all of the input into a new row in the table below.  
 Make sure no input is empty, check that first and last name are at least two letters each. Validate for valid phone number 
 and email structure. This should continue to work for multiple entries and rows.*/
 document.getElementById('form-sub').addEventListener('click', () => {
-    // let first = document.getElementById('firstname').value;
-    // if (first.length < 2) window.alert('Not a valid first name');
-    // let last = document.getElementById('lastname').value;
-    // if (last.length < 2) window.alert('Not a valid last name');
-    // let email = document.getElementById('email').value;
-    // let validEmail = /\S+@\S+\.\S+/;
-    // if (!email && !validEmail.test(email)) window.alert("Not a valid email.");
-    // let phone = document.getElementById('phone').value;
-    // let phoneValidator = /\d\d\d+\-\d\d\d+\-\d\d\d\d/
-    // if (!phone && !phoneValidator.test(phone)) window.alert("Not a valid phone number. EX:111-111-1111.");
-    // let birthday = document.getElementById('bday').value;
-    // let bdayValidator = /\d\d+\/+\d\d+\/\d\d\d\d/
-    // if (!birthday && !bdayValidator.test(birthday)) window.alert("Not a valid birthday. EX:01/01/1111.");
-    // let planets = document.getElementById('planet')
-    // let planet = planets.options(planets.selectedIndex).text;
-    // let gender = document.getElementsByName('gender').value;
-    // for (i=0;i<3;i++){
-    //     if (gender.checked)
-    //     gender = document.getElementsByName('gender')[i].value;
-    //     else window.alert('Please select a gender')
-    // }
-    // let color = document.getElementById('color').value;
-    let activity = [];
-    for (i=0;i<4;i++){
+    let person = [];
+
+    let first = document.getElementById('firstname').value;
+    let last = document.getElementById('lastname').value;
+
+    if (first.length < 2){ 
+        window.alert('Not a valid first name');
+        return; 
+    }else if (last.length < 2){ 
+        window.alert('Not a valid last name');
+        return;
+    }else {
+        person.push(first + ' ' + last);
+    }
+
+    let email = document.getElementById('email').value;
+    let validEmail = /\S+@\S+\.\S+/;
+
+    if (!email && !validEmail.test(email)){ 
+        window.alert("Not a valid email.");
+        return;
+    }else {
+        person.push(email);
+    }
+
+    let phone = document.getElementById('phone').value;
+    let phoneValidator = /\d\d\d\d\d\d\d\d\d\d/;
+
+    if (!phone && !phoneValidator.test(phone)){
+        window.alert("Not a valid phone number. EX:111-111-1111.");
+        return;
+    }else {
+        person.push(phone);
+    }
+
+    let birthday = document.getElementById('bday').value;
+    let bdayValidator = /\d\d+\/+\d\d+\/\d\d\d\d/;
+
+    if (!birthday && !bdayValidator.test(birthday)){
+        window.alert("Not a valid birthday. EX:01/01/1111.");
+        return;
+    }else {
+        person.push(birthday);
+    }
+
+    let color = document.getElementById('color').value;
+    person.push(color);
+
+    let gender;
     let selectedAnything = false;
-        if (document.getElementsByClassName('activity')[i].checked){
-            if (i = 0){
-                activity.push('hiking');
-                selectedAnything = true;
-            }else if (i = 1){
-                activity.push('stamp collection');
-                selectedAnything = true;
-            }else if (i = 2){
-                activity.push('birding');
-                selectedAnything = true;
-            }else if (i = 3){
-                activity.push('underwater basket weaver');
-                selectedAnything = true;
-            }
-        }else if (i = 3 && selectedAnything == false){
-            window.alert('Please select an activity even if they all suck.');
+    for (let i=0;i<3;i++){
+        if (document.getElementsByName('gender')[i].checked){
+            gender = document.getElementsByName('gender')[i].value;
+            person.push(gender);
+            selectedAnything = true;
+        }
+        if (i == 2 && !selectedAnything) {
+            window.alert('Please select a gender');
+            return;
         }
     }
-    console.log(selectedAnything);
-    console.log(activity);
+
+    /*For loop to check each activity and add it to person[] since multiple can be selected*/
+    selectedAnything = false;
+    for (let i=0;i<4;i++){
+        if (document.getElementsByClassName('activity')[i].checked){
+            if (i == 0){
+                person.push('hiking');
+                selectedAnything = true;
+            }else if (i == 1){
+                person.push('stamp collection');
+                selectedAnything = true;
+            }else if (i == 2){
+                person.push('birding');
+                selectedAnything = true;
+            }else if (i == 3){
+                person.push('underwater basket weaver');
+                selectedAnything = true;
+            }
+        }else if (i == 3 && !selectedAnything){
+            window.alert('Please select an activity even if they all suck.');
+            return;
+        }
+    }
+
+    let row = document.createElement('tr');
+    /*Table row creator loop*/
+    for(let i=0;i<person.length;i++){
+        let cell;
+        if (i < 6){
+            cell = document.createElement('td');
+            row.appendChild(cell).innerText = person[i];
+        }else if (i >= 6){
+            cell = document.createElement('ul');
+            let activity = document.createElement('li');
+            cell.appendChild(activity).innerText = person[i];
+            row.appendChild(cell);
+        }
+    }
+    document.getElementsByTagName('tbody')[0].appendChild(row);
 });
-
-
 
 /*Create a function openDetails() which opens the details element. Invoke this function when the details’ summary is moused over. 
 The details should be hidden when the mouse is removed from the summary.
