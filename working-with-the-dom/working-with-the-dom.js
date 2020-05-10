@@ -24,6 +24,11 @@ javadocs.innerHTML = "Javadocs";
 javadocs.setAttribute('href', 'https://docs.oracle.com/en/java/');
 javadocs.setAttribute('target', '_blank');
 
+//Problem 2
+
+let pluto = document.querySelector('#planet > option:nth-child(4)');
+pluto.setAttribute('disabled', true);
+
 
 
 
