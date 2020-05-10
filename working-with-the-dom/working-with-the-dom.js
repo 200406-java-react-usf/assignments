@@ -29,6 +29,28 @@ javadocs.setAttribute('target', '_blank');
 let pluto = document.querySelector('#planet > option:nth-child(4)');
 pluto.setAttribute('disabled', true);
 
+//Problem 2
+
+let pluto = document.querySelector('#planet > option:nth-child(4)');
+pluto.setAttribute('disabled', true);
+
+//Problem 3
+let earth = document.querySelector('#planet > option:nth-child(1)');
+let mars = document.querySelector('#planet > option:nth-child(2)');
+let pcb = document.querySelector('#planet > option');
+let hidden_msg = document.querySelector('.container > p');
+let planets = document.getElementById('planet')
+
+//function to remove hidden attribute
+function alienText() {
+
+    if(planets.value == earth.innerHTML){
+        hidden_msg.setAttribute('hidden', true);
+    } else{
+        hidden_msg.removeAttribute('hidden');
+    }
+}
+planets.addEventListener('change', alienText);
 
 
 
