@@ -231,7 +231,15 @@ operation.addEventListener("click", () => {
 
 //Problem 10
 
-walkTheDom()
-function walkTheDom(node){
-    
-}
+walkTheDom(document.documentElement.children);
+function walkTheDom(htmlnode){
+    for(let parents of htmlnode ){
+        console.log(parents);
+        for(let childs of parents.children){
+            console.log(childs);
+            for(let desecendants of childs.children){
+                console.log(desecendants);
+            }
+        }
+    };
+};
