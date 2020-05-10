@@ -39,16 +39,13 @@ function alienText() {
 }
 
 planets.addEventListener('click', alienText);
-console.log(mars.getAttribute('selected'));
 
+
+
+//Problem 4
 let submitBtn = document.getElementById('form-sub');
-let form = document.getElementsByClassName('form-control');
-
-
 let rdoBtn = document.querySelectorAll('input[name="gender"]');
 let chkBtn = document.querySelectorAll('input[class="activity"]');
-
-
 let firstName = document.getElementById('firstname');
 let lastName = document.getElementById('lastname');
 let email = document.getElementById('email');
@@ -59,22 +56,42 @@ let fcolor = document.getElementById('color');
 firstName.setAttribute('required', true);
 lastName.setAttribute('required', true);
 email.setAttribute('required', true);
-//email.setAttribute('pattern','[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-\.]+\.[a-zA-Z]{2,5}')
-firstName.setAttribute('min', 2);
-lastName.setAttribute('min', 2);
+email.setAttribute('pattern','[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$');
+firstName.setAttribute('minlength', 2);
+lastName.setAttribute('minlength', 2);
+phone.setAttribute('required',true);
+phone.setAttribute('pattern','[0-9]{3}-[0-9]{3}-[0-9]{4}');
+bday.setAttribute('required', true);
+
 
 submitBtn.addEventListener('click', addRow);
-console.log(form);
 
 function addRow() {
-    let firstName = document.getElementById('firstname');
-    let lastName = document.getElementById('lastname');
-    let email = document.getElementById('email');
-    let phone = document.getElementById('phone');
-    let bday = document.getElementById('bday');
-    let fcolor = document.getElementById('color');
+    let form = document.querySelector('form.form-group');
+    let invalidrb, invalidcb;
+    for(const rb of rdoBtn) {
+        if(rb.checked){
+            invalidrb = true;
+            break;
+        }
+        else{
+            invalidrb = false;
+        }
+    }
 
-    if(firstName.value && lastName.value && email.value && phone.value && bday.value && fcolor.value){
+    for(const cb of chkBtn) {
+        if(cb.checked){
+            invalidcb = true;
+            break;
+        }
+        else{
+            invalidcb = false;
+        }
+    }
+
+    if(firstName.validity.valid && lastName.validity.valid && 
+        email.validity.valid && bday.validity.valid && invalidrb
+            && invalidcb){
         let namecell = document.createElement('td');
         let emailcell = document.createElement('td');
         let phonecell = document.createElement('td');
@@ -116,11 +133,12 @@ function addRow() {
         }
 
 
-        namecell.innerText = `${firstName} and ${lastName}`;
-        emailcell.innerText = email;
-        phonecell.innerText = phone;
-        bdaycell.innerText = bday;
-        fcolorcell.innerText = fcolor;
+        namecell.innerText = `${firstName.value} and ${lastName.value}`;
+        emailcell.innerText = email.value;
+        phonecell.innerText = phone.value;
+        formatdate = new Date(bday.value);
+        bdaycell.innerText = new Date(formatdate.getTime() - formatdate.getTimezoneOffset() * -60000 ).toDateString();
+        fcolorcell.innerText = fcolor.value;
 
         firstName.value = '';
         lastName.value = '';
@@ -132,4 +150,88 @@ function addRow() {
 
     }
 
+}
+
+//Problem 5
+let details = document.querySelector('details');
+details.addEventListener("mouseover", openDetails);
+details.addEventListener("mouseleave", () => details.removeAttribute('open'));
+
+function openDetails() {
+    details.setAttribute('open', true);
+}
+
+
+//Problem 6
+
+let allspan = document.getElementsByTagName("span");
+let fulltext = '';
+for(const spn of allspan){
+    fulltext = fulltext + " " + spn.innerHTML;
+}
+console.log(fulltext);
+
+//Problem 7 
+let earthtime = document.getElementById('earth_time_check');
+let earthdisplay = document.getElementById('earth_time');
+earthtime.addEventListener("click", () => {
+    earthdisplay.innerHTML = new Date(Date.now());
+})
+
+//Problem 8
+let heading = document.querySelector("div.container > h1");
+
+heading.addEventListener("click", () => {
+    setTimeout(()=> {
+        let randomColor;
+        let toodark = 5242880;
+        toodark.toString(16);
+        do{
+            randomColor = Math.floor(Math.random()*16777215).toString(16);
+        }while(randomColor < toodark);
+
+        document.body.style.backgroundColor = "#" + randomColor;
+        color.innerHTML = "#" + randomColor;
+
+    },3000);
+});
+
+//Problem 9 
+
+let operation = document.getElementById('operation');
+let result = document.getElementById('result');
+let n1 = document.getElementById('n1');
+let n2 = document.getElementById('n2');
+n1.setAttribute('min',1);
+n2.setAttribute('min',1);
+n1.setAttribute('required', true);
+n2.setAttribute('required', true);
+let addition = document.querySelector('#operation > option:nth-child(1)');
+let substraction = document.querySelector('#operation > option:nth-child(2)');
+let divided = document.querySelector('#operation > option:nth-child(3)');
+let multiply = document.querySelector('#operation > option:nth-child(4)');
+
+operation.addEventListener("click", () => {
+    if(n1.validity.valid && n2.validity.valid){
+        if(operation.value == addition.innerHTML){
+        result.innerHTML = parseInt(n1.value) + parseInt(n2.value);
+        }
+        else if(operation.value == substraction.innerHTML){
+            result.innerHTML = parseInt(n1.value) - parseInt(n2.value);
+        }
+        else if(operation.value == divided.innerHTML){
+            result.innerHTML = parseInt(n1.value) / parseInt(n2.value);
+        }
+        else if(operation.value == multiply.innerHTML){
+            result.innerHTML = parseInt(n1.value) * parseInt(n2.value);
+        }
+    }
+    
+});
+
+//Problem 10
+
+walkTheDom()
+function walkTheDom(node){
+    
 }
