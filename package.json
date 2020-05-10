@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/200406-java-react-usf/assignments#readme",
   "devDependencies": {
-    "jest": "^25.3.0"
+    "@types/node": "^13.13.2",
+    "jest": "^25.3.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
