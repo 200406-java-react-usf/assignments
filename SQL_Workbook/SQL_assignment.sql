@@ -3,28 +3,38 @@
 -- Task – Select all records from the Employee table. --
 select * from "Employee"
 
+/******************************************************************/
+
 -- Task – Select all records from the Employee table where last name is King --
 select * from "Employee"
  where "LastName" = 'King';
+
+/******************************************************************/
 
 --Task – Select all records from the Employee table where first name is Andrew and REPORTSTO is null
 select * from "Employee" 
 where "FirstName" = 'Andrew' and "ReportsTo" is null;
 
+/******************************************************************/
+
 -- Task – Select all albums in album table and sort result set in descending order
 select "Title" from "Album" order by "Title" desc
+
+/******************************************************************/
 
 2.2 ORDER BY
 
 -- Task – Select first name from Customer and sort result set in ascending order
 select "FirstName" from "Customer"
- order by "FirstName" asc
+order by "FirstName" asc
+/******************************************************************/
 
 2.3 INSERT INTO
 
 -- Task – Insert two new records into Genre table
 insert into "Genre" ("GenreId", "Name") 
 values (26, 'Salsa'), (27, 'Techno');
+/******************************************************************/
 
 -- Task – Insert two new records into Employee  table
 insert into "Employee" ("EmployeeId", "LastName", "FirstName", 
@@ -32,37 +42,45 @@ insert into "Employee" ("EmployeeId", "LastName", "FirstName",
 (9, 'Albelice', 'Anna', 'IT Staff', '1986/3/08'), 
 (10, 'Singleton', 'Wezley', 'IT Staff', '1990/07/09');
 
+/******************************************************************/
+
 -- Task – Insert two new records into Customer  table
 insert into "Customer" ("CustomerId", "LastName", "FirstName", 
 "Email") values 
 (60, 'Anderson', 'Alice', 'aanderson@revature.com'),
 (61, 'Bailey', 'Bob', 'bbailey@revature.com');
+/******************************************************************/
 
 2.4 UPDATE
 
 -- Task – Update Aaron Mitchell in Customer table to Robert Walter
 update "Customer" set "FirstName" = 'Robert', "LastName" = 'Walter' 
 where "FirstName" = 'Aaron' and "LastName" = 'Mitchell';
+/******************************************************************/
 
 -- Task – Update name of artist “Creedence Clearwater Revival” to “CCR”
 update "Artist" set "Name" = 'CCR'
 where "Name" = 'Creedence Clearwater Revival';
+/******************************************************************/
 
 2.5 LIKE
 
 -- Task – Select all invoices with a billing address like “T”
 select * from "Invoice" 
 where "BillingAddress" like 'T%';
+/******************************************************************/
 
 2.6 BETWEEN
 
 -- Task – Select all invoices that have a total between 15 and 50
 select * from "Invoice"
 where "Total" between 15 and 50
+/******************************************************************/
 
 --Task – Select all Employeess hired between 1st of June 2003 and 1st of March 2004
 select * from "Employee" 
 where "HireDate" between '6/1/2003' and '3/1/2004'
+/******************************************************************/
 
 2.7 DELETE
 
@@ -75,6 +93,8 @@ where "FirstName" = 'Robert' and "LastName" = 'Walter';
 
 3.1 System Defined Functions
 
+/******************************************************************/
+
 --Task – Create a function that returns the current time.
 create or replace function myCurrentTime() returns  time 
 as 
@@ -85,6 +105,8 @@ $$
 $$ language plpgsql;
 
 select myCurrentTime();
+
+/******************************************************************/
 
 3.2 System Defined Aggregate Functions
 
@@ -98,21 +120,25 @@ $$
 $$ language plpgsql;	
 
 select InvoiceAverage(); 
+
+/******************************************************************/
 	
 -- Task – Create a function that returns the most expensive track 
 create or replace function PriciestTrack()  
 returns setof "Track" as 
 $$
-declare mstrack numeric(3,2) = max("UnitPrice") from "Track";
+declare msTack numeric(3,2) = max("UnitPrice") from "Track";
 	begin
 		return query
 			select * from "Track" t
-			where t."UnitPrice" = mstrack;
+			where t."UnitPrice" = msTrack;
 	end
 	
 $$ language plpgsql;	
 
 select PriciestTrack(); 
+
+/******************************************************************/
 
 3.3 Employees Defined Scalar Functions
 
@@ -126,6 +152,8 @@ end
 $$ language plpgsql;
 
 select InvoiceLineAverage(); 
+
+/******************************************************************/
 
 3.4 Employees Defined Table Valued Functions
 
@@ -143,12 +171,16 @@ $$ language plpgsql;
 
 select newEmployees();
 
+/******************************************************************/
 4.0 Stored Procedures
 
  In this section you will be creating and executing stored procedures. You will be creating various types of stored procedures that take input and output parameters.
 
 
 4.1 Basic Stored Procedure
+
+/******************************************************************/
+
 --Task – Create a stored procedure that selects the first and last names of all the Employeess.
 
 4.2 Stored Procedure Input Parameters
