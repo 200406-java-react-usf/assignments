@@ -172,7 +172,7 @@ function addFields() {
   //append new row to table
   document.getElementsByTagName('table')[0].appendChild(row);
 
-  //add student data to the newly created row
+  //add data to the newly created row
   Name.innerText = `${fname} ${lname}`;
   Email.innerText = email;
   Phone.innerText = phone;
@@ -207,6 +207,7 @@ function openDetails() {
 function closeDetails() {
   document.getElementsByTagName('details')[0].open = false;
 }
+
 document.getElementsByTagName('details')[0].addEventListener('mouseover', openDetails);
 document.getElementsByTagName('details')[0].addEventListener('mouseout', closeDetails);
 
@@ -226,11 +227,12 @@ document.getElementsByTagName('details')[0].addEventListener('mouseout', closeDe
 })()
 
 
-  /**
-  * Create a function that displays the current time on earth
-  *  in the span with id “earth_time”. Invoke this function when
-  *  “Earth time” button is clicked.
-  */
+/**
+* Create a function that displays the current time on earth
+*  in the span with id “earth_time”. Invoke this function when
+*  “Earth time” button is clicked.
+*/
+
 function earthTime () {
   let today = new Date();
   let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
