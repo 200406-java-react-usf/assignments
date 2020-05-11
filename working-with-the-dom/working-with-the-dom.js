@@ -207,9 +207,42 @@ heading.addEventListener('click', ()=>{
         color.innerHTML = "#" + randomColor;
 
     },3000);
-})
+});
 
 //Problem 9
+let operation = document.getElementById('operation');
+let result = document.getElementById('result');
+let n1 = document.getElementById('n1');
+let n2 = document.getElementById('n2');
+n1.setAttribute('min',1);
+n2.setAttribute('min',1);
+n1.setAttribute('required', true);
+n2.setAttribute('required', true);
+let addition = document.querySelector('#operation > option:nth-child(1)');
+let substraction = document.querySelector('#operation > option:nth-child(2)');
+let divided = document.querySelector('#operation > option:nth-child(3)');
+let multiply = document.querySelector('#operation > option:nth-child(4)');
 
+operation.addEventListener('change', () => {
+    if(n1.validity.valid && n2.validity.valid){
+        if(operation.value == addition.innerHTML){
+        result.innerHTML = parseInt(n1.value) + parseInt(n2.value);
+        }
+        else if(operation.value == substraction.innerHTML){
+            result.innerHTML = parseInt(n1.value) - parseInt(n2.value);
+        }
+        else if(operation.value == divided.innerHTML){
+            result.innerHTML = parseInt(n1.value) / parseInt(n2.value);
+        }
+        else if(operation.value == multiply.innerHTML){
+            result.innerHTML = parseInt(n1.value) * parseInt(n2.value);
+        }
+    }
+    
+});
 
 //Problem 10
+function walkTheDom(){
+    //something
+}
+
