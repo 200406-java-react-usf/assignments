@@ -159,22 +159,57 @@ function addNewRow(){
             color.value = '#000000';
     
     
-        } 
+        }
+    } 
 }
 //Problem 5
 
+let details = document.querySelector('details');
+details.addEventListener("mouseover", openDetails);
+details.addEventListener("mouseleave", () => details.open = false);
+
+function openDetails() {
+    details.open = true;
+}
 
 //Problem 6
-
+function concatSpans() {
+    let spanTags = document.getElementsByTagName('span');
+    let text = '';
+    for (const spn of spanTags){
+        text = text + spn.innerHTML;
+    }
+    console.log(text);
+}
+concatSpans();
 
 //Problem 7
+let earthtime = document.getElementById('earth_time_check');
+let earthdisplay = document.getElementById('earth_time');
+earthtime.addEventListener("click", () => {
+    earthdisplay.innerHTML = new Date(Date.now());
+})
 
 
 //Problem 8
+let heading = document.querySelector('h1');
 
+heading.addEventListener('click', ()=>{
+    setTimeout(()=> {
+        let randomColor;
+        let toodark = 5242880;
+        toodark.toString(16);
+        do{
+            randomColor = Math.floor(Math.random()*16777215).toString(16);
+        }while(randomColor < toodark);
+
+        document.body.style.backgroundColor = "#" + randomColor;
+        color.innerHTML = "#" + randomColor;
+
+    },3000);
+})
 
 //Problem 9
 
 
 //Problem 10
-}
